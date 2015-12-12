@@ -1,0 +1,12 @@
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> 
+PREFIX oslc: <http://open-services.net/ns/core#>  
+
+SELECT DISTINCT ?resourceShape ?propertyDefinition ?propertyOccurs 
+WHERE {
+	?resourceShape  rdf:type oslc:ResourceShape . 
+	?resourceShape  oslc:property ?propertyOfResourceShape . 
+	?propertyOfResourceShape  oslc:propertyDefinition ?propertyDefinition . 
+	?propertyOfResourceShape  oslc:occurs ?propertyOccurs . 
+}
+
+
