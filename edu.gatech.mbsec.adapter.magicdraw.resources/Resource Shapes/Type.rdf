@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rdf:RDF
+	xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+	xmlns:oslc="http://open-services.net/ns/core#"
+	xmlns:dcterms="http://purl.org/dc/terms/"
+	xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+	xmlns:sysml="http://www.omg.org/sysml/">
+	<oslc:ResourceShape rdf:about="http://myOSLCServiceProvider.com/sysml/TypeResourceShape">
+		<oslc:describes rdf:resource="sysml:Type"/>
+		<dcterms:title rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#XMLLiteral">Type Resource Shape</dcterms:title>
+	</oslc:ResourceShape>
+</rdf:RDF>

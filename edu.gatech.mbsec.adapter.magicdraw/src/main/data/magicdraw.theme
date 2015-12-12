@@ -1,0 +1,218 @@
+<PropertyVisitorAcceptor >
+    <mdElement elementClass='PropertyManager'>
+        <name>Custom properties</name>
+        <propertyManagerID>Custom properties</propertyManagerID>
+        <mdElement elementClass='FontProperty'>
+            <propertyID>CONTROL_TEXT_FONT</propertyID>
+            <propertyDescriptionID>CONTROL_TEXT_FONT_DESCRIPTION</propertyDescriptionID>
+            <fontName>Dialog</fontName>
+            <size xmi:value='11'/>
+            <style xmi:value='0'/>
+        </mdElement>
+        <mdElement elementClass='FontProperty'>
+            <propertyID>SYSTEM_TEXT_FONT</propertyID>
+            <propertyDescriptionID>SYSTEM_TEXT_FONT_DESCRIPTION</propertyDescriptionID>
+            <fontName>Dialog</fontName>
+            <size xmi:value='11'/>
+            <style xmi:value='0'/>
+        </mdElement>
+        <mdElement elementClass='FontProperty'>
+            <propertyID>USER_TEXT_FONT</propertyID>
+            <propertyDescriptionID>USER_TEXT_FONT_DESCRIPTION</propertyDescriptionID>
+            <fontName>Dialog</fontName>
+            <size xmi:value='11'/>
+            <style xmi:value='0'/>
+        </mdElement>
+        <mdElement elementClass='FontProperty'>
+            <propertyID>MENU_TEXT_FONT</propertyID>
+            <propertyDescriptionID>MENU_TEXT_FONT_DESCRIPTION</propertyDescriptionID>
+            <fontName>Dialog</fontName>
+            <size xmi:value='11'/>
+            <style xmi:value='0'/>
+        </mdElement>
+        <mdElement elementClass='FontProperty'>
+            <propertyID>WINDOW_TITLE_FONT</propertyID>
+            <propertyDescriptionID>WINDOW_TITLE_FONT_DESCRIPTION</propertyDescriptionID>
+            <fontName>Dialog</fontName>
+            <size xmi:value='11'/>
+            <style xmi:value='1'/>
+        </mdElement>
+        <mdElement elementClass='FontProperty'>
+            <propertyID>SUB_TEXT_FONT</propertyID>
+            <propertyDescriptionID>SUB_TEXT_FONT_DESCRIPTION</propertyDescriptionID>
+            <fontName>Dialog</fontName>
+            <size xmi:value='11'/>
+            <style xmi:value='0'/>
+        </mdElement>
+        <mdElement elementClass='ColorProperty'>
+            <propertyID>FOCUS_COLOR</propertyID>
+            <propertyDescriptionID>FOCUS_COLOR_DESCRIPTION</propertyDescriptionID>
+            <value xmi:value='-1447447'/>
+        </mdElement>
+        <mdElement elementClass='ColorProperty'>
+            <propertyID>DESKTOP_COLOR</propertyID>
+            <propertyDescriptionID>DESKTOP_COLOR_DESCRIPTION</propertyDescriptionID>
+            <value xmi:value='-1513501'/>
+        </mdElement>
+        <mdElement elementClass='ColorProperty'>
+            <propertyID>CONTROL_COLOR</propertyID>
+            <propertyDescriptionID>CONTROL_COLOR_DESCRIPTION</propertyDescriptionID>
+            <value xmi:value='-2434863'/>
+        </mdElement>
+        <mdElement elementClass='ColorProperty'>
+            <propertyID>CONTROL_SHADOW_COLOR</propertyID>
+            <propertyDescriptionID>CONTROL_SHADOW_COLOR_DESCRIPTION</propertyDescriptionID>
+            <value xmi:value='-5263451'/>
+        </mdElement>
+        <mdElement elementClass='ColorProperty'>
+            <propertyID>CONTROL_DARK_SHADOW_COLOR</propertyID>
+            <propertyDescriptionID>CONTROL_DARK_SHADOW_COLOR_DESCRIPTION</propertyDescriptionID>
+            <value xmi:value='-10066330'/>
+        </mdElement>
+        <mdElement elementClass='ColorProperty'>
+            <propertyID>CONTROL_INFO_COLOR</propertyID>
+            <propertyDescriptionID>CONTROL_INFO_COLOR_DESCRIPTION</propertyDescriptionID>
+            <value xmi:value='-16777216'/>
+        </mdElement>
+        <mdElement elementClass='ColorProperty'>
+            <propertyID>CONTROL_HIGHLIGHT_COLOR</propertyID>
+            <propertyDescriptionID>CONTROL_HIGHLIGHT_COLOR_DESCRIPTION</propertyDescriptionID>
+            <value xmi:value='-1'/>
+        </mdElement>
+        <mdElement elementClass='ColorProperty'>
+            <propertyID>CONTROL_DISABLED_COLOR</propertyID>
+            <propertyDescriptionID>CONTROL_DISABLED_COLOR_DESCRIPTION</propertyDescriptionID>
+            <value xmi:value='-5987164'/>
+        </mdElement>
+        <mdElement elementClass='ColorProperty'>
+            <propertyID>PRIMARY_CONTROL_COLOR</propertyID>
+            <propertyDescriptionID>PRIMARY_CONTROL_COLOR_DESCRIPTION</propertyDescriptionID>
+            <value xmi:value='-1447447'/>
+        </mdElement>
+        <mdElement elementClass='ColorProperty'>
+            <propertyID>PRIMARY_CONTROL_SHADOW_COLOR</propertyID>
+            <propertyDescriptionID>PRIMARY_CONTROL_SHADOW_COLOR_DESCRIPTION</propertyDescriptionID>
+            <value xmi:value='-4276556'/>
+        </mdElement>
+        <mdElement elementClass='ColorProperty'>
+            <propertyID>PRIMARY_CONTROL_DARK_SHADOW_COLOR</propertyID>
+            <propertyDescriptionID>PRIMARY_CONTROL_DARK_SHADOW_COLOR_DESCRIPTION</propertyDescriptionID>
+            <value xmi:value='-5263451'/>
+        </mdElement>
+        <mdElement elementClass='ColorProperty'>
+            <propertyID>PRIMARY_CONTROL_INFO_COLOR</propertyID>
+            <propertyDescriptionID>PRIMARY_CONTROL_INFO_COLOR_DESCRIPTION</propertyDescriptionID>
+            <value xmi:value='-16777216'/>
+        </mdElement>
+        <mdElement elementClass='ColorProperty'>
+            <propertyID>PRIMARY_CONTROL_HIGHLIGHT_COLOR</propertyID>
+            <propertyDescriptionID>PRIMARY_CONTROL_HIGHLIGHT_COLOR_DESCRIPTION</propertyDescriptionID>
+            <value xmi:value='-1'/>
+        </mdElement>
+        <mdElement elementClass='ColorProperty'>
+            <propertyID>SYSTEM_TEXT_COLOR</propertyID>
+            <propertyDescriptionID>SYSTEM_TEXT_COLOR_DESCRIPTION</propertyDescriptionID>
+            <value xmi:value='-16777216'/>
+        </mdElement>
+        <mdElement elementClass='ColorProperty'>
+            <propertyID>CONTROL_TEXT_COLOR</propertyID>
+            <propertyDescriptionID>CONTROL_TEXT_COLOR_DESCRIPTION</propertyDescriptionID>
+            <value xmi:value='-16777216'/>
+        </mdElement>
+        <mdElement elementClass='ColorProperty'>
+            <propertyID>INACTIVE_CONTROL_TEXT_COLOR</propertyID>
+            <propertyDescriptionID>INACTIVE_CONTROL_TEXT_COLOR_DESCRIPTION</propertyDescriptionID>
+            <value xmi:value='-8816263'/>
+        </mdElement>
+        <mdElement elementClass='ColorProperty'>
+            <propertyID>INACTIVE_SYSTEM_TEXT_COLOR</propertyID>
+            <propertyDescriptionID>INACTIVE_SYSTEM_TEXT_COLOR_DESCRIPTION</propertyDescriptionID>
+            <value xmi:value='-8816263'/>
+        </mdElement>
+        <mdElement elementClass='ColorProperty'>
+            <propertyID>USER_TEXT_COLOR</propertyID>
+            <propertyDescriptionID>USER_TEXT_COLOR_DESCRIPTION</propertyDescriptionID>
+            <value xmi:value='-16777216'/>
+        </mdElement>
+        <mdElement elementClass='ColorProperty'>
+            <propertyID>TEXT_HIGHLIGHT_COLOR</propertyID>
+            <propertyDescriptionID>TEXT_HIGHLIGHT_COLOR_DESCRIPTION</propertyDescriptionID>
+            <value xmi:value='-597060'/>
+        </mdElement>
+        <mdElement elementClass='ColorProperty'>
+            <propertyID>HIGHLIGHTED_TEXT_COLOR</propertyID>
+            <propertyDescriptionID>HIGHLIGHTED_TEXT_COLOR_DESCRIPTION</propertyDescriptionID>
+            <value xmi:value='-16777216'/>
+        </mdElement>
+        <mdElement elementClass='ColorProperty'>
+            <propertyID>WINDOW_BACKGROUND_COLOR</propertyID>
+            <propertyDescriptionID>WINDOW_BACKGROUND_COLOR_DESCRIPTION</propertyDescriptionID>
+            <value xmi:value='-1'/>
+        </mdElement>
+        <mdElement elementClass='ColorProperty'>
+            <propertyID>WINDOW_TITLE_BACKGROUND_COLOR</propertyID>
+            <propertyDescriptionID>WINDOW_TITLE_BACKGROUND_COLOR_DESCRIPTION</propertyDescriptionID>
+            <value xmi:value='-1259630'/>
+        </mdElement>
+        <mdElement elementClass='ColorProperty'>
+            <propertyID>WINDOW_TITLE_FOREGROUND_COLOR</propertyID>
+            <propertyDescriptionID>WINDOW_TITLE_FOREGROUND_COLOR_DESCRIPTION</propertyDescriptionID>
+            <value xmi:value='-16777216'/>
+        </mdElement>
+        <mdElement elementClass='ColorProperty'>
+            <propertyID>WINDOW_TITLE_INACTIVE_BACKGROUND_COLOR</propertyID>
+            <propertyDescriptionID>WINDOW_TITLE_INACTIVE_BACKGROUND_COLOR_DESCRIPTION</propertyDescriptionID>
+            <value xmi:value='-2434863'/>
+        </mdElement>
+        <mdElement elementClass='ColorProperty'>
+            <propertyID>WINDOW_TITLE_INACTIVE_FOREGROUND_COLOR</propertyID>
+            <propertyDescriptionID>WINDOW_TITLE_INACTIVE_FOREGROUND_COLOR_DESCRIPTION</propertyDescriptionID>
+            <value xmi:value='-16777216'/>
+        </mdElement>
+        <mdElement elementClass='ColorProperty'>
+            <propertyID>MENU_BACKGROUND_COLOR</propertyID>
+            <propertyDescriptionID>MENU_BACKGROUND_COLOR_DESCRIPTION</propertyDescriptionID>
+            <value xmi:value='-2434863'/>
+        </mdElement>
+        <mdElement elementClass='ColorProperty'>
+            <propertyID>MENU_FOREGROUND_COLOR</propertyID>
+            <propertyDescriptionID>MENU_FOREGROUND_COLOR_DESCRIPTION</propertyDescriptionID>
+            <value xmi:value='-16777216'/>
+        </mdElement>
+        <mdElement elementClass='ColorProperty'>
+            <propertyID>MENU_SELECTED_BACKGROUND_COLOR</propertyID>
+            <propertyDescriptionID>MENU_SELECTED_BACKGROUND_COLOR_DESCRIPTION</propertyDescriptionID>
+            <value xmi:value='-1259630'/>
+        </mdElement>
+        <mdElement elementClass='ColorProperty'>
+            <propertyID>MENU_SELECTED_FOREGROUND_COLOR</propertyID>
+            <propertyDescriptionID>MENU_SELECTED_FOREGROUND_COLOR_DESCRIPTION</propertyDescriptionID>
+            <value xmi:value='-16777216'/>
+        </mdElement>
+        <mdElement elementClass='ColorProperty'>
+            <propertyID>MENU_DISABLED_FOREGROUND_COLOR</propertyID>
+            <propertyDescriptionID>MENU_DISABLED_FOREGROUND_COLOR_DESCRIPTION</propertyDescriptionID>
+            <value xmi:value='-5263451'/>
+        </mdElement>
+        <mdElement elementClass='ColorProperty'>
+            <propertyID>MENU_SEPARATOR_BACKGROUND_COLOR</propertyID>
+            <propertyDescriptionID>MENU_SEPARATOR_BACKGROUND_COLOR_DESCRIPTION</propertyDescriptionID>
+            <value xmi:value='-1'/>
+        </mdElement>
+        <mdElement elementClass='ColorProperty'>
+            <propertyID>MENU_SEPARATOR_FOREGROUND_COLOR</propertyID>
+            <propertyDescriptionID>MENU_SEPARATOR_FOREGROUND_COLOR_DESCRIPTION</propertyDescriptionID>
+            <value xmi:value='-5263451'/>
+        </mdElement>
+        <mdElement elementClass='ColorProperty'>
+            <propertyID>MENU_ACCELERATOR_FOREGROUND_COLOR</propertyID>
+            <propertyDescriptionID>MENU_ACCELERATOR_FOREGROUND_COLOR_DESCRIPTION</propertyDescriptionID>
+            <value xmi:value='-16777216'/>
+        </mdElement>
+        <mdElement elementClass='ColorProperty'>
+            <propertyID>MENU_ACCELERATOR_SELECTED_FOREGROUND_COLOR</propertyID>
+            <propertyDescriptionID>MENU_ACCELERATOR_SELECTED_FOREGROUND_COLOR_DESCRIPTION</propertyDescriptionID>
+            <value xmi:value='-16777216'/>
+        </mdElement>
+    </mdElement>
+</PropertyVisitorAcceptor >

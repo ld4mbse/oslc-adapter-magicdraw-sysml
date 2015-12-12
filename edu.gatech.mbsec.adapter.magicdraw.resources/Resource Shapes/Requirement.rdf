@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rdf:RDF
+	xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+	xmlns:oslc="http://open-services.net/ns/core#"
+	xmlns:dcterms="http://purl.org/dc/terms/"
+	xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+	xmlns:sysml="http://www.omg.org/sysml/">
+	<oslc:ResourceShape rdf:about="http://myOSLCServiceProvider.com/sysml/RequirementResourceShape">
+		<oslc:describes rdf:resource="sysml:Requirement"/>
+		<dcterms:title rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#XMLLiteral">Requirement Resource Shape</dcterms:title>
+		<oslc:property>
+			<oslc:Property>
+				<oslc:name>name</oslc:name>
+				<oslc:propertyDefinition rdf:resource="sysml:NamedElement_name"/>
+				<oslc:occurs rdf:resource="http://open-services.net/ns/core#Zero-or-one"/>
+			</oslc:Property>
+		</oslc:property>
+		<oslc:property>
+			<oslc:Property>
+				<oslc:name>hyperlink</oslc:name>
+				<oslc:propertyDefinition rdf:resource="sysml:Requirement_hyperlink"/>
+				<oslc:occurs rdf:resource="http://open-services.net/ns/core#Zero-or-one"/>
+			</oslc:Property>
+		</oslc:property>
+		<oslc:property>
+			<oslc:Property>
+				<oslc:name>master</oslc:name>
+				<oslc:propertyDefinition rdf:resource="sysml:Requirement_master"/>
+				<oslc:range rdf:resource="sysml:Requirement"/>
+				<oslc:valueType rdf:resource="http://open-services.net/ns/core#Resource"/>
+				<oslc:occurs rdf:resource="http://open-services.net/ns/core#Zero-or-one"/>
+			</oslc:Property>
+		</oslc:property>
+		<oslc:property>
+			<oslc:Property>
+				<oslc:name>derived</oslc:name>
+				<oslc:propertyDefinition rdf:resource="sysml:Requirement_derived"/>
+				<oslc:range rdf:resource="sysml:Requirement"/>
+				<oslc:valueType rdf:resource="http://open-services.net/ns/core#Resource"/>
+				<oslc:occurs rdf:resource="http://open-service.net/ns/core#Zero-or-many"/>
+			</oslc:Property>
+		</oslc:property>
+		<oslc:property>
+			<oslc:Property>
+				<oslc:name>subRequirement</oslc:name>
+				<oslc:propertyDefinition rdf:resource="sysml:Requirement_subRequirement"/>
+				<oslc:range rdf:resource="sysml:Requirement"/>
+				<oslc:valueType rdf:resource="http://open-services.net/ns/core#Resource"/>
+				<oslc:occurs rdf:resource="http://open-service.net/ns/core#Zero-or-many"/>
+			</oslc:Property>
+		</oslc:property>
+		<oslc:property>
+			<oslc:Property>
+				<oslc:name>derivedFrom</oslc:name>
+				<oslc:propertyDefinition rdf:resource="sysml:Requirement_derivedFrom"/>
+				<oslc:range rdf:resource="sysml:Requirement"/>
+				<oslc:valueType rdf:resource="http://open-services.net/ns/core#Resource"/>
+				<oslc:occurs rdf:resource="http://open-service.net/ns/core#Zero-or-many"/>
+			</oslc:Property>
+		</oslc:property>
+	</oslc:ResourceShape>
+</rdf:RDF>

@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rdf:RDF
+	xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+	xmlns:oslc="http://open-services.net/ns/core#"
+	xmlns:dcterms="http://purl.org/dc/terms/"
+	xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+	xmlns:sysml="http://www.omg.org/sysml/">
+	<oslc:ResourceShape rdf:about="http://myOSLCServiceProvider.com/sysml/PartPropertyResourceShape">
+		<oslc:describes rdf:resource="sysml:PartProperty"/>
+		<dcterms:title rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#XMLLiteral">PartProperty Resource Shape</dcterms:title>
+		<oslc:property>
+			<oslc:Property>
+				<oslc:name>name</oslc:name>
+				<oslc:propertyDefinition rdf:resource="sysml:NamedElement_name"/>
+				<oslc:occurs rdf:resource="http://open-services.net/ns/core#Zero-or-one"/>
+			</oslc:Property>
+		</oslc:property>
+		<oslc:property>
+			<oslc:Property>
+				<oslc:name>lower</oslc:name>
+				<oslc:propertyDefinition rdf:resource="sysml:MultiplicityElement_lower"/>
+				<oslc:occurs rdf:resource="http://open-services.net/ns/core#Zero-or-one"/>
+			</oslc:Property>
+		</oslc:property>
+		<oslc:property>
+			<oslc:Property>
+				<oslc:name>upper</oslc:name>
+				<oslc:propertyDefinition rdf:resource="sysml:MultiplicityElement_upper"/>
+				<oslc:occurs rdf:resource="http://open-services.net/ns/core#Zero-or-one"/>
+			</oslc:Property>
+		</oslc:property>
+		<oslc:property>
+			<oslc:Property>
+				<oslc:name>owner</oslc:name>
+				<oslc:propertyDefinition rdf:resource="sysml:OwnedElement_owner"/>
+				<oslc:range rdf:resource="sysml:NamedElement"/>
+				<oslc:valueType rdf:resource="http://open-services.net/ns/core#Resource"/>
+				<oslc:occurs rdf:resource="http://open-services.net/ns/core#Zero-or-one"/>
+			</oslc:Property>
+		</oslc:property>
+		<oslc:property>
+			<oslc:Property>
+				<oslc:name>type</oslc:name>
+				<oslc:propertyDefinition rdf:resource="sysml:Property_type"/>
+				<oslc:range rdf:resource="sysml:Type"/>
+				<oslc:valueType rdf:resource="http://open-services.net/ns/core#Resource"/>
+				<oslc:occurs rdf:resource="http://open-services.net/ns/core#Zero-or-one"/>
+			</oslc:Property>
+		</oslc:property>
+	</oslc:ResourceShape>
+</rdf:RDF>

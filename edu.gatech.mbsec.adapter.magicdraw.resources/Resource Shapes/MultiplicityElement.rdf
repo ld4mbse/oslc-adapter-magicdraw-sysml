@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rdf:RDF
+	xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+	xmlns:oslc="http://open-services.net/ns/core#"
+	xmlns:dcterms="http://purl.org/dc/terms/"
+	xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+	xmlns:sysml="http://www.omg.org/sysml/">
+	<oslc:ResourceShape rdf:about="http://myOSLCServiceProvider.com/sysml/MultiplicityElementResourceShape">
+		<oslc:describes rdf:resource="sysml:MultiplicityElement"/>
+		<dcterms:title rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#XMLLiteral">MultiplicityElement Resource Shape</dcterms:title>
+		<oslc:property>
+			<oslc:Property>
+				<oslc:name>lower</oslc:name>
+				<oslc:propertyDefinition rdf:resource="sysml:MultiplicityElement_lower"/>
+				<oslc:occurs rdf:resource="http://open-services.net/ns/core#Zero-or-one"/>
+			</oslc:Property>
+		</oslc:property>
+		<oslc:property>
+			<oslc:Property>
+				<oslc:name>upper</oslc:name>
+				<oslc:propertyDefinition rdf:resource="sysml:MultiplicityElement_upper"/>
+				<oslc:occurs rdf:resource="http://open-services.net/ns/core#Zero-or-one"/>
+			</oslc:Property>
+		</oslc:property>
+	</oslc:ResourceShape>
+</rdf:RDF>

@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rdf:RDF
+	xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+	xmlns:oslc="http://open-services.net/ns/core#"
+	xmlns:dcterms="http://purl.org/dc/terms/"
+	xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+	xmlns:sysml="http://www.omg.org/sysml/">
+	<oslc:ResourceShape rdf:about="http://myOSLCServiceProvider.com/sysml/ItemFlowResourceShape">
+		<oslc:describes rdf:resource="sysml:ItemFlow"/>
+		<dcterms:title rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#XMLLiteral">ItemFlow Resource Shape</dcterms:title>
+		<oslc:property>
+			<oslc:Property>
+				<oslc:name>itemProperty</oslc:name>
+				<oslc:propertyDefinition rdf:resource="sysml:ItemFlow_itemProperty"/>
+				<oslc:range rdf:resource="sysml:Property"/>
+				<oslc:valueType rdf:resource="http://open-services.net/ns/core#Resource"/>
+				<oslc:occurs rdf:resource="http://open-services.net/ns/core#Zero-or-one"/>
+			</oslc:Property>
+		</oslc:property>
+		<oslc:property>
+			<oslc:Property>
+				<oslc:name>informationTarget</oslc:name>
+				<oslc:propertyDefinition rdf:resource="sysml:ItemFlow_informationTarget"/>
+				<oslc:range rdf:resource="sysml:Property"/>
+				<oslc:valueType rdf:resource="http://open-services.net/ns/core#Resource"/>
+				<oslc:occurs rdf:resource="http://open-service.net/ns/core#Exactly-one"/>
+			</oslc:Property>
+		</oslc:property>
+		<oslc:property>
+			<oslc:Property>
+				<oslc:name>informationSource</oslc:name>
+				<oslc:propertyDefinition rdf:resource="sysml:ItemFlow_informationSource"/>
+				<oslc:range rdf:resource="sysml:Property"/>
+				<oslc:valueType rdf:resource="http://open-services.net/ns/core#Resource"/>
+				<oslc:occurs rdf:resource="http://open-service.net/ns/core#Exactly-one"/>
+			</oslc:Property>
+		</oslc:property>
+		<oslc:property>
+			<oslc:Property>
+				<oslc:name>realizingConnector</oslc:name>
+				<oslc:propertyDefinition rdf:resource="sysml:ItemFlow_realizingConnector"/>
+				<oslc:range rdf:resource="sysml:Connector"/>
+				<oslc:valueType rdf:resource="http://open-services.net/ns/core#Resource"/>
+				<oslc:occurs rdf:resource="http://open-service.net/ns/core#Exactly-one"/>
+			</oslc:Property>
+		</oslc:property>
+		<oslc:property>
+			<oslc:Property>
+				<oslc:name>conveyedBlock</oslc:name>
+				<oslc:propertyDefinition rdf:resource="sysml:ItemFlow_conveyedBlock"/>
+				<oslc:range rdf:resource="sysml:Block"/>
+				<oslc:valueType rdf:resource="http://open-services.net/ns/core#Resource"/>
+				<oslc:occurs rdf:resource="http://open-service.net/ns/core#Zero-or-many"/>
+			</oslc:Property>
+		</oslc:property>
+	</oslc:ResourceShape>
+</rdf:RDF>

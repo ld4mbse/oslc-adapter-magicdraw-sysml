@@ -1,0 +1,1334 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>org.eclipse.lyo.adapter.magicdraw</groupId>
+	<artifactId>oslc4jmagicdraw</artifactId>
+	<version>0.1.0</version>
+	<packaging>war</packaging>
+	<name>oslc4jmagicdraw</name>
+	
+	<properties>
+		<magicdraw.installdir>C:\Program Files\MagicDraw UML17.0.4 SP2</magicdraw.installdir>
+	</properties>
+	
+	<dependencies>
+		<dependency>
+			<groupId>javax.servlet.jsp</groupId>
+			<artifactId>javax.servlet.jsp-api</artifactId>
+			<version>2.3.0</version>
+		</dependency>
+		<dependency>
+			<groupId>javax.servlet</groupId>
+			<artifactId>javax.servlet-api</artifactId>
+			<version>3.1-b06</version>
+		</dependency>
+
+		<dependency>
+			<groupId>javax.ws.rs</groupId>
+			<artifactId>jsr311-api</artifactId>
+			<version>1.1.1</version>
+		</dependency>
+		
+		<!-- ********************************************************************** --> 
+  		<!-- Dependency to OSLC-annotated Java classes describing MagicDraw SysML concepts --> 
+		<!-- ********************************************************************** --> 
+		
+		<dependency>
+			<groupId>org.eclipse.lyo.adapter.magicdraw</groupId>
+			<artifactId>oslc4j-magicdraw-resources</artifactId>
+			<version>0.1.0</version>
+		</dependency>
+		
+		<!-- ********************************************************************** --> 
+  		<!-- OSLC4J dependencies --> 
+		<!-- ********************************************************************** --> 
+		
+		<dependency>
+			<groupId>org.eclipse.lyo.oslc4j.core</groupId>
+			<artifactId>oslc4j-wink</artifactId>
+			<version>2.0.0</version>
+			<exclusions>
+        		<exclusion>
+      				<groupId>javax.xml.bind</groupId>
+      				<artifactId>jaxb-api</artifactId>
+    			</exclusion>
+    			<exclusion>
+      				<groupId>com.sun.xml.bind</groupId>
+      				<artifactId>jaxb-impl</artifactId>
+    			</exclusion>  			  			
+  			</exclusions>
+		</dependency>
+		<dependency>
+			<groupId>org.eclipse.lyo.oslc4j.core</groupId>
+			<artifactId>oslc4j-jena-provider</artifactId>
+			<version>2.0.0</version>
+		</dependency>
+		<dependency>
+			<groupId>org.eclipse.lyo.oslc4j.core</groupId>
+			<artifactId>oslc4j-core</artifactId>
+			<version>2.0.0</version>
+		</dependency>
+		<dependency>
+			<groupId>org.eclipse.lyo.oslc4j.core</groupId>
+			<artifactId>oslc4j-json4j-provider</artifactId>
+			<version>2.0.0</version>
+		</dependency>
+		
+		<!-- ********************************************************************** --> 
+  		<!-- 3rd Party dependency --> 
+		<!-- ********************************************************************** -->
+		
+		<dependency>
+			<groupId>org.apache.ws.commons.util</groupId>
+			<artifactId>ws-commons-util</artifactId>
+			<version>1.0.2</version>						
+		</dependency>
+		
+
+
+ 		<!-- ********************************************************************** --> 
+  		<!-- Magicdraw jars which need to be on the classpath in order to launch MagicDraw 
+  		through the MagicDraw API, as described in the MagicDraw OpenAPI UserGuide --> 
+		<!-- ********************************************************************** --> 
+
+		<dependency>
+			<groupId>com.magicdraw.application</groupId>
+			<artifactId>patch</artifactId>
+			<version>17.0.4</version>
+			<scope>system</scope>
+			<systemPath>${magicdraw.installdir}/lib/patch.jar</systemPath>
+		</dependency>
+
+		<dependency>
+			<groupId>com.magicdraw.application</groupId>
+			<artifactId>activation</artifactId>
+			<version>17.0.4</version>
+			<scope>system</scope>
+			<systemPath>${magicdraw.installdir}/lib/activation.jar</systemPath>
+		</dependency>
+		
+		<dependency>
+			<groupId>com.magicdraw.application</groupId>
+			<artifactId>annotation</artifactId>
+			<version>17.0.4</version>
+			<scope>system</scope>
+			<systemPath>${magicdraw.installdir}/lib/annotation.jar</systemPath>
+		</dependency>
+
+		<dependency>
+			<groupId>com.magicdraw.application</groupId>
+			<artifactId>batik</artifactId>
+			<version>17.0.4</version>
+			<scope>system</scope>
+			<systemPath>${magicdraw.installdir}/lib/batik.jar</systemPath>
+		</dependency>
+
+		<dependency>
+			<groupId>com.magicdraw.application</groupId>
+			<artifactId>cmof14</artifactId>
+			<version>17.0.4</version>
+			<scope>system</scope>
+			<systemPath>${magicdraw.installdir}/lib/cmof14.jar</systemPath>
+		</dependency>
+
+		<dependency>
+			<groupId>com.magicdraw.application</groupId>
+			<artifactId>com.nomagic.ci.admin.lock_17.0.1</artifactId>
+			<version>17.0.4</version>
+			<scope>system</scope>
+			<systemPath>${magicdraw.installdir}/lib/com.nomagic.ci.admin.lock_17.0.1.jar</systemPath>
+		</dependency>
+		
+		<dependency>
+			<groupId>com.magicdraw.application</groupId>
+			<artifactId>com.nomagic.ci.client.ac_17.0.1</artifactId>
+			<version>17.0.4</version>
+			<scope>system</scope>
+			<systemPath>${magicdraw.installdir}/lib/com.nomagic.ci.client.ac_17.0.1.jar</systemPath>
+		</dependency>
+
+		<dependency>
+			<groupId>com.magicdraw.application</groupId>
+			<artifactId>com.nomagic.ci.client.licensing_17.0.1</artifactId>
+			<version>17.0.4</version>
+			<scope>system</scope>
+			<systemPath>${magicdraw.installdir}/lib/com.nomagic.ci.client.licensing_17.0.1.jar</systemPath>
+		</dependency>
+		
+		<dependency>
+			<groupId>com.magicdraw.application</groupId>
+			<artifactId>com.nomagic.ci.client.mediastore_17.0.1</artifactId>
+			<version>17.0.4</version>
+			<scope>system</scope>
+			<systemPath>${magicdraw.installdir}/lib/com.nomagic.ci.client.mediastore_17.0.1.jar</systemPath>
+		</dependency>
+		
+		<dependency>
+			<groupId>com.magicdraw.application</groupId>
+			<artifactId>com.nomagic.ci.cts.admin_17.0.1</artifactId>
+			<version>17.0.4</version>
+			<scope>system</scope>
+			<systemPath>${magicdraw.installdir}/lib/com.nomagic.ci.cts.admin_17.0.1.jar</systemPath>
+		</dependency>
+		
+		<dependency>
+			<groupId>com.magicdraw.application</groupId>
+			<artifactId>com.nomagic.ci.cts.cdo_17.0.1</artifactId>
+			<version>17.0.4</version>
+			<scope>system</scope>
+			<systemPath>${magicdraw.installdir}/lib/com.nomagic.ci.cts.cdo_17.0.1.jar</systemPath>
+		</dependency>
+		
+		<dependency>
+			<groupId>com.magicdraw.application</groupId>
+			<artifactId>com.nomagic.ci.cts.info_17.0.1</artifactId>
+			<version>17.0.4</version>
+			<scope>system</scope>
+			<systemPath>${magicdraw.installdir}/lib/com.nomagic.ci.cts.info_17.0.1.jar</systemPath>
+		</dependency>
+		
+		<dependency>
+			<groupId>com.magicdraw.application</groupId>
+			<artifactId>com.nomagic.ci.cts.security_17.0.1</artifactId>
+			<version>17.0.4</version>
+			<scope>system</scope>
+			<systemPath>${magicdraw.installdir}/lib/com.nomagic.ci.cts.security_17.0.1.jar</systemPath>
+		</dependency>
+		
+		<dependency>
+			<groupId>com.magicdraw.application</groupId>
+			<artifactId>com.nomagic.ci.metamodel.admin_17.0.1</artifactId>
+			<version>17.0.4</version>
+			<scope>system</scope>
+			<systemPath>${magicdraw.installdir}/lib/com.nomagic.ci.metamodel.admin_17.0.1.jar</systemPath>
+		</dependency>
+		
+		<dependency>
+			<groupId>com.magicdraw.application</groupId>
+			<artifactId>com.nomagic.ci.metamodel.index_17.0.1</artifactId>
+			<version>17.0.4</version>
+			<scope>system</scope>
+			<systemPath>${magicdraw.installdir}/lib/com.nomagic.ci.metamodel.index_17.0.1.jar</systemPath>
+		</dependency>
+		
+		<dependency>
+			<groupId>com.magicdraw.application</groupId>
+			<artifactId>com.nomagic.ci.metamodel.project_17.0.1</artifactId>
+			<version>17.0.4</version>
+			<scope>system</scope>
+			<systemPath>${magicdraw.installdir}/lib/com.nomagic.ci.metamodel.project_17.0.1.jar</systemPath>
+		</dependency>
+		
+		<dependency>
+			<groupId>com.magicdraw.application</groupId>
+			<artifactId>com.nomagic.ci.persistence.local_17.0.1</artifactId>
+			<version>17.0.4</version>
+			<scope>system</scope>
+			<systemPath>${magicdraw.installdir}/lib/com.nomagic.ci.persistence.local_17.0.1.jar</systemPath>
+		</dependency>
+		
+		<dependency>
+			<groupId>com.magicdraw.application</groupId>
+			<artifactId>com.nomagic.ci.persistence.server_17.0.1</artifactId>
+			<version>17.0.4</version>
+			<scope>system</scope>
+			<systemPath>${magicdraw.installdir}/lib/com.nomagic.ci.persistence.server_17.0.1.jar</systemPath>
+		</dependency>
+		
+		<dependency>
+			<groupId>com.magicdraw.application</groupId>
+			<artifactId>com.nomagic.ci.persistence_17.0.1</artifactId>
+			<version>17.0.4</version>
+			<scope>system</scope>
+			<systemPath>${magicdraw.installdir}/lib/com.nomagic.ci.persistence_17.0.1.jar</systemPath>
+		</dependency>
+		
+		<dependency>
+			<groupId>com.magicdraw.application</groupId>
+			<artifactId>com.nomagic.ci.server.ac.core_17.0.1</artifactId>
+			<version>17.0.4</version>
+			<scope>system</scope>
+			<systemPath>${magicdraw.installdir}/lib/com.nomagic.ci.server.ac.core_17.0.1.jar</systemPath>
+		</dependency>
+		
+		<dependency>
+			<groupId>com.magicdraw.application</groupId>
+			<artifactId>com.nomagic.ci.server.common_17.0.1</artifactId>
+			<version>17.0.4</version>
+			<scope>system</scope>
+			<systemPath>${magicdraw.installdir}/lib/com.nomagic.ci.server.common_17.0.1.jar</systemPath>
+		</dependency>
+		
+		<dependency>
+			<groupId>com.magicdraw.application</groupId>
+			<artifactId>com.nomagic.ci.services_17.0.1</artifactId>
+			<version>17.0.4</version>
+			<scope>system</scope>
+			<systemPath>${magicdraw.installdir}/lib/com.nomagic.ci.services_17.0.1.jar</systemPath>
+		</dependency>
+		
+		<dependency>
+			<groupId>com.magicdraw.application</groupId>
+			<artifactId>com.nomagic.ci_17.0.1</artifactId>
+			<version>17.0.4</version>
+			<scope>system</scope>
+			<systemPath>${magicdraw.installdir}/lib/com.nomagic.ci_17.0.1.jar</systemPath>
+		</dependency>
+
+		<dependency>
+			<groupId>com.magicdraw.application</groupId>
+			<artifactId>commons-codec-1.3</artifactId>
+			<version>17.0.4</version>
+			<scope>system</scope>
+			<systemPath>${magicdraw.installdir}/lib/commons-codec-1.3.jar</systemPath>
+		</dependency>
+
+		<dependency>
+			<groupId>com.magicdraw.application</groupId>
+			<artifactId>commons-compress-1.3</artifactId>
+			<version>17.0.4</version>
+			<scope>system</scope>
+			<systemPath>${magicdraw.installdir}/lib/commons-compress-1.3.jar</systemPath>
+		</dependency>
+
+		<dependency>
+			<groupId>com.magicdraw.application</groupId>
+			<artifactId>commons-httpclient-3.1</artifactId>
+			<version>17.0.4</version>
+			<scope>system</scope>
+			<systemPath>${magicdraw.installdir}/lib/commons-httpclient-3.1.jar</systemPath>
+		</dependency>
+
+		<dependency>
+			<groupId>com.magicdraw.application</groupId>
+			<artifactId>commons-logging-1.0.4</artifactId>
+			<version>17.0.4</version>
+			<scope>system</scope>
+			<systemPath>${magicdraw.installdir}/lib/commons-logging-1.0.4.jar</systemPath>
+		</dependency>
+
+		<dependency>
+			<groupId>com.magicdraw.application</groupId>
+			<artifactId>concurrent</artifactId>
+			<version>17.0.4</version>
+			<scope>system</scope>
+			<systemPath>${magicdraw.installdir}/lib/concurrent.jar</systemPath>
+		</dependency>
+
+		<dependency>
+			<groupId>com.magicdraw.application</groupId>
+			<artifactId>cvsclient</artifactId>
+			<version>17.0.4</version>
+			<scope>system</scope>
+			<systemPath>${magicdraw.installdir}/lib/cvsclient.jar</systemPath>
+		</dependency>
+
+		<dependency>
+			<groupId>com.magicdraw.application</groupId>
+			<artifactId>EccpressoAll</artifactId>
+			<version>17.0.4</version>
+			<scope>system</scope>
+			<systemPath>${magicdraw.installdir}/lib/EccpressoAll.jar</systemPath>
+		</dependency>
+		
+		 
+		<dependency>
+			<groupId>com.magicdraw.application</groupId>
+			<artifactId>ehcache-core-2.2.0</artifactId>
+			<version>17.0.4</version>
+			<scope>system</scope>
+			<systemPath>${magicdraw.installdir}/lib/ehcache-core-2.2.0.jar</systemPath>
+		</dependency>
+		
+		<dependency>
+			<groupId>com.magicdraw.application</groupId>
+			<artifactId>flexlm</artifactId>
+			<version>17.0.4</version>
+			<scope>system</scope>
+			<systemPath>${magicdraw.installdir}/lib/flexlm.jar</systemPath>
+		</dependency>
+				
+		<dependency>
+			<groupId>com.magicdraw.application</groupId>
+			<artifactId>HTMLEditorLight</artifactId>
+			<version>17.0.4</version>
+			<scope>system</scope>
+			<systemPath>${magicdraw.installdir}/lib/HTMLEditorLight.jar</systemPath>
+		</dependency>
+
+		<dependency>
+			<groupId>com.magicdraw.application</groupId>
+			<artifactId>javassist</artifactId>
+			<version>17.0.4</version>
+			<scope>system</scope>
+			<systemPath>${magicdraw.installdir}/lib/javassist.jar</systemPath>
+		</dependency>
+
+		<dependency>
+			<groupId>com.magicdraw.application</groupId>
+			<artifactId>javax_jmi-1_0-fr</artifactId>
+			<version>17.0.4</version>
+			<scope>system</scope>
+			<systemPath>${magicdraw.installdir}/lib/javax_jmi-1_0-fr.jar</systemPath>
+		</dependency>
+						
+		<dependency>
+			<groupId>com.magicdraw.application</groupId>
+			<artifactId>jaxb-api</artifactId>
+			<version>17.0.4</version>
+			<scope>system</scope>
+			<systemPath>${magicdraw.installdir}/lib/jaxb-api.jar</systemPath>
+		</dependency>
+		
+		<dependency>
+			<groupId>com.magicdraw.application</groupId>
+			<artifactId>jaxb-impl</artifactId>
+			<version>17.0.4</version>
+			<scope>system</scope>
+			<systemPath>${magicdraw.installdir}/lib/jaxb-impl.jar</systemPath>
+		</dependency>
+				
+		<dependency>
+			<groupId>com.magicdraw.application</groupId>
+			<artifactId>jaxb-libs</artifactId>
+			<version>17.0.4</version>
+			<scope>system</scope>
+			<systemPath>${magicdraw.installdir}/lib/jaxb-libs.jar</systemPath>
+		</dependency>
+		
+		<dependency>
+			<groupId>com.magicdraw.application</groupId>
+			<artifactId>jax-qname</artifactId>
+			<version>17.0.4</version>
+			<scope>system</scope>
+			<systemPath>${magicdraw.installdir}/lib/jax-qname.jar</systemPath>
+		</dependency>
+		
+		<dependency>
+			<groupId>com.magicdraw.application</groupId>
+			<artifactId>jbossall-client</artifactId>
+			<version>17.0.4</version>
+			<scope>system</scope>
+			<systemPath>${magicdraw.installdir}/lib/jbossall-client.jar</systemPath>
+		</dependency>
+
+		<dependency>
+			<groupId>com.magicdraw.application</groupId>
+			<artifactId>jboss-aop-client</artifactId>
+			<version>17.0.4</version>
+			<scope>system</scope>
+			<systemPath>${magicdraw.installdir}/lib/jboss-aop-client.jar</systemPath>
+		</dependency>
+
+		<dependency>
+			<groupId>com.magicdraw.application</groupId>
+			<artifactId>jboss-aspect-jdk50-client</artifactId>
+			<version>17.0.4</version>
+			<scope>system</scope>
+			<systemPath>${magicdraw.installdir}/lib/jboss-aspect-jdk50-client.jar</systemPath>
+		</dependency>
+
+		<dependency>
+			<groupId>com.magicdraw.application</groupId>
+			<artifactId>jboss-common-core</artifactId>
+			<version>17.0.4</version>
+			<scope>system</scope>
+			<systemPath>${magicdraw.installdir}/lib/jboss-common-core.jar</systemPath>
+		</dependency>
+
+		<dependency>
+			<groupId>com.magicdraw.application</groupId>
+			<artifactId>jbosscx-client</artifactId>
+			<version>17.0.4</version>
+			<scope>system</scope>
+			<systemPath>${magicdraw.installdir}/lib/jbosscx-client.jar</systemPath>
+		</dependency>
+
+		<dependency>
+			<groupId>com.magicdraw.application</groupId>
+			<artifactId>jboss-ejb3-common-client</artifactId>
+			<version>17.0.4</version>
+			<scope>system</scope>
+			<systemPath>${magicdraw.installdir}/lib/jboss-ejb3-common-client.jar</systemPath>
+		</dependency>
+
+		<dependency>
+			<groupId>com.magicdraw.application</groupId>
+			<artifactId>jboss-ejb3-core-client</artifactId>
+			<version>17.0.4</version>
+			<scope>system</scope>
+			<systemPath>${magicdraw.installdir}/lib/jboss-ejb3-core-client.jar</systemPath>
+		</dependency>
+
+		<dependency>
+			<groupId>com.magicdraw.application</groupId>
+			<artifactId>jboss-ejb3-ext-api</artifactId>
+			<version>17.0.4</version>
+			<scope>system</scope>
+			<systemPath>${magicdraw.installdir}/lib/jboss-ejb3-ext-api.jar</systemPath>
+		</dependency>
+
+		<dependency>
+			<groupId>com.magicdraw.application</groupId>
+			<artifactId>jboss-ejb3-proxy-client</artifactId>
+			<version>17.0.4</version>
+			<scope>system</scope>
+			<systemPath>${magicdraw.installdir}/lib/jboss-ejb3-proxy-client.jar</systemPath>
+		</dependency>
+
+		<dependency>
+			<groupId>com.magicdraw.application</groupId>
+			<artifactId>jboss-ejb3-security-client</artifactId>
+			<version>17.0.4</version>
+			<scope>system</scope>
+			<systemPath>${magicdraw.installdir}/lib/jboss-ejb3-security-client.jar</systemPath>
+		</dependency>
+
+		<dependency>
+			<groupId>com.magicdraw.application</groupId>
+			<artifactId>jboss-integration</artifactId>
+			<version>17.0.4</version>
+			<scope>system</scope>
+			<systemPath>${magicdraw.installdir}/lib/jboss-integration.jar</systemPath>
+		</dependency>
+
+		<dependency>
+			<groupId>com.magicdraw.application</groupId>
+			<artifactId>jboss-javaee</artifactId>
+			<version>17.0.4</version>
+			<scope>system</scope>
+			<systemPath>${magicdraw.installdir}/lib/jboss-javaee.jar</systemPath>
+		</dependency>
+
+		<dependency>
+			<groupId>com.magicdraw.application</groupId>
+			<artifactId>jboss-logging-spi</artifactId>
+			<version>17.0.4</version>
+			<scope>system</scope>
+			<systemPath>${magicdraw.installdir}/lib/jboss-logging-spi.jar</systemPath>
+		</dependency>
+
+		<dependency>
+			<groupId>com.magicdraw.application</groupId>
+			<artifactId>jboss-mdr</artifactId>
+			<version>17.0.4</version>
+			<scope>system</scope>
+			<systemPath>${magicdraw.installdir}/lib/jboss-mdr.jar</systemPath>
+		</dependency>
+
+		<dependency>
+			<groupId>com.magicdraw.application</groupId>
+			<artifactId>jboss-messaging-client</artifactId>
+			<version>17.0.4</version>
+			<scope>system</scope>
+			<systemPath>${magicdraw.installdir}/lib/jboss-messaging-client.jar</systemPath>
+		</dependency>
+
+		<dependency>
+			<groupId>com.magicdraw.application</groupId>
+			<artifactId>jboss-remoting</artifactId>
+			<version>17.0.4</version>
+			<scope>system</scope>
+			<systemPath>${magicdraw.installdir}/lib/jboss-remoting.jar</systemPath>
+		</dependency>
+
+		<dependency>
+			<groupId>com.magicdraw.application</groupId>
+			<artifactId>jboss-security-spi</artifactId>
+			<version>17.0.4</version>
+			<scope>system</scope>
+			<systemPath>${magicdraw.installdir}/lib/jboss-security-spi.jar</systemPath>
+		</dependency>
+
+		<dependency>
+			<groupId>com.magicdraw.application</groupId>
+			<artifactId>jboss-serialization</artifactId>
+			<version>17.0.4</version>
+			<scope>system</scope>
+			<systemPath>${magicdraw.installdir}/lib/jboss-serialization.jar</systemPath>
+		</dependency>
+
+		<dependency>
+			<groupId>com.magicdraw.application</groupId>
+			<artifactId>jbosssx</artifactId>
+			<version>17.0.4</version>
+			<scope>system</scope>
+			<systemPath>${magicdraw.installdir}/lib/jbosssx.jar</systemPath>
+		</dependency>
+
+		<dependency>
+			<groupId>com.magicdraw.application</groupId>
+			<artifactId>jbosssx-as-client</artifactId>
+			<version>17.0.4</version>
+			<scope>system</scope>
+			<systemPath>${magicdraw.installdir}/lib/jbosssx-as-client.jar</systemPath>
+		</dependency>
+
+		<dependency>
+			<groupId>com.magicdraw.application</groupId>
+			<artifactId>jbosssx-client</artifactId>
+			<version>17.0.4</version>
+			<scope>system</scope>
+			<systemPath>${magicdraw.installdir}/lib/jbosssx-client.jar</systemPath>
+		</dependency>
+
+		<dependency>
+			<groupId>com.magicdraw.application</groupId>
+			<artifactId>jhall</artifactId>
+			<version>17.0.4</version>
+			<scope>system</scope>
+			<systemPath>${magicdraw.installdir}/lib/jhall.jar</systemPath>
+		</dependency>
+
+		<dependency>
+			<groupId>com.magicdraw.application</groupId>
+			<artifactId>jide-action</artifactId>
+			<version>17.0.4</version>
+			<scope>system</scope>
+			<systemPath>${magicdraw.installdir}/lib/jide-action.jar</systemPath>
+		</dependency>
+
+		<dependency>
+			<groupId>com.magicdraw.application</groupId>
+			<artifactId>jide-charts</artifactId>
+			<version>17.0.4</version>
+			<scope>system</scope>
+			<systemPath>${magicdraw.installdir}/lib/jide-charts.jar</systemPath>
+		</dependency>
+
+		<dependency>
+			<groupId>com.magicdraw.application</groupId>
+			<artifactId>jide-common</artifactId>
+			<version>17.0.4</version>
+			<scope>system</scope>
+			<systemPath>${magicdraw.installdir}/lib/jide-common.jar</systemPath>
+		</dependency>
+
+		<dependency>
+			<groupId>com.magicdraw.application</groupId>
+			<artifactId>jide-components</artifactId>
+			<version>17.0.4</version>
+			<scope>system</scope>
+			<systemPath>${magicdraw.installdir}/lib/jide-components.jar</systemPath>
+		</dependency>
+
+		<dependency>
+			<groupId>com.magicdraw.application</groupId>
+			<artifactId>jide-dock</artifactId>
+			<version>17.0.4</version>
+			<scope>system</scope>
+			<systemPath>${magicdraw.installdir}/lib/jide-dock.jar</systemPath>
+		</dependency>
+
+		<dependency>
+			<groupId>com.magicdraw.application</groupId>
+			<artifactId>jide-editor</artifactId>
+			<version>17.0.4</version>
+			<scope>system</scope>
+			<systemPath>${magicdraw.installdir}/lib/jide-editor.jar</systemPath>
+		</dependency>
+
+		<dependency>
+			<groupId>com.magicdraw.application</groupId>
+			<artifactId>jide-gantt</artifactId>
+			<version>17.0.4</version>
+			<scope>system</scope>
+			<systemPath>${magicdraw.installdir}/lib/jide-gantt.jar</systemPath>
+		</dependency>
+
+		<dependency>
+			<groupId>com.magicdraw.application</groupId>
+			<artifactId>jide-grids</artifactId>
+			<version>17.0.4</version>
+			<scope>system</scope>
+			<systemPath>${magicdraw.installdir}/lib/jide-grids.jar</systemPath>
+		</dependency>
+
+		<dependency>
+			<groupId>com.magicdraw.application</groupId>
+			<artifactId>jide-properties</artifactId>
+			<version>17.0.4</version>
+			<scope>system</scope>
+			<systemPath>${magicdraw.installdir}/lib/jide-properties.jar</systemPath>
+		</dependency>
+
+		<dependency>
+			<groupId>com.magicdraw.application</groupId>
+			<artifactId>jide-shortcut</artifactId>
+			<version>17.0.4</version>
+			<scope>system</scope>
+			<systemPath>${magicdraw.installdir}/lib/jide-shortcut.jar</systemPath>
+		</dependency>
+
+		<dependency>
+			<groupId>com.magicdraw.application</groupId>
+			<artifactId>jimi</artifactId>
+			<version>17.0.4</version>
+			<scope>system</scope>
+			<systemPath>${magicdraw.installdir}/lib/jimi.jar</systemPath>
+		</dependency>
+
+		<dependency>
+			<groupId>com.magicdraw.application</groupId>
+			<artifactId>jmyspell-core-1.0.0-beta-2</artifactId>
+			<version>17.0.4</version>
+			<scope>system</scope>
+			<systemPath>${magicdraw.installdir}/lib/jmyspell-core-1.0.0-beta-2.jar</systemPath>
+		</dependency>
+
+		<dependency>
+			<groupId>com.magicdraw.application</groupId>
+			<artifactId>jna</artifactId>
+			<version>17.0.4</version>
+			<scope>system</scope>
+			<systemPath>${magicdraw.installdir}/lib/jna.jar</systemPath>
+		</dependency>
+
+		<dependency>
+			<groupId>com.magicdraw.application</groupId>
+			<artifactId>jnp-client</artifactId>
+			<version>17.0.4</version>
+			<scope>system</scope>
+			<systemPath>${magicdraw.installdir}/lib/jnp-client.jar</systemPath>
+		</dependency>
+
+		<dependency>
+			<groupId>com.magicdraw.application</groupId>
+			<artifactId>jsr250-api-1.0</artifactId>
+			<version>17.0.4</version>
+			<scope>system</scope>
+			<systemPath>${magicdraw.installdir}/lib/jsr250-api-1.0.jar</systemPath>
+		</dependency>
+
+		<dependency>
+			<groupId>com.magicdraw.application</groupId>
+			<artifactId>jsr305</artifactId>
+			<version>17.0.4</version>
+			<scope>system</scope>
+			<systemPath>${magicdraw.installdir}/lib/jsr305.jar</systemPath>
+		</dependency>
+
+		<dependency>
+			<groupId>com.magicdraw.application</groupId>
+			<artifactId>junit</artifactId>
+			<version>17.0.4</version>
+			<scope>system</scope>
+			<systemPath>${magicdraw.installdir}/lib/junit.jar</systemPath>
+		</dependency>
+
+		<dependency>
+			<groupId>com.magicdraw.application</groupId>
+			<artifactId>launcher</artifactId>
+			<version>17.0.4</version>
+			<scope>system</scope>
+			<systemPath>${magicdraw.installdir}/lib/launcher.jar</systemPath>
+		</dependency>
+
+		<dependency>
+			<groupId>com.magicdraw.application</groupId>
+			<artifactId>log4j-1.2.15</artifactId>
+			<version>17.0.4</version>
+			<scope>system</scope>
+			<systemPath>${magicdraw.installdir}/lib/log4j-1.2.15.jar</systemPath>
+		</dependency>
+
+		<dependency>
+			<groupId>com.magicdraw.application</groupId>
+			<artifactId>lpg.runtime.java_2.0.17.v201004271640</artifactId>
+			<version>17.0.4</version>
+			<scope>system</scope>
+			<systemPath>${magicdraw.installdir}/lib/lpg.runtime.java_2.0.17.v201004271640.jar</systemPath>
+		</dependency>
+
+		<dependency>
+			<groupId>com.magicdraw.application</groupId>
+			<artifactId>md</artifactId>
+			<version>17.0.4</version>
+			<scope>system</scope>
+			<systemPath>${magicdraw.installdir}/lib/md.jar</systemPath>
+		</dependency>
+			
+		<dependency>
+			<groupId>com.magicdraw.application</groupId>
+			<artifactId>md_api</artifactId>
+			<version>17.0.4</version>
+			<scope>system</scope>
+			<systemPath>${magicdraw.installdir}/lib/md_api.jar</systemPath>
+		</dependency>
+		
+		<dependency>
+			<groupId>com.magicdraw.application</groupId>
+			<artifactId>md_cdo_1.0</artifactId>
+			<version>17.0.4</version>
+			<scope>system</scope>
+			<systemPath>${magicdraw.installdir}/lib/md_cdo_1.0.jar</systemPath>
+		</dependency>
+				
+		<dependency>
+			<groupId>com.magicdraw.application</groupId>
+			<artifactId>md_common</artifactId>
+			<version>17.0.4</version>
+			<scope>system</scope>
+			<systemPath>${magicdraw.installdir}/lib/md_common.jar</systemPath>
+		</dependency>
+		
+		<dependency>
+			<groupId>com.magicdraw.application</groupId>
+			<artifactId>md_common_api</artifactId>
+			<version>17.0.4</version>
+			<scope>system</scope>
+			<systemPath>${magicdraw.installdir}/lib/md_common_api.jar</systemPath>
+		</dependency>
+
+		<dependency>
+			<groupId>com.magicdraw.application</groupId>
+			<artifactId>md_foundation_1.0</artifactId>
+			<version>17.0.4</version>
+			<scope>system</scope>
+			<systemPath>${magicdraw.installdir}/lib/md_foundation_1.0.jar</systemPath>
+		</dependency>
+
+		<dependency>
+			<groupId>com.magicdraw.application</groupId>
+			<artifactId>namespace</artifactId>
+			<version>17.0.4</version>
+			<scope>system</scope>
+			<systemPath>${magicdraw.installdir}/lib/namespace.jar</systemPath>
+		</dependency>
+
+		<dependency>
+			<groupId>com.magicdraw.application</groupId>
+			<artifactId>org.apache.commons.codec_1.3.0.v201101211617</artifactId>
+			<version>17.0.4</version>
+			<scope>system</scope>
+			<systemPath>${magicdraw.installdir}/lib/org.apache.commons.codec_1.3.0.v201101211617.jar</systemPath>
+		</dependency>
+
+		<dependency>
+			<groupId>com.magicdraw.application</groupId>
+			<artifactId>org.apache.commons.collections_3.2.0.v201005080500</artifactId>
+			<version>17.0.4</version>
+			<scope>system</scope>
+			<systemPath>${magicdraw.installdir}/lib/org.apache.commons.collections_3.2.0.v201005080500.jar</systemPath>
+		</dependency>
+
+		<dependency>
+			<groupId>com.magicdraw.application</groupId>
+			<artifactId>org.apache.commons.logging_1.1.1.v201101211721</artifactId>
+			<version>17.0.4</version>
+			<scope>system</scope>
+			<systemPath>${magicdraw.installdir}/lib/org.apache.commons.logging_1.1.1.v201101211721.jar</systemPath>
+		</dependency>
+
+		<dependency>
+			<groupId>com.magicdraw.application</groupId>
+			<artifactId>org.eclipse.core.contenttype_3.4.100.v20110423-0524</artifactId>
+			<version>17.0.4</version>
+			<scope>system</scope>
+			<systemPath>${magicdraw.installdir}/lib/org.eclipse.core.contenttype_3.4.100.v20110423-0524.jar</systemPath>
+		</dependency>
+
+		<dependency>
+			<groupId>com.magicdraw.application</groupId>
+			<artifactId>org.eclipse.core.jobs_3.5.100.v20110404</artifactId>
+			<version>17.0.4</version>
+			<scope>system</scope>
+			<systemPath>${magicdraw.installdir}/lib/org.eclipse.core.jobs_3.5.100.v20110404.jar</systemPath>
+		</dependency>
+
+		<dependency>
+			<groupId>com.magicdraw.application</groupId>
+			<artifactId>org.eclipse.core.runtime_3.7.0.v20110110</artifactId>
+			<version>17.0.4</version>
+			<scope>system</scope>
+			<systemPath>${magicdraw.installdir}/lib/org.eclipse.core.runtime_3.7.0.v20110110.jar</systemPath>
+		</dependency>
+				
+		<!-- 17.0.5 uses a different emf jar!! -->		
+		<dependency>
+			<groupId>com.magicdraw.application</groupId>
+			<artifactId>org.eclipse.emf.cdo.common_4.0.1.custom</artifactId>
+			<version>17.0.4</version>
+			<scope>system</scope>
+			<systemPath>${magicdraw.installdir}/lib/org.eclipse.emf.cdo.common_4.0.1.custom.jar</systemPath>
+		</dependency>
+		
+		<dependency>
+			<groupId>com.magicdraw.application</groupId>
+			<artifactId>org.eclipse.emf.cdo.net4j_4.0.0.custom</artifactId>
+			<version>17.0.4</version>
+			<scope>system</scope>
+			<systemPath>${magicdraw.installdir}/lib/org.eclipse.emf.cdo.net4j_4.0.0.custom.jar</systemPath>
+		</dependency>
+		
+		<dependency>
+			<groupId>com.magicdraw.application</groupId>
+			<artifactId>org.eclipse.emf.cdo_4.0.1.custom</artifactId>
+			<version>17.0.4</version>
+			<scope>system</scope>
+			<systemPath>${magicdraw.installdir}/lib/org.eclipse.emf.cdo_4.0.1.custom.jar</systemPath>
+		</dependency>
+		
+		<dependency>
+			<groupId>com.magicdraw.application</groupId>
+			<artifactId>org.eclipse.emf.common_2.7.0.v20110513-1719</artifactId>
+			<version>17.0.4</version>
+			<scope>system</scope>
+			<systemPath>${magicdraw.installdir}/lib/org.eclipse.emf.common_2.7.0.v20110513-1719.jar</systemPath>
+		</dependency>
+
+		<dependency>
+			<groupId>com.magicdraw.application</groupId>
+			<artifactId>org.eclipse.emf.ecore.change_2.7.0.v20110408-2116</artifactId>
+			<version>17.0.4</version>
+			<scope>system</scope>
+			<systemPath>${magicdraw.installdir}/lib/org.eclipse.emf.ecore.change_2.7.0.v20110408-2116.jar</systemPath>
+		</dependency>
+
+		<dependency>
+			<groupId>com.magicdraw.application</groupId>
+			<artifactId>org.eclipse.emf.ecore.xmi_2.7.0.v20110411-2239</artifactId>
+			<version>17.0.4</version>
+			<scope>system</scope>
+			<systemPath>${magicdraw.installdir}/lib/org.eclipse.emf.ecore.xmi_2.7.0.v20110411-2239.jar</systemPath>
+		</dependency>
+
+		<dependency>
+			<groupId>com.magicdraw.application</groupId>
+			<artifactId>org.eclipse.emf.ecore_2.7.0.v20110513-1719</artifactId>
+			<version>17.0.4</version>
+			<scope>system</scope>
+			<systemPath>${magicdraw.installdir}/lib/org.eclipse.emf.ecore_2.7.0.v20110513-1719.jar</systemPath>
+		</dependency>
+
+		<dependency>
+			<groupId>com.magicdraw.application</groupId>
+			<artifactId>org.eclipse.emf.transaction_1.4.0.v20100331-1738</artifactId>
+			<version>17.0.4</version>
+			<scope>system</scope>
+			<systemPath>${magicdraw.installdir}/lib/org.eclipse.emf.transaction_1.4.0.v20100331-1738.jar</systemPath>
+		</dependency>
+
+		<dependency>
+			<groupId>com.magicdraw.application</groupId>
+			<artifactId>org.eclipse.equinox.common_3.6.0.v20110506</artifactId>
+			<version>17.0.4</version>
+			<scope>system</scope>
+			<systemPath>${magicdraw.installdir}/lib/org.eclipse.equinox.common_3.6.0.v20110506.jar</systemPath>
+		</dependency>
+
+		<dependency>
+			<groupId>com.magicdraw.application</groupId>
+			<artifactId>org.eclipse.equinox.registry_3.5.100.v20110502</artifactId>
+			<version>17.0.4</version>
+			<scope>system</scope>
+			<systemPath>${magicdraw.installdir}/lib/org.eclipse.equinox.registry_3.5.100.v20110502.jar</systemPath>
+		</dependency>
+		
+		<dependency>
+			<groupId>com.magicdraw.application</groupId>
+			<artifactId>org.eclipse.net4j.tcp_4.0.0.custom</artifactId>
+			<version>17.0.4</version>
+			<scope>system</scope>
+			<systemPath>${magicdraw.installdir}/lib/org.eclipse.net4j.tcp_4.0.0.custom.jar</systemPath>
+		</dependency>
+		
+		<dependency>
+			<groupId>com.magicdraw.application</groupId>
+			<artifactId>org.eclipse.net4j.util_3.1.1.custom</artifactId>
+			<version>17.0.4</version>
+			<scope>system</scope>
+			<systemPath>${magicdraw.installdir}/lib/org.eclipse.net4j.util_3.1.1.custom.jar</systemPath>
+		</dependency>
+		
+		<dependency>
+			<groupId>com.magicdraw.application</groupId>
+			<artifactId>org.eclipse.net4j_4.0.0.custom</artifactId>
+			<version>17.0.4</version>
+			<scope>system</scope>
+			<systemPath>${magicdraw.installdir}/lib/org.eclipse.net4j_4.0.0.custom.jar</systemPath>
+		</dependency>
+		
+		<dependency>
+			<groupId>com.magicdraw.application</groupId>
+			<artifactId>org.eclipse.ocl.doc_3.0.1.R30x_v201008311245</artifactId>
+			<version>17.0.4</version>
+			<scope>system</scope>
+			<systemPath>${magicdraw.installdir}/lib/org.eclipse.ocl.doc_3.0.1.R30x_v201008311245.jar</systemPath>
+		</dependency>
+
+		<dependency>
+			<groupId>com.magicdraw.application</groupId>
+			<artifactId>org.eclipse.ocl.ecore.edit.source_3.0.0.R30x_v201008251030</artifactId>
+			<version>17.0.4</version>
+			<scope>system</scope>
+			<systemPath>${magicdraw.installdir}/lib/org.eclipse.ocl.ecore.edit.source_3.0.0.R30x_v201008251030.jar</systemPath>
+		</dependency>
+
+		<dependency>
+			<groupId>com.magicdraw.application</groupId>
+			<artifactId>org.eclipse.ocl.ecore.edit_3.0.0.R30x_v201008251030</artifactId>
+			<version>17.0.4</version>
+			<scope>system</scope>
+			<systemPath>${magicdraw.installdir}/lib/org.eclipse.ocl.ecore.edit_3.0.0.R30x_v201008251030.jar</systemPath>
+		</dependency>
+
+		<dependency>
+			<groupId>com.magicdraw.application</groupId>
+			<artifactId>org.eclipse.ocl.ecore.source_3.0.1.R30x_v201008251030</artifactId>
+			<version>17.0.4</version>
+			<scope>system</scope>
+			<systemPath>${magicdraw.installdir}/lib/org.eclipse.ocl.ecore.source_3.0.1.R30x_v201008251030.jar</systemPath>
+		</dependency>
+
+		<dependency>
+			<groupId>com.magicdraw.application</groupId>
+			<artifactId>org.eclipse.ocl.ecore_3.0.1.R30x_v201008251030</artifactId>
+			<version>17.0.4</version>
+			<scope>system</scope>
+			<systemPath>${magicdraw.installdir}/lib/org.eclipse.ocl.ecore_3.0.1.R30x_v201008251030.jar</systemPath>
+		</dependency>
+
+		<dependency>
+			<groupId>com.magicdraw.application</groupId>
+			<artifactId>org.eclipse.ocl.source_3.0.1.R30x_v201008251030</artifactId>
+			<version>17.0.4</version>
+			<scope>system</scope>
+			<systemPath>${magicdraw.installdir}/lib/org.eclipse.ocl.source_3.0.1.R30x_v201008251030.jar</systemPath>
+		</dependency>
+
+		<dependency>
+			<groupId>com.magicdraw.application</groupId>
+			<artifactId>org.eclipse.ocl_3.0.1.R30x_v201008251030</artifactId>
+			<version>17.0.4</version>
+			<scope>system</scope>
+			<systemPath>${magicdraw.installdir}/lib/org.eclipse.ocl_3.0.1.R30x_v201008251030.jar</systemPath>
+		</dependency>
+
+		<dependency>
+			<groupId>com.magicdraw.application</groupId>
+			<artifactId>org.eclipse.osgi_3.7.0.v20110513</artifactId>
+			<version>17.0.4</version>
+			<scope>system</scope>
+			<systemPath>${magicdraw.installdir}/lib/org.eclipse.osgi_3.7.0.v20110513.jar</systemPath>
+		</dependency>
+
+		<dependency>
+			<groupId>com.magicdraw.application</groupId>
+			<artifactId>org.eclipse.uml2.common_1.5.0.v200905041045</artifactId>
+			<version>17.0.4</version>
+			<scope>system</scope>
+			<systemPath>${magicdraw.installdir}/lib/org.eclipse.uml2.common_1.5.0.v200905041045.jar</systemPath>
+		</dependency>
+
+		<dependency>
+			<groupId>com.magicdraw.application</groupId>
+			<artifactId>relaxngDatatype</artifactId>
+			<version>17.0.4</version>
+			<scope>system</scope>
+			<systemPath>${magicdraw.installdir}/lib/relaxngDatatype.jar</systemPath>
+		</dependency>
+
+		<dependency>
+			<groupId>com.magicdraw.application</groupId>
+			<artifactId>slf4j-api-1.5.11</artifactId>
+			<version>17.0.4</version>
+			<scope>system</scope>
+			<systemPath>${magicdraw.installdir}/lib/slf4j-api-1.5.11.jar</systemPath>
+		</dependency>
+
+		<dependency>
+			<groupId>com.magicdraw.application</groupId>
+			<artifactId>slf4j-jdk14-1.5.11</artifactId>
+			<version>17.0.4</version>
+			<scope>system</scope>
+			<systemPath>${magicdraw.installdir}/lib/slf4j-jdk14-1.5.11.jar</systemPath>
+		</dependency>
+
+		<dependency>
+			<groupId>com.magicdraw.application</groupId>
+			<artifactId>trove</artifactId>
+			<version>17.0.4</version>
+			<scope>system</scope>
+			<systemPath>${magicdraw.installdir}/lib/trove.jar</systemPath>
+		</dependency>
+
+		<dependency>
+			<groupId>com.magicdraw.application</groupId>
+			<artifactId>truezip-driver-zip-7.4.3</artifactId>
+			<version>17.0.4</version>
+			<scope>system</scope>
+			<systemPath>${magicdraw.installdir}/lib/truezip-driver-zip-7.4.3.jar</systemPath>
+		</dependency>
+
+		<dependency>
+			<groupId>com.magicdraw.application</groupId>
+			<artifactId>truezip-kernel-7.4.3</artifactId>
+			<version>17.0.4</version>
+			<scope>system</scope>
+			<systemPath>${magicdraw.installdir}/lib/truezip-kernel-7.4.3.jar</systemPath>
+		</dependency>
+
+		<dependency>
+			<groupId>com.magicdraw.application</groupId>
+			<artifactId>tw_common</artifactId>
+			<version>17.0.4</version>
+			<scope>system</scope>
+			<systemPath>${magicdraw.installdir}/lib/tw_common.jar</systemPath>
+		</dependency>
+
+		<dependency>
+			<groupId>com.magicdraw.application</groupId>
+			<artifactId>tw_common_api</artifactId>
+			<version>17.0.4</version>
+			<scope>system</scope>
+			<systemPath>${magicdraw.installdir}/lib/tw_common_api.jar</systemPath>
+		</dependency>
+
+		<dependency>
+			<groupId>com.magicdraw.application</groupId>
+			<artifactId>tw_console</artifactId>
+			<version>17.0.4</version>
+			<scope>system</scope>
+			<systemPath>${magicdraw.installdir}/lib/tw_console.jar</systemPath>
+		</dependency>
+
+		<dependency>
+			<groupId>com.magicdraw.application</groupId>
+			<artifactId>tw_console_api</artifactId>
+			<version>17.0.4</version>
+			<scope>system</scope>
+			<systemPath>${magicdraw.installdir}/lib/tw_console_api.jar</systemPath>
+		</dependency>
+
+		<dependency>
+			<groupId>com.magicdraw.application</groupId>
+			<artifactId>uml2</artifactId>
+			<version>17.0.4</version>
+			<scope>system</scope>
+			<systemPath>${magicdraw.installdir}/lib/uml2.jar</systemPath>
+		</dependency>
+
+		<dependency>
+			<groupId>com.magicdraw.application</groupId>
+			<artifactId>xalan</artifactId>
+			<version>17.0.4</version>
+			<scope>system</scope>
+			<systemPath>${magicdraw.installdir}/lib/xalan.jar</systemPath>
+		</dependency>
+		
+		<!-- this jar is no longer included in 17.0.5 -->
+		<dependency>
+			<groupId>com.magicdraw.application</groupId>
+			<artifactId>xml-apis</artifactId>
+			<version>17.0.4</version>
+			<scope>system</scope>
+			<systemPath>${magicdraw.installdir}/lib/xml-apis.jar</systemPath>
+		</dependency>
+		
+		<dependency>
+			<groupId>com.magicdraw.application</groupId>
+			<artifactId>xsdlib</artifactId>
+			<version>17.0.4</version>
+			<scope>system</scope>
+			<systemPath>${magicdraw.installdir}/lib/xsdlib.jar</systemPath>
+		</dependency>
+
+		<dependency>
+			<groupId>com.magicdraw.application</groupId>
+			<artifactId>y</artifactId>
+			<version>17.0.4</version>
+			<scope>system</scope>
+			<systemPath>${magicdraw.installdir}/lib/y.jar</systemPath>
+		</dependency>
+
+		<dependency>
+			<groupId>com.magicdraw.application</groupId>
+			<artifactId>clibwrapper_jiio</artifactId>
+			<version>17.0.4</version>
+			<scope>system</scope>
+			<systemPath>${magicdraw.installdir}/lib/graphics/clibwrapper_jiio.jar</systemPath>
+		</dependency>
+
+		<dependency>
+			<groupId>com.magicdraw.application</groupId>
+			<artifactId>freehep-base</artifactId>
+			<version>17.0.4</version>
+			<scope>system</scope>
+			<systemPath>${magicdraw.installdir}/lib/graphics/freehep-base.jar</systemPath>
+		</dependency>
+
+		<dependency>
+			<groupId>com.magicdraw.application</groupId>
+			<artifactId>freehep-graphics2d</artifactId>
+			<version>17.0.4</version>
+			<scope>system</scope>
+			<systemPath>${magicdraw.installdir}/lib/graphics/freehep-graphics2d.jar</systemPath>
+		</dependency>
+
+		<dependency>
+			<groupId>com.magicdraw.application</groupId>
+			<artifactId>freehep-graphicsio</artifactId>
+			<version>17.0.4</version>
+			<scope>system</scope>
+			<systemPath>${magicdraw.installdir}/lib/graphics/freehep-graphicsio.jar</systemPath>
+		</dependency>
+
+		<dependency>
+			<groupId>com.magicdraw.application</groupId>
+			<artifactId>freehep-graphicsio-emf</artifactId>
+			<version>17.0.4</version>
+			<scope>system</scope>
+			<systemPath>${magicdraw.installdir}/lib/graphics/freehep-graphicsio-emf.jar</systemPath>
+		</dependency>
+
+		<dependency>
+			<groupId>com.magicdraw.application</groupId>
+			<artifactId>freehep-graphicsio-ps</artifactId>
+			<version>17.0.4</version>
+			<scope>system</scope>
+			<systemPath>${magicdraw.installdir}/lib/graphics/freehep-graphicsio-ps.jar</systemPath>
+		</dependency>
+
+		<dependency>
+			<groupId>com.magicdraw.application</groupId>
+			<artifactId>jai_imageio</artifactId>
+			<version>17.0.4</version>
+			<scope>system</scope>
+			<systemPath>${magicdraw.installdir}/lib/graphics/jai_imageio.jar</systemPath>
+		</dependency>
+
+		<dependency>
+			<groupId>com.magicdraw.application</groupId>
+			<artifactId>axis</artifactId>
+			<version>17.0.4</version>
+			<scope>system</scope>
+			<systemPath>${magicdraw.installdir}/lib/webservice/axis.jar</systemPath>
+		</dependency>
+
+		<dependency>
+			<groupId>com.magicdraw.application</groupId>
+			<artifactId>axis-config</artifactId>
+			<version>17.0.4</version>
+			<scope>system</scope>
+			<systemPath>${magicdraw.installdir}/lib/webservice/axis-config.jar</systemPath>
+		</dependency>
+
+		<dependency>
+			<groupId>com.magicdraw.application</groupId>
+			<artifactId>commons-discovery-0.2</artifactId>
+			<version>17.0.4</version>
+			<scope>system</scope>
+			<systemPath>${magicdraw.installdir}/lib/webservice/commons-discovery-0.2.jar</systemPath>
+		</dependency>
+
+		<dependency>
+			<groupId>com.magicdraw.application</groupId>
+			<artifactId>jaxrpc</artifactId>
+			<version>17.0.4</version>
+			<scope>system</scope>
+			<systemPath>${magicdraw.installdir}/lib/webservice/jaxrpc.jar</systemPath>
+		</dependency>
+
+		<dependency>
+			<groupId>com.magicdraw.application</groupId>
+			<artifactId>mdserviceclient</artifactId>
+			<version>17.0.4</version>
+			<scope>system</scope>
+			<systemPath>${magicdraw.installdir}/lib/webservice/mdserviceclient.jar</systemPath>
+		</dependency>
+
+		<dependency>
+			<groupId>com.magicdraw.application</groupId>
+			<artifactId>rsclient</artifactId>
+			<version>17.0.4</version>
+			<scope>system</scope>
+			<systemPath>${magicdraw.installdir}/lib/webservice/rsclient.jar</systemPath>
+		</dependency>
+
+		<dependency>
+			<groupId>com.magicdraw.application</groupId>
+			<artifactId>saaj</artifactId>
+			<version>17.0.4</version>
+			<scope>system</scope>
+			<systemPath>${magicdraw.installdir}/lib/webservice/saaj.jar</systemPath>
+		</dependency>
+
+		<dependency>
+			<groupId>com.magicdraw.application</groupId>
+			<artifactId>wsdl4j-1.5.1</artifactId>
+			<version>17.0.4</version>
+			<scope>system</scope>
+			<systemPath>${magicdraw.installdir}/lib/webservice/wsdl4j-1.5.1.jar</systemPath>
+		</dependency>
+		  
+		 <!-- ********************************************************************** --> 
+		 <!-- Magicdraw SysML plugin jars which need to be on the classpath--> 
+		  		 		
+		<dependency>
+			<groupId>com.nomagic.magicdraw.sysml</groupId>
+			<artifactId>sysml_api</artifactId>
+			<version>17.0.4</version>
+			<scope>system</scope>
+			<systemPath>${magicdraw.installdir}/plugins/com.nomagic.magicdraw.sysml/sysml_api.jar</systemPath>
+		</dependency>
+
+		<dependency>
+			<groupId>com.nomagic.magicdraw.sysml</groupId>
+			<artifactId>sysml</artifactId>
+			<version>17.0.4</version>
+			<scope>system</scope>
+			<systemPath>${magicdraw.installdir}/plugins/com.nomagic.magicdraw.sysml/sysml.jar</systemPath>
+		</dependency>
+
+ 		
+		
+		
+	</dependencies>
+
+
+	<build>
+		<plugins>
+			<plugin>
+				<!-- This plugin is needed for the servlet example -->
+				<groupId>org.mortbay.jetty</groupId>
+				<artifactId>jetty-maven-plugin</artifactId>
+				<!-- <version>${jettyVersion}</version> -->
+
+				<configuration>
+					<!--
+					<systemProperties>
+						<force>true</force>
+						<systemProperty>
+							<name>install.root</name>
+							<value>"C:\Program Files\MagicDraw UML"</value>
+						</systemProperty>
+					</systemProperties>
+					-->
+
+					<webAppConfig>
+						<contextPath>/oslc4jmagicdraw</contextPath>
+					</webAppConfig>
+
+					<!-- enable hot deploy -->
+					<reload>automatic</reload>
+					<scanIntervalSeconds>5</scanIntervalSeconds>
+					<scanTargets>
+						<scanTarget>WebContent</scanTarget>
+					</scanTargets>
+
+
+
+				</configuration>
+
+
+
+
+			</plugin>
+
+		</plugins>
+	</build>
+
+
+
+</project>

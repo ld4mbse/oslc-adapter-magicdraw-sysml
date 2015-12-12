@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rdf:RDF
+	xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+	xmlns:oslc="http://open-services.net/ns/core#"
+	xmlns:dcterms="http://purl.org/dc/terms/"
+	xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+	xmlns:sysml="http://www.omg.org/sysml/">
+	<oslc:ResourceShape rdf:about="http://myOSLCServiceProvider.com/sysml/QuantityKindResourceShape">
+		<oslc:describes rdf:resource="sysml:QuantityKind"/>
+		<dcterms:title rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#XMLLiteral">QuantityKind Resource Shape</dcterms:title>
+		<oslc:property>
+			<oslc:Property>
+				<oslc:name>name</oslc:name>
+				<oslc:propertyDefinition rdf:resource="sysml:NamedElement_name"/>
+				<oslc:occurs rdf:resource="http://open-services.net/ns/core#Zero-or-one"/>
+			</oslc:Property>
+		</oslc:property>
+		<oslc:property>
+			<oslc:Property>
+				<oslc:name>symbol</oslc:name>
+				<oslc:propertyDefinition rdf:resource="sysml:QuantityKind_symbol"/>
+				<oslc:occurs rdf:resource="http://open-services.net/ns/core#Zero-or-one"/>
+			</oslc:Property>
+		</oslc:property>
+		<oslc:property>
+			<oslc:Property>
+				<oslc:name>description</oslc:name>
+				<oslc:propertyDefinition rdf:resource="sysml:QuantityKind_description"/>
+				<oslc:occurs rdf:resource="http://open-services.net/ns/core#Zero-or-one"/>
+			</oslc:Property>
+		</oslc:property>
+		<oslc:property>
+			<oslc:Property>
+				<oslc:name>definitionURI</oslc:name>
+				<oslc:propertyDefinition rdf:resource="sysml:QuantityKind_definitionURI"/>
+				<oslc:occurs rdf:resource="http://open-services.net/ns/core#Zero-or-one"/>
+			</oslc:Property>
+		</oslc:property>
+	</oslc:ResourceShape>
+</rdf:RDF>

@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rdf:RDF
+	xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+	xmlns:oslc="http://open-services.net/ns/core#"
+	xmlns:dcterms="http://purl.org/dc/terms/"
+	xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+	xmlns:sysml="http://www.omg.org/sysml/">
+	<oslc:ResourceShape rdf:about="http://myOSLCServiceProvider.com/sysml/BlockResourceShape">
+		<oslc:describes rdf:resource="sysml:Block"/>
+		<dcterms:title rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#XMLLiteral">Block Resource Shape</dcterms:title>
+		<oslc:property>
+			<oslc:Property>
+				<oslc:name>name</oslc:name>
+				<oslc:propertyDefinition rdf:resource="sysml:NamedElement_name"/>
+				<oslc:occurs rdf:resource="http://open-services.net/ns/core#Zero-or-one"/>
+			</oslc:Property>
+		</oslc:property>
+		<oslc:property>
+			<oslc:Property>
+				<oslc:name>owner</oslc:name>
+				<oslc:propertyDefinition rdf:resource="sysml:OwnedElement_owner"/>
+				<oslc:range rdf:resource="sysml:NamedElement"/>
+				<oslc:valueType rdf:resource="http://open-services.net/ns/core#Resource"/>
+				<oslc:occurs rdf:resource="http://open-services.net/ns/core#Zero-or-one"/>
+			</oslc:Property>
+		</oslc:property>
+		<oslc:property>
+			<oslc:Property>
+				<oslc:name>partProperty</oslc:name>
+				<oslc:propertyDefinition rdf:resource="sysml:Block_partProperty"/>
+				<oslc:range rdf:resource="sysml:PartProperty"/>
+				<oslc:valueType rdf:resource="http://open-services.net/ns/core#Resource"/>
+				<oslc:occurs rdf:resource="http://open-service.net/ns/core#Zero-or-many"/>
+			</oslc:Property>
+		</oslc:property>
+		<oslc:property>
+			<oslc:Property>
+				<oslc:name>referenceProperty</oslc:name>
+				<oslc:propertyDefinition rdf:resource="sysml:Block_referenceProperty"/>
+				<oslc:range rdf:resource="sysml:ReferenceProperty"/>
+				<oslc:valueType rdf:resource="http://open-services.net/ns/core#Resource"/>
+				<oslc:occurs rdf:resource="http://open-service.net/ns/core#Zero-or-many"/>
+			</oslc:Property>
+		</oslc:property>
+		<oslc:property>
+			<oslc:Property>
+				<oslc:name>flowProperty</oslc:name>
+				<oslc:propertyDefinition rdf:resource="sysml:Block_flowProperty"/>
+				<oslc:range rdf:resource="sysml:FlowProperty"/>
+				<oslc:valueType rdf:resource="http://open-services.net/ns/core#Resource"/>
+				<oslc:occurs rdf:resource="http://open-service.net/ns/core#Zero-or-many"/>
+			</oslc:Property>
+		</oslc:property>
+		<oslc:property>
+			<oslc:Property>
+				<oslc:name>valueProperty</oslc:name>
+				<oslc:propertyDefinition rdf:resource="sysml:Block_valueProperty"/>
+				<oslc:range rdf:resource="sysml:ValueProperty"/>
+				<oslc:valueType rdf:resource="http://open-services.net/ns/core#Resource"/>
+				<oslc:occurs rdf:resource="http://open-service.net/ns/core#Zero-or-many"/>
+			</oslc:Property>
+		</oslc:property>
+		<oslc:property>
+			<oslc:Property>
+				<oslc:name>boundReference</oslc:name>
+				<oslc:propertyDefinition rdf:resource="sysml:Block_boundReference"/>
+				<oslc:range rdf:resource="sysml:BoundReference"/>
+				<oslc:valueType rdf:resource="http://open-services.net/ns/core#Resource"/>
+				<oslc:occurs rdf:resource="http://open-service.net/ns/core#Zero-or-many"/>
+			</oslc:Property>
+		</oslc:property>
+		<oslc:property>
+			<oslc:Property>
+				<oslc:name>nestedBlock</oslc:name>
+				<oslc:propertyDefinition rdf:resource="sysml:Block_nestedBlock"/>
+				<oslc:range rdf:resource="sysml:Block"/>
+				<oslc:valueType rdf:resource="http://open-services.net/ns/core#Resource"/>
+				<oslc:occurs rdf:resource="http://open-service.net/ns/core#Zero-or-many"/>
+			</oslc:Property>
+		</oslc:property>
+		<oslc:property>
+			<oslc:Property>
+				<oslc:name>inheritedBlock</oslc:name>
+				<oslc:propertyDefinition rdf:resource="sysml:Block_inheritedBlock"/>
+				<oslc:range rdf:resource="sysml:Block"/>
+				<oslc:valueType rdf:resource="http://open-services.net/ns/core#Resource"/>
+				<oslc:occurs rdf:resource="http://open-service.net/ns/core#Zero-or-many"/>
+			</oslc:Property>
+		</oslc:property>
+		<oslc:property>
+			<oslc:Property>
+				<oslc:name>satisfy</oslc:name>
+				<oslc:propertyDefinition rdf:resource="sysml:Block_satisfy"/>
+				<oslc:range rdf:resource="sysml:Requirement"/>
+				<oslc:valueType rdf:resource="http://open-services.net/ns/core#Resource"/>
+				<oslc:occurs rdf:resource="http://open-service.net/ns/core#Zero-or-many"/>
+			</oslc:Property>
+		</oslc:property>
+		<oslc:property>
+			<oslc:Property>
+				<oslc:name>connector</oslc:name>
+				<oslc:propertyDefinition rdf:resource="sysml:Block_connector"/>
+				<oslc:range rdf:resource="sysml:Connector"/>
+				<oslc:valueType rdf:resource="http://open-services.net/ns/core#Resource"/>
+				<oslc:occurs rdf:resource="http://open-service.net/ns/core#Zero-or-many"/>
+			</oslc:Property>
+		</oslc:property>
+		<oslc:property>
+			<oslc:Property>
+				<oslc:name>internalBlockDiagram</oslc:name>
+				<oslc:propertyDefinition rdf:resource="sysml:Block_internalBlockDiagram"/>
+				<oslc:range rdf:resource="sysml:InternalBlockDiagram"/>
+				<oslc:valueType rdf:resource="http://open-services.net/ns/core#Resource"/>
+				<oslc:occurs rdf:resource="http://open-service.net/ns/core#Zero-or-many"/>
+			</oslc:Property>
+		</oslc:property>
+		<oslc:property>
+			<oslc:Property>
+				<oslc:name>port</oslc:name>
+				<oslc:propertyDefinition rdf:resource="sysml:Block_port"/>
+				<oslc:range rdf:resource="sysml:Port"/>
+				<oslc:valueType rdf:resource="http://open-services.net/ns/core#Resource"/>
+				<oslc:occurs rdf:resource="http://open-service.net/ns/core#Zero-or-many"/>
+			</oslc:Property>
+		</oslc:property>
+		<oslc:property>
+			<oslc:Property>
+				<oslc:name>proxyPort</oslc:name>
+				<oslc:propertyDefinition rdf:resource="sysml:Block_proxyPort"/>
+				<oslc:range rdf:resource="sysml:ProxyPort"/>
+				<oslc:valueType rdf:resource="http://open-services.net/ns/core#Resource"/>
+				<oslc:occurs rdf:resource="http://open-service.net/ns/core#Zero-or-many"/>
+			</oslc:Property>
+		</oslc:property>
+		<oslc:property>
+			<oslc:Property>
+				<oslc:name>fullPort</oslc:name>
+				<oslc:propertyDefinition rdf:resource="sysml:Block_fullPort"/>
+				<oslc:range rdf:resource="sysml:FullPort"/>
+				<oslc:valueType rdf:resource="http://open-services.net/ns/core#Resource"/>
+				<oslc:occurs rdf:resource="http://open-service.net/ns/core#Zero-or-many"/>
+			</oslc:Property>
+		</oslc:property>
+	</oslc:ResourceShape>
+</rdf:RDF>

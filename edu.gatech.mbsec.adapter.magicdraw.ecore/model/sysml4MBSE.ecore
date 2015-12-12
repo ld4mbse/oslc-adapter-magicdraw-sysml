@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="sysml" nsURI="http://localhost:8080/oslc4jmagicdraw/services/sysml-rdfvocabulary#"
+    nsPrefix="sysml">
+  <eClassifiers xsi:type="ecore:EClass" name="Model" eSuperTypes="#//NamedElement ../../org.eclipse.mbse.common.vocabulary/Ecore%20Metamodels/CommonMBSEVocabulary.ecore#//Model">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="package" upperBound="-1"
+        eType="#//Package"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Package" eSuperTypes="#//NamedElement #//OwnedElement">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="block" upperBound="-1"
+        eType="#//Block"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="requirement" upperBound="-1"
+        eType="#//Requirement"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="NamedElement" abstract="true">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="OwnedElement">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="owner" eType="#//NamedElement"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Requirement" eSuperTypes="#//NamedElement ../../org.eclipse.mbse.common.vocabulary/Ecore%20Metamodels/CommonMBSEVocabulary.ecore#//Requirement">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="satisfiedBy" upperBound="-1"
+        eType="#//NamedElement" derived="true">
+      <eAnnotations source="oslc_rm:satisfiedBy"/>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="master" eType="#//Requirement"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="refines" upperBound="-1"
+        eType="#//NamedElement" derived="true">
+      <eAnnotations source="oslc_rm:elaborates"/>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="id" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+        derived="true">
+      <eAnnotations source="dcterms:identifier"/>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="text" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+        derived="true">
+      <eAnnotations source="dcterms:description"/>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="derived" upperBound="-1"
+        eType="#//Requirement"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="subRequirement" upperBound="-1"
+        eType="#//Requirement"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+        derived="true">
+      <eAnnotations source="dcterms:title"/>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="derivedFrom" upperBound="-1"
+        eType="#//Requirement"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="hyperlink" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Block" eSuperTypes="#//NamedElement #//Type #//OwnedElement ../../org.eclipse.mbse.common.vocabulary/Ecore%20Metamodels/CommonMBSEVocabulary.ecore#//Block">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="partProperty" upperBound="-1"
+        eType="#//PartProperty"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="referenceProperty" upperBound="-1"
+        eType="#//ReferenceProperty"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="flowProperty" upperBound="-1"
+        eType="#//FlowProperty"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="valueProperty" upperBound="-1"
+        eType="#//ValueProperty"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="boundReference" upperBound="-1"
+        eType="#//BoundReference"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="nestedBlock" upperBound="-1"
+        eType="#//Block"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="inheritedBlock" upperBound="-1"
+        eType="#//Block"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="satisfy" upperBound="-1"
+        eType="#//Requirement"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="connector" upperBound="-1"
+        eType="#//Connector"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="internalBlockDiagram" upperBound="-1"
+        eType="#//InternalBlockDiagram"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="port" upperBound="-1" eType="#//Port">
+      <eAnnotations source="subsets" references="../../org.eclipse.mbse.common.vocabulary/Ecore%20Metamodels/CommonMBSEVocabulary.ecore#//Block/port"/>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="proxyPort" upperBound="-1"
+        eType="#//ProxyPort">
+      <eAnnotations source="subsets" references="../../org.eclipse.mbse.common.vocabulary/Ecore%20Metamodels/CommonMBSEVocabulary.ecore#//Block/port"/>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="fullPort" upperBound="-1"
+        eType="#//FullPort">
+      <eAnnotations source="subsets" references="../../org.eclipse.mbse.common.vocabulary/Ecore%20Metamodels/CommonMBSEVocabulary.ecore#//Block/port"/>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="InterfaceBlock" eSuperTypes="#//NamedElement #//OwnedElement #//Type">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="flowProperty" upperBound="-1"
+        eType="#//FlowProperty"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="proxyPort" upperBound="-1"
+        eType="#//ProxyPort"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="AssociationBlock" eSuperTypes="#//Association">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="memberEnd" upperBound="2"
+        eType="#//ReferenceProperty"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Property" abstract="true" eSuperTypes="#//NamedElement #//MultiplicityElement #//OwnedElement">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="type" eType="#//Type"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="PartProperty" eSuperTypes="#//Property"/>
+  <eClassifiers xsi:type="ecore:EClass" name="ReferenceProperty" eSuperTypes="#//Property">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="association" eType="#//Association"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="FlowProperty" eSuperTypes="#//Property">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="direction" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ValueProperty" eSuperTypes="#//Property ../../org.eclipse.mbse.common.vocabulary/Ecore%20Metamodels/CommonMBSEVocabulary.ecore#//Parameter">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="defaultValue" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="MultiplicityElement" abstract="true">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="lower" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="upper" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Association" eSuperTypes="#//NamedElement"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Port" eSuperTypes="#//Property ../../org.eclipse.mbse.common.vocabulary/Ecore%20Metamodels/CommonMBSEVocabulary.ecore#//Port">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="isService" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="isBehavior" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="isConjugated" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ProxyPort" eSuperTypes="#//Port"/>
+  <eClassifiers xsi:type="ecore:EClass" name="FullPort" eSuperTypes="#//Port"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Connector" eSuperTypes="#//NamedElement #//OwnedElement ../../org.eclipse.mbse.common.vocabulary/Ecore%20Metamodels/CommonMBSEVocabulary.ecore#//Connection">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="end" lowerBound="2" upperBound="-1"
+        eType="#//ConnectorEnd"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="type" eType="#//Association"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ConnectorEnd" eSuperTypes="#//MultiplicityElement #//OwnedElement">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="role" eType="#//Property"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="definingEnd" eType="#//Property"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="partWithPort" eType="#//Property"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="FlowDirection">
+    <eLiterals name="in" literal="in"/>
+    <eLiterals name="out"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ItemFlow">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="itemProperty" eType="#//Property"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="informationTarget" lowerBound="1"
+        eType="#//Property"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="informationSource" lowerBound="1"
+        eType="#//Property"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="realizingConnector" lowerBound="1"
+        eType="#//Connector"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="conveyedBlock" upperBound="-1"
+        eType="#//Block"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ValueType" eSuperTypes="#//Type #//NamedElement">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="unit" eType="#//Unit"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="quantityKind" eType="#//QuantityKind"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Unit" eSuperTypes="#//NamedElement">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="symbol" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+        defaultValueLiteral=""/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="description" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="definitionURI" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+        defaultValueLiteral=""/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="quantityKind" eType="#//QuantityKind"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="QuantityKind" eSuperTypes="#//NamedElement">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="symbol" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+        defaultValueLiteral=""/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="description" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="definitionURI" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+        defaultValueLiteral=""/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Type"/>
+  <eClassifiers xsi:type="ecore:EClass" name="BlockDiagram" eSuperTypes="#//NamedElement"/>
+  <eClassifiers xsi:type="ecore:EClass" name="InternalBlockDiagram" eSuperTypes="#//NamedElement"/>
+  <eClassifiers xsi:type="ecore:EClass" name="BoundReference" eSuperTypes="#//Property">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="boundEnd" lowerBound="1"
+        eType="#//ConnectorEnd"/>
+  </eClassifiers>
+</ecore:EPackage>
