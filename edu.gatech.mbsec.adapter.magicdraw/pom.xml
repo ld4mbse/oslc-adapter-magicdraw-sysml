@@ -1130,16 +1130,16 @@
 		<!-- ********************************************************************** --> 
 		<!-- Subversion client module --> 
 		<dependency>
-			<groupId>org.eclipse.lyo.subversion.client</groupId>
+			<groupId>edu.gatech.mbsec.subversion.client</groupId>
 			<artifactId>svnkit-client</artifactId>
-			<version>0.0.1-SNAPSHOT</version>
+			<version>1.1.0</version>
 		</dependency>
 		
 		<!-- Subversion OSLC web services module --> 
 		<dependency>
-			<groupId>org.eclipse.lyo.adapter.subversion</groupId>
+			<groupId>edu.gatech.mbsec.adapter.subversion</groupId>
 			<artifactId>oslc4jsubversion</artifactId>			
-			<version>0.0.1-SNAPSHOT</version>
+			<version>1.1.0</version>
 		</dependency>
 
 		<!--jsp library --> 
