@@ -102,8 +102,7 @@ ServiceProvider element = (ServiceProvider)request.getAttribute("serviceProvider
 
 
 	<!-- footer -->
-	<p id="footer">OSLC MagicDraw Adapter 0.1 brought to you by <a class="nofancyfooter"
-	 href="https://www.eclipse.org/lyo/" target="_blank">Eclipse Lyo</a>
+	<p id="footer">OSLC MagicDraw Adapter 1.1</a>
 	 
 </body>
 </html>
