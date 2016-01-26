@@ -41,13 +41,13 @@ import javax.ws.rs.core.Response;
 import javax.ws.rs.core.UriInfo;
 
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.lyo.adapter.magicdraw.resources.Constants;
-import org.eclipse.lyo.adapter.magicdraw.resources.OSLCJavaClassesGenerator;
-import org.eclipse.lyo.adapter.magicdraw.resources.SysMLBlock;
-import org.eclipse.lyo.adapter.magicdraw.resources.SysMLModel;
-import org.eclipse.lyo.adapter.magicdraw.resources.SysMLPackage;
-import org.eclipse.lyo.adapter.magicdraw.resources.SysMLPartProperty;
-import org.eclipse.lyo.adapter.magicdraw.resources.SysMLRequirement;
+import edu.gatech.mbsec.adapter.magicdraw.resources.Constants;
+import edu.gatech.mbsec.adapter.magicdraw.resources.OSLCJavaClassesGenerator;
+import edu.gatech.mbsec.adapter.magicdraw.resources.SysMLBlock;
+import edu.gatech.mbsec.adapter.magicdraw.resources.SysMLModel;
+import edu.gatech.mbsec.adapter.magicdraw.resources.SysMLPackage;
+import edu.gatech.mbsec.adapter.magicdraw.resources.SysMLPartProperty;
+import edu.gatech.mbsec.adapter.magicdraw.resources.SysMLRequirement;
 import org.eclipse.lyo.oslc4j.core.annotation.OslcCreationFactory;
 import org.eclipse.lyo.oslc4j.core.annotation.OslcQueryCapability;
 import org.eclipse.lyo.oslc4j.core.annotation.OslcService;
@@ -90,7 +90,7 @@ public class SysMLPartPropertyService extends HttpServlet {
 	@GET
 	@Produces({ OslcMediaType.APPLICATION_RDF_XML,
 			OslcMediaType.APPLICATION_XML, OslcMediaType.APPLICATION_JSON })
-	public List<org.eclipse.lyo.adapter.magicdraw.resources.SysMLPartProperty> getPartProperties(
+	public List<edu.gatech.mbsec.adapter.magicdraw.resources.SysMLPartProperty> getPartProperties(
 			@PathParam("projectId") final String projectId,
 			@QueryParam("oslc.where") final String where,
 			@QueryParam("oslc.select") final String select,
@@ -109,7 +109,7 @@ public class SysMLPartPropertyService extends HttpServlet {
 	@Path("{propertyQualifiedName}")
 	@Produces({ OslcMediaType.APPLICATION_RDF_XML,
 			OslcMediaType.APPLICATION_JSON })
-	public org.eclipse.lyo.adapter.magicdraw.resources.SysMLPartProperty getPartProperty(
+	public edu.gatech.mbsec.adapter.magicdraw.resources.SysMLPartProperty getPartProperty(
 			@PathParam("projectId") final String projectId,
 			@PathParam("propertyQualifiedName") final String propertyQualifiedName)
 			throws URISyntaxException {
@@ -153,7 +153,7 @@ public class SysMLPartPropertyService extends HttpServlet {
 			@QueryParam("oslc.prefix") final String prefix)
 			throws URISyntaxException, IOException {
 		MagicDrawManager.loadSysMLProjects();
-		org.eclipse.lyo.adapter.magicdraw.resources.SysMLPartProperty sysmlPartProperty = MagicDrawManager
+		edu.gatech.mbsec.adapter.magicdraw.resources.SysMLPartProperty sysmlPartProperty = MagicDrawManager
 				.getPartPropertyByQualifiedName(projectId + "/partproperties/" + qualifiedName);
 
 		String requestURL = httpServletRequest.getRequestURL().toString();

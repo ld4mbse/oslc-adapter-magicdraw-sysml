@@ -44,16 +44,7 @@ import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
 import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.emf.ecore.xmi.impl.XMIResourceFactoryImpl;
-import org.eclipse.lyo.adapter.magicdraw.resources.Constants;
-import org.eclipse.lyo.oslc4j.core.annotation.OslcDialog;
-import org.eclipse.lyo.oslc4j.core.annotation.OslcQueryCapability;
-import org.eclipse.lyo.oslc4j.core.annotation.OslcService;
-import org.eclipse.lyo.oslc4j.core.model.Compact;
-import org.eclipse.lyo.oslc4j.core.model.OslcConstants;
-import org.eclipse.lyo.oslc4j.core.model.OslcMediaType;
-import org.eclipse.lyo.oslc4j.core.model.ServiceProviderCatalog;
 
-import edu.gatech.mbsec.adapter.magicdraw.serviceproviders.ServiceProviderCatalogSingleton;
 
 
 

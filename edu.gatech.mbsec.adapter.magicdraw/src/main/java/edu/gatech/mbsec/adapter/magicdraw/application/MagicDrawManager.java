@@ -37,26 +37,26 @@ import java.util.Map;
 import java.util.Timer;
 import java.util.TimerTask;
 
-import org.eclipse.lyo.adapter.magicdraw.resources.SysMLAssociationBlock;
-import org.eclipse.lyo.adapter.magicdraw.resources.SysMLBlock;
-import org.eclipse.lyo.adapter.magicdraw.resources.SysMLBlockDiagram;
-import org.eclipse.lyo.adapter.magicdraw.resources.SysMLConnector;
-import org.eclipse.lyo.adapter.magicdraw.resources.SysMLConnectorEnd;
-import org.eclipse.lyo.adapter.magicdraw.resources.SysMLFlowDirection;
-import org.eclipse.lyo.adapter.magicdraw.resources.SysMLFlowProperty;
-import org.eclipse.lyo.adapter.magicdraw.resources.SysMLFullPort;
-import org.eclipse.lyo.adapter.magicdraw.resources.SysMLInterfaceBlock;
-import org.eclipse.lyo.adapter.magicdraw.resources.SysMLInternalBlockDiagram;
-import org.eclipse.lyo.adapter.magicdraw.resources.SysMLItemFlow;
-import org.eclipse.lyo.adapter.magicdraw.resources.SysMLModel;
-import org.eclipse.lyo.adapter.magicdraw.resources.SysMLPackage;
-import org.eclipse.lyo.adapter.magicdraw.resources.SysMLPartProperty;
-import org.eclipse.lyo.adapter.magicdraw.resources.SysMLPort;
-import org.eclipse.lyo.adapter.magicdraw.resources.SysMLProxyPort;
-import org.eclipse.lyo.adapter.magicdraw.resources.SysMLReferenceProperty;
-import org.eclipse.lyo.adapter.magicdraw.resources.SysMLRequirement;
-import org.eclipse.lyo.adapter.magicdraw.resources.SysMLValueProperty;
-import org.eclipse.lyo.adapter.magicdraw.resources.SysMLValueType;
+import edu.gatech.mbsec.adapter.magicdraw.resources.SysMLAssociationBlock;
+import edu.gatech.mbsec.adapter.magicdraw.resources.SysMLBlock;
+import edu.gatech.mbsec.adapter.magicdraw.resources.SysMLBlockDiagram;
+import edu.gatech.mbsec.adapter.magicdraw.resources.SysMLConnector;
+import edu.gatech.mbsec.adapter.magicdraw.resources.SysMLConnectorEnd;
+import edu.gatech.mbsec.adapter.magicdraw.resources.SysMLFlowDirection;
+import edu.gatech.mbsec.adapter.magicdraw.resources.SysMLFlowProperty;
+import edu.gatech.mbsec.adapter.magicdraw.resources.SysMLFullPort;
+import edu.gatech.mbsec.adapter.magicdraw.resources.SysMLInterfaceBlock;
+import edu.gatech.mbsec.adapter.magicdraw.resources.SysMLInternalBlockDiagram;
+import edu.gatech.mbsec.adapter.magicdraw.resources.SysMLItemFlow;
+import edu.gatech.mbsec.adapter.magicdraw.resources.SysMLModel;
+import edu.gatech.mbsec.adapter.magicdraw.resources.SysMLPackage;
+import edu.gatech.mbsec.adapter.magicdraw.resources.SysMLPartProperty;
+import edu.gatech.mbsec.adapter.magicdraw.resources.SysMLPort;
+import edu.gatech.mbsec.adapter.magicdraw.resources.SysMLProxyPort;
+import edu.gatech.mbsec.adapter.magicdraw.resources.SysMLReferenceProperty;
+import edu.gatech.mbsec.adapter.magicdraw.resources.SysMLRequirement;
+import edu.gatech.mbsec.adapter.magicdraw.resources.SysMLValueProperty;
+import edu.gatech.mbsec.adapter.magicdraw.resources.SysMLValueType;
 import org.eclipse.lyo.oslc4j.core.model.Link;
 
 import com.nomagic.magicdraw.commandline.CommandLine;
@@ -2352,7 +2352,7 @@ public class MagicDrawManager {
 		return sysMLRequirements;
 	}
 
-	public static org.eclipse.lyo.adapter.magicdraw.resources.SysMLBlock getBlockByQualifiedName(String qualifiedName) {
+	public static edu.gatech.mbsec.adapter.magicdraw.resources.SysMLBlock getBlockByQualifiedName(String qualifiedName) {
 		SysMLBlock sysMLBlock = qNameOslcSysmlBlockMap.get(qualifiedName);
 		return sysMLBlock;
 	}

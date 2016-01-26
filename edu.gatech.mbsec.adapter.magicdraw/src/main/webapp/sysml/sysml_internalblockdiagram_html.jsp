@@ -26,7 +26,7 @@
 <%@ page import="org.eclipse.lyo.oslc4j.core.model.Link"%>
 <%@ page import="java.net.URI"%>
 <%@ page
-	import="org.eclipse.lyo.adapter.magicdraw.resources.SysMLInternalBlockDiagram"%>
+	import="edu.gatech.mbsec.adapter.magicdraw.resources.SysMLInternalBlockDiagram"%>
 <%
 
 SysMLInternalBlockDiagram element = (SysMLInternalBlockDiagram)request.getAttribute("internalblockdiagram");

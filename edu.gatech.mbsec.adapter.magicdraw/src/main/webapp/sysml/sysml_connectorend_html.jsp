@@ -26,7 +26,7 @@
 <%@ page import="org.eclipse.lyo.oslc4j.core.model.Link"%>
 <%@ page import="java.net.URI"%>
 <%@ page
-	import="org.eclipse.lyo.adapter.magicdraw.resources.SysMLConnectorEnd"%>
+	import="edu.gatech.mbsec.adapter.magicdraw.resources.SysMLConnectorEnd"%>
 <%
 
 SysMLConnectorEnd element = (SysMLConnectorEnd)request.getAttribute("connectorend");

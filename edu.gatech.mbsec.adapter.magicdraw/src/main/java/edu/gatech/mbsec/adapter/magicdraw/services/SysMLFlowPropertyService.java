@@ -38,13 +38,13 @@ import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 import javax.ws.rs.core.UriInfo;
 
-import org.eclipse.lyo.adapter.magicdraw.resources.Constants;
-import org.eclipse.lyo.adapter.magicdraw.resources.SysMLFlowProperty;
-import org.eclipse.lyo.adapter.magicdraw.resources.SysMLPartProperty;
-import org.eclipse.lyo.adapter.magicdraw.resources.SysMLPort;
-import org.eclipse.lyo.adapter.magicdraw.resources.SysMLProxyPort;
-import org.eclipse.lyo.adapter.magicdraw.resources.SysMLReferenceProperty;
-import org.eclipse.lyo.adapter.magicdraw.resources.SysMLValueProperty;
+import edu.gatech.mbsec.adapter.magicdraw.resources.Constants;
+import edu.gatech.mbsec.adapter.magicdraw.resources.SysMLFlowProperty;
+import edu.gatech.mbsec.adapter.magicdraw.resources.SysMLPartProperty;
+import edu.gatech.mbsec.adapter.magicdraw.resources.SysMLPort;
+import edu.gatech.mbsec.adapter.magicdraw.resources.SysMLProxyPort;
+import edu.gatech.mbsec.adapter.magicdraw.resources.SysMLReferenceProperty;
+import edu.gatech.mbsec.adapter.magicdraw.resources.SysMLValueProperty;
 import org.eclipse.lyo.oslc4j.core.annotation.OslcCreationFactory;
 import org.eclipse.lyo.oslc4j.core.annotation.OslcName;
 import org.eclipse.lyo.oslc4j.core.annotation.OslcNamespace;
@@ -91,7 +91,7 @@ public class SysMLFlowPropertyService extends HttpServlet{
 	@GET
 	@Produces({ OslcMediaType.APPLICATION_RDF_XML,
 			OslcMediaType.APPLICATION_XML, OslcMediaType.APPLICATION_JSON })
-	public List<org.eclipse.lyo.adapter.magicdraw.resources.SysMLFlowProperty> getFlowProperties(
+	public List<edu.gatech.mbsec.adapter.magicdraw.resources.SysMLFlowProperty> getFlowProperties(
 			@PathParam("projectId") final String projectId,
 			@QueryParam("oslc.where") final String where,
 			@QueryParam("oslc.select") final String select,
@@ -109,7 +109,7 @@ public class SysMLFlowPropertyService extends HttpServlet{
 	@GET
 	@Path("{propertyQualifiedName}")
 	@Produces({ OslcMediaType.APPLICATION_RDF_XML, OslcMediaType.APPLICATION_JSON})
-	public org.eclipse.lyo.adapter.magicdraw.resources.SysMLFlowProperty getFlowProperty(@PathParam("projectId") final String projectId, @PathParam("propertyQualifiedName") final String propertyQualifiedName) throws URISyntaxException  {
+	public edu.gatech.mbsec.adapter.magicdraw.resources.SysMLFlowProperty getFlowProperty(@PathParam("projectId") final String projectId, @PathParam("propertyQualifiedName") final String propertyQualifiedName) throws URISyntaxException  {
 		MagicDrawManager.loadSysMLProjects();
 		SysMLFlowProperty sysMLFlowProperty = MagicDrawManager.getFlowPropertyByQualifiedName(projectId + "/flowproperties/" + propertyQualifiedName);
 		return sysMLFlowProperty;
@@ -147,7 +147,7 @@ public class SysMLFlowPropertyService extends HttpServlet{
 			@QueryParam("oslc.prefix") final String prefix)
 			throws URISyntaxException, IOException {
 		MagicDrawManager.loadSysMLProjects();
-		org.eclipse.lyo.adapter.magicdraw.resources.SysMLFlowProperty sysmlFlowProperty = 
+		edu.gatech.mbsec.adapter.magicdraw.resources.SysMLFlowProperty sysmlFlowProperty = 
 				MagicDrawManager.getFlowPropertyByQualifiedName(projectId + "/flowproperties/" + qualifiedName);
 	
 		String requestURL = httpServletRequest.getRequestURL().toString();

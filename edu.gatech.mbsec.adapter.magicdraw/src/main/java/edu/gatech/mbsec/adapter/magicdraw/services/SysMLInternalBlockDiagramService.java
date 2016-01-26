@@ -36,12 +36,12 @@ import javax.ws.rs.core.Context;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.UriInfo;
 
-import org.eclipse.lyo.adapter.magicdraw.resources.Constants;
-import org.eclipse.lyo.adapter.magicdraw.resources.SysMLBlock;
-import org.eclipse.lyo.adapter.magicdraw.resources.SysMLBlockDiagram;
-import org.eclipse.lyo.adapter.magicdraw.resources.SysMLInternalBlockDiagram;
-import org.eclipse.lyo.adapter.magicdraw.resources.SysMLModel;
-import org.eclipse.lyo.adapter.magicdraw.resources.SysMLPackage;
+import edu.gatech.mbsec.adapter.magicdraw.resources.Constants;
+import edu.gatech.mbsec.adapter.magicdraw.resources.SysMLBlock;
+import edu.gatech.mbsec.adapter.magicdraw.resources.SysMLBlockDiagram;
+import edu.gatech.mbsec.adapter.magicdraw.resources.SysMLInternalBlockDiagram;
+import edu.gatech.mbsec.adapter.magicdraw.resources.SysMLModel;
+import edu.gatech.mbsec.adapter.magicdraw.resources.SysMLPackage;
 import org.eclipse.lyo.oslc4j.core.annotation.OslcCreationFactory;
 import org.eclipse.lyo.oslc4j.core.annotation.OslcQueryCapability;
 import org.eclipse.lyo.oslc4j.core.annotation.OslcService;
@@ -76,7 +76,7 @@ public class SysMLInternalBlockDiagramService extends HttpServlet {
 //	@GET
 //	@Produces({ OslcMediaType.APPLICATION_RDF_XML,
 //			OslcMediaType.APPLICATION_XML, OslcMediaType.APPLICATION_JSON })
-//	public List<org.eclipse.lyo.adapter.magicdraw.resources.SysMLBlock> getBlockDiagrams(
+//	public List<edu.gatech.mbsec.adapter.magicdraw.resources.SysMLBlock> getBlockDiagrams(
 //			@PathParam("projectId") final String projectId,
 //			@QueryParam("oslc.where") final String where,
 //			@QueryParam("oslc.select") final String select,
@@ -95,12 +95,12 @@ public class SysMLInternalBlockDiagramService extends HttpServlet {
 //	@Path("{blockQualifiedName}")
 //	@Produces({ OslcMediaType.APPLICATION_RDF_XML,
 //			OslcMediaType.APPLICATION_JSON })
-//	public org.eclipse.lyo.adapter.magicdraw.resources.SysMLBlock getBlockDiagram(
+//	public edu.gatech.mbsec.adapter.magicdraw.resources.SysMLBlock getBlockDiagram(
 //			@PathParam("projectId") final String projectId,
 //			@PathParam("blockQualifiedName") final String blockQualifiedName)
 //			throws URISyntaxException {
 //		MagicDrawManager.loadSysMLProject(projectId);
-//		org.eclipse.lyo.adapter.magicdraw.resources.SysMLBlock sysmlBlock = MagicDrawManager
+//		edu.gatech.mbsec.adapter.magicdraw.resources.SysMLBlock sysmlBlock = MagicDrawManager
 //				.getBlockByQualifiedName(blockQualifiedName);
 //		return sysmlBlock;
 //	}
@@ -137,7 +137,7 @@ public class SysMLInternalBlockDiagramService extends HttpServlet {
 			@QueryParam("oslc.prefix") final String prefix)
 			throws URISyntaxException, IOException {
 		MagicDrawManager.loadSysMLProjects();
-		org.eclipse.lyo.adapter.magicdraw.resources.SysMLInternalBlockDiagram sysmlInternalBlockDiagram = MagicDrawManager
+		edu.gatech.mbsec.adapter.magicdraw.resources.SysMLInternalBlockDiagram sysmlInternalBlockDiagram = MagicDrawManager
 				.getInternalBlockDiagramByQualifiedName(projectId + "/internalblockdiagrams/" + diagramName);
 
 		String requestURL = httpServletRequest.getRequestURL().toString();

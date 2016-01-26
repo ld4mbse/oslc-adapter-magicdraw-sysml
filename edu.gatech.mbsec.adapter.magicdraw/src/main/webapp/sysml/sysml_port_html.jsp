@@ -26,7 +26,7 @@
 <%@ page import="org.eclipse.lyo.oslc4j.core.model.Link"%>
 <%@ page import="java.net.URI"%>
 <%@ page
-	import="org.eclipse.lyo.adapter.magicdraw.resources.SysMLPort"%>
+	import="edu.gatech.mbsec.adapter.magicdraw.resources.SysMLPort"%>
 <%
 
 SysMLPort element = (SysMLPort)request.getAttribute("port");

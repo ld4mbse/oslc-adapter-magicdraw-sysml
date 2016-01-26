@@ -39,9 +39,9 @@ import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 import javax.ws.rs.core.UriInfo;
 
-import org.eclipse.lyo.adapter.magicdraw.resources.Constants;
-import org.eclipse.lyo.adapter.magicdraw.resources.SysMLReferenceProperty;
-import org.eclipse.lyo.adapter.magicdraw.resources.SysMLRequirement;
+import edu.gatech.mbsec.adapter.magicdraw.resources.Constants;
+import edu.gatech.mbsec.adapter.magicdraw.resources.SysMLReferenceProperty;
+import edu.gatech.mbsec.adapter.magicdraw.resources.SysMLRequirement;
 import org.eclipse.lyo.oslc4j.core.annotation.OslcCreationFactory;
 import org.eclipse.lyo.oslc4j.core.annotation.OslcQueryCapability;
 import org.eclipse.lyo.oslc4j.core.annotation.OslcService;
@@ -85,7 +85,7 @@ public class SysMLRequirementService extends HttpServlet {
 	@GET
 	@Produces({ OslcMediaType.APPLICATION_RDF_XML,
 			OslcMediaType.APPLICATION_XML, OslcMediaType.APPLICATION_JSON })
-	public List<org.eclipse.lyo.adapter.magicdraw.resources.SysMLRequirement> getRequirements(
+	public List<edu.gatech.mbsec.adapter.magicdraw.resources.SysMLRequirement> getRequirements(
 			@PathParam("projectId") final String projectId,
 			@QueryParam("oslc.where") final String where,
 			@QueryParam("oslc.select") final String select,
@@ -143,7 +143,7 @@ public class SysMLRequirementService extends HttpServlet {
 			@QueryParam("oslc.prefix") final String prefix)
 			throws URISyntaxException, IOException {
 		MagicDrawManager.loadSysMLProjects();
-		org.eclipse.lyo.adapter.magicdraw.resources.SysMLRequirement sysmlRequirement = MagicDrawManager.getRequirementByID(projectId + "/requirements/" + reqID);
+		edu.gatech.mbsec.adapter.magicdraw.resources.SysMLRequirement sysmlRequirement = MagicDrawManager.getRequirementByID(projectId + "/requirements/" + reqID);
 	
 		String requestURL = httpServletRequest.getRequestURL().toString();
 		if (sysmlRequirement !=null )

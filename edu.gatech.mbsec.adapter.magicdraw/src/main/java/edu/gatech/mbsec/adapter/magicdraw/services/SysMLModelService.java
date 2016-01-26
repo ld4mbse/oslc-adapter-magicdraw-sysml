@@ -38,9 +38,9 @@ import javax.ws.rs.core.Response;
 import javax.ws.rs.core.UriInfo;
 import javax.ws.rs.core.Response.Status;
 
-import org.eclipse.lyo.adapter.magicdraw.resources.Constants;
-import org.eclipse.lyo.adapter.magicdraw.resources.SysMLModel;
-import org.eclipse.lyo.adapter.magicdraw.resources.SysMLReferenceProperty;
+import edu.gatech.mbsec.adapter.magicdraw.resources.Constants;
+import edu.gatech.mbsec.adapter.magicdraw.resources.SysMLModel;
+import edu.gatech.mbsec.adapter.magicdraw.resources.SysMLReferenceProperty;
 import org.eclipse.lyo.oslc4j.core.OSLC4JConstants;
 import org.eclipse.lyo.oslc4j.core.annotation.OslcQueryCapability;
 import org.eclipse.lyo.oslc4j.core.annotation.OslcService;
@@ -93,7 +93,7 @@ public class SysMLModelService extends HttpServlet {
 	@GET
 	@Produces({ OslcMediaType.APPLICATION_RDF_XML,
 			OslcMediaType.APPLICATION_XML, OslcMediaType.APPLICATION_JSON })
-	public List<org.eclipse.lyo.adapter.magicdraw.resources.SysMLModel> getModels(
+	public List<edu.gatech.mbsec.adapter.magicdraw.resources.SysMLModel> getModels(
 			@PathParam("projectId") final String projectId,
 			@QueryParam("oslc.where") final String where,
 			@QueryParam("oslc.select") final String select,
@@ -111,7 +111,7 @@ public class SysMLModelService extends HttpServlet {
 	@GET
 	@Path("{modelName}")
 	@Produces({ OslcMediaType.APPLICATION_RDF_XML, OslcMediaType.APPLICATION_JSON })
-	public org.eclipse.lyo.adapter.magicdraw.resources.SysMLModel getModel(
+	public edu.gatech.mbsec.adapter.magicdraw.resources.SysMLModel getModel(
 			@PathParam("projectId") final String projectId,
 			@PathParam("modelName") final String modelName,
 			@QueryParam("oslc.properties") final String propertiesString,

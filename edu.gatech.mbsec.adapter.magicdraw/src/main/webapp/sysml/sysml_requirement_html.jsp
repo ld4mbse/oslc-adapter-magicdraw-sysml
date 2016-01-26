@@ -26,7 +26,7 @@
 <%@ page import="org.eclipse.lyo.oslc4j.core.model.Link"%>
 <%@ page import="java.net.URI"%>
 <%@ page
-	import="org.eclipse.lyo.adapter.magicdraw.resources.SysMLRequirement"%>
+	import="edu.gatech.mbsec.adapter.magicdraw.resources.SysMLRequirement"%>
 <%
 
 SysMLRequirement element = (SysMLRequirement)request.getAttribute("requirement");

@@ -5,6 +5,9 @@
         <wb-resource deploy-path="/WEB-INF/classes" source-path="/src/main/java"/>
         <wb-resource deploy-path="/WEB-INF/classes" source-path="/src/main/resources"/>
         <wb-resource deploy-path="/WEB-INF/classes" source-path="/src/main/data"/>
+        <dependent-module archiveName="oslc4j-magicdraw-resources-1.1.0.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/edu.gatech.mbsec.adapter.magicdraw.resources/edu.gatech.mbsec.adapter.magicdraw.resources">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
         <dependent-module archiveName="oslc4j-jena-provider-3.0.0-SNAPSHOT.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/org.eclipse.lyo.oslc4j.provider.jena/org.eclipse.lyo.oslc4j.provider.jena">
             <dependency-type>uses</dependency-type>
         </dependent-module>
@@ -14,10 +17,10 @@
         <dependent-module archiveName="oslc4j-json4j-provider-3.0.0-SNAPSHOT.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/org.eclipse.lyo.oslc4j.provider.json4j/org.eclipse.lyo.oslc4j.provider.json4j">
             <dependency-type>uses</dependency-type>
         </dependent-module>
-        <dependent-module archiveName="svnkit-client-0.0.1-SNAPSHOT.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/svnkit-client/svnkit-client">
+        <dependent-module archiveName="svnkit-client-1.1.0.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/edu.gatech.mbsec.subversion.client/edu.gatech.mbsec.subversion.client">
             <dependency-type>uses</dependency-type>
         </dependent-module>
-        <dependent-module archiveName="oslc4jsubversion-0.0.1-SNAPSHOT.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/org.eclipse.lyo.adapter.subversion/org.eclipse.lyo.adapter.subversion">
+        <dependent-module archiveName="oslc4jsubversion-1.1.0.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/edu.gatech.mbsec.adapter.subversion/edu.gatech.mbsec.adapter.subversion">
             <dependency-type>uses</dependency-type>
         </dependent-module>
         <dependent-module archiveName="oslc-query-3.0.0-SNAPSHOT.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/org.eclipse.lyo.core.query/org.eclipse.lyo.core.query">

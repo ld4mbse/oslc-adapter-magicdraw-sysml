@@ -26,7 +26,7 @@
 <%@ page import="org.eclipse.lyo.oslc4j.core.model.Link"%>
 <%@ page import="java.net.URI"%>
 <%@ page
-	import="org.eclipse.lyo.adapter.magicdraw.resources.SysMLFullPort"%>
+	import="edu.gatech.mbsec.adapter.magicdraw.resources.SysMLFullPort"%>
 <%
 
 SysMLFullPort element = (SysMLFullPort)request.getAttribute("fullPort");

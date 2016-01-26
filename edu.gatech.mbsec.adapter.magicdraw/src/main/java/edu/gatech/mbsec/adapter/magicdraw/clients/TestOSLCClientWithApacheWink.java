@@ -21,12 +21,12 @@ import java.util.Set;
 
 import org.apache.wink.client.handlers.BasicAuthSecurityHandler;
 import org.apache.wink.client.handlers.ClientHandler;
-import org.eclipse.lyo.adapter.magicdraw.resources.SysMLBlock;
-import org.eclipse.lyo.adapter.magicdraw.resources.SysMLModel;
-import org.eclipse.lyo.adapter.magicdraw.resources.SysMLPackage;
-import org.eclipse.lyo.adapter.magicdraw.resources.SysMLPartProperty;
-import org.eclipse.lyo.adapter.magicdraw.resources.SysMLReferenceProperty;
-import org.eclipse.lyo.adapter.magicdraw.resources.SysMLRequirement;
+import edu.gatech.mbsec.adapter.magicdraw.resources.SysMLBlock;
+import edu.gatech.mbsec.adapter.magicdraw.resources.SysMLModel;
+import edu.gatech.mbsec.adapter.magicdraw.resources.SysMLPackage;
+import edu.gatech.mbsec.adapter.magicdraw.resources.SysMLPartProperty;
+import edu.gatech.mbsec.adapter.magicdraw.resources.SysMLReferenceProperty;
+import edu.gatech.mbsec.adapter.magicdraw.resources.SysMLRequirement;
 import org.eclipse.lyo.oslc4j.client.OslcRestClient;
 import org.eclipse.lyo.oslc4j.core.model.QueryCapability;
 import org.eclipse.lyo.oslc4j.core.model.Service;

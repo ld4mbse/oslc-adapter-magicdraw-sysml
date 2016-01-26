@@ -37,11 +37,11 @@ import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 import javax.ws.rs.core.UriInfo;
 
-import org.eclipse.lyo.adapter.magicdraw.resources.Constants;
-import org.eclipse.lyo.adapter.magicdraw.resources.SysMLAssociationBlock;
-import org.eclipse.lyo.adapter.magicdraw.resources.SysMLBlock;
-import org.eclipse.lyo.adapter.magicdraw.resources.SysMLItemFlow;
-import org.eclipse.lyo.adapter.magicdraw.resources.SysMLRequirement;
+import edu.gatech.mbsec.adapter.magicdraw.resources.Constants;
+import edu.gatech.mbsec.adapter.magicdraw.resources.SysMLAssociationBlock;
+import edu.gatech.mbsec.adapter.magicdraw.resources.SysMLBlock;
+import edu.gatech.mbsec.adapter.magicdraw.resources.SysMLItemFlow;
+import edu.gatech.mbsec.adapter.magicdraw.resources.SysMLRequirement;
 import org.eclipse.lyo.oslc4j.core.annotation.OslcCreationFactory;
 import org.eclipse.lyo.oslc4j.core.annotation.OslcQueryCapability;
 import org.eclipse.lyo.oslc4j.core.annotation.OslcService;
@@ -79,7 +79,7 @@ public class SysMLItemFlowService {
 	@GET
 	@Produces({ OslcMediaType.APPLICATION_RDF_XML,
 			OslcMediaType.APPLICATION_XML, OslcMediaType.APPLICATION_JSON })
-	public List<org.eclipse.lyo.adapter.magicdraw.resources.SysMLItemFlow> getItemFlows(
+	public List<edu.gatech.mbsec.adapter.magicdraw.resources.SysMLItemFlow> getItemFlows(
 			@PathParam("projectId") final String projectId,
 			@QueryParam("oslc.where") final String where,
 			@QueryParam("oslc.select") final String select,
@@ -97,12 +97,12 @@ public class SysMLItemFlowService {
 	@GET
 	@Path("{blockQualifiedName}")
 	@Produces({ OslcMediaType.APPLICATION_RDF_XML, OslcMediaType.APPLICATION_JSON })
-	public org.eclipse.lyo.adapter.magicdraw.resources.SysMLItemFlow getItemFlow(
+	public edu.gatech.mbsec.adapter.magicdraw.resources.SysMLItemFlow getItemFlow(
 			@PathParam("projectId") final String projectId,
 			@PathParam("blockQualifiedName") final String blockQualifiedName)
 			throws URISyntaxException {
 		MagicDrawManager.loadSysMLProjects();
-		org.eclipse.lyo.adapter.magicdraw.resources.SysMLItemFlow sysmlAssociationBlock = MagicDrawManager
+		edu.gatech.mbsec.adapter.magicdraw.resources.SysMLItemFlow sysmlAssociationBlock = MagicDrawManager
 				.getItemFlowByQualifiedName(blockQualifiedName);
 		return sysmlAssociationBlock;
 	}
@@ -140,7 +140,7 @@ public class SysMLItemFlowService {
 			@QueryParam("oslc.prefix") final String prefix)
 			throws URISyntaxException, IOException {
 		MagicDrawManager.loadSysMLProjects();
-		org.eclipse.lyo.adapter.magicdraw.resources.SysMLItemFlow sysmlItemFlow = MagicDrawManager.getItemFlowByQualifiedName(blockQualifiedName);
+		edu.gatech.mbsec.adapter.magicdraw.resources.SysMLItemFlow sysmlItemFlow = MagicDrawManager.getItemFlowByQualifiedName(blockQualifiedName);
 	
 		String requestURL = httpServletRequest.getRequestURL().toString();
 		if (sysmlItemFlow !=null )

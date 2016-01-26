@@ -49,14 +49,14 @@ import javax.ws.rs.core.UriInfo;
 import javax.ws.rs.core.Response.ResponseBuilder;
 
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.lyo.adapter.magicdraw.resources.Constants;
-import org.eclipse.lyo.adapter.magicdraw.resources.OSLCJavaClassesGenerator;
-import org.eclipse.lyo.adapter.magicdraw.resources.SysMLFlowProperty;
-import org.eclipse.lyo.adapter.magicdraw.resources.SysMLPartProperty;
-import org.eclipse.lyo.adapter.magicdraw.resources.SysMLPort;
-import org.eclipse.lyo.adapter.magicdraw.resources.SysMLProxyPort;
-import org.eclipse.lyo.adapter.magicdraw.resources.SysMLReferenceProperty;
-import org.eclipse.lyo.adapter.magicdraw.resources.SysMLValueProperty;
+import edu.gatech.mbsec.adapter.magicdraw.resources.Constants;
+import edu.gatech.mbsec.adapter.magicdraw.resources.OSLCJavaClassesGenerator;
+import edu.gatech.mbsec.adapter.magicdraw.resources.SysMLFlowProperty;
+import edu.gatech.mbsec.adapter.magicdraw.resources.SysMLPartProperty;
+import edu.gatech.mbsec.adapter.magicdraw.resources.SysMLPort;
+import edu.gatech.mbsec.adapter.magicdraw.resources.SysMLProxyPort;
+import edu.gatech.mbsec.adapter.magicdraw.resources.SysMLReferenceProperty;
+import edu.gatech.mbsec.adapter.magicdraw.resources.SysMLValueProperty;
 import org.eclipse.lyo.oslc4j.core.annotation.OslcCreationFactory;
 import org.eclipse.lyo.oslc4j.core.annotation.OslcName;
 import org.eclipse.lyo.oslc4j.core.annotation.OslcNamespace;
@@ -105,7 +105,7 @@ public class SysMLValuePropertyService extends HttpServlet {
 	@GET
 	@Produces({ OslcMediaType.APPLICATION_RDF_XML,
 			OslcMediaType.APPLICATION_XML, OslcMediaType.APPLICATION_JSON })
-	public List<org.eclipse.lyo.adapter.magicdraw.resources.SysMLValueProperty> getValueProperties(
+	public List<edu.gatech.mbsec.adapter.magicdraw.resources.SysMLValueProperty> getValueProperties(
 			@PathParam("projectId") final String projectId,
 			@QueryParam("oslc.where") final String where,
 			@QueryParam("oslc.select") final String select,
@@ -190,7 +190,7 @@ public class SysMLValuePropertyService extends HttpServlet {
 			@QueryParam("oslc.prefix") final String prefix)
 			throws URISyntaxException, IOException {
 		MagicDrawManager.loadSysMLProjects();
-		org.eclipse.lyo.adapter.magicdraw.resources.SysMLValueProperty sysmlValueProperty = MagicDrawManager
+		edu.gatech.mbsec.adapter.magicdraw.resources.SysMLValueProperty sysmlValueProperty = MagicDrawManager
 				.getValuePropertyByQualifiedName(projectId + "/valueproperties/" + qualifiedName);
 
 		String requestURL = httpServletRequest.getRequestURL().toString();

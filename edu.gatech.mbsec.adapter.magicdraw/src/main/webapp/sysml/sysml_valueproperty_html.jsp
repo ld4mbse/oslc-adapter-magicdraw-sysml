@@ -26,7 +26,7 @@
 <%@ page import="org.eclipse.lyo.oslc4j.core.model.Link"%>
 <%@ page import="java.net.URI"%>
 <%@ page
-	import="org.eclipse.lyo.adapter.magicdraw.resources.SysMLValueProperty"%>
+	import="edu.gatech.mbsec.adapter.magicdraw.resources.SysMLValueProperty"%>
 <%
 
 SysMLValueProperty element = (SysMLValueProperty)request.getAttribute("valueProperty");

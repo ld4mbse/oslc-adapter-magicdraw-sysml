@@ -45,11 +45,11 @@ import javax.ws.rs.core.Response.Status;
 
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EcorePackage;
-import org.eclipse.lyo.adapter.magicdraw.resources.Constants;
-import org.eclipse.lyo.adapter.magicdraw.resources.SysMLBlock;
-import org.eclipse.lyo.adapter.magicdraw.resources.SysMLModel;
-import org.eclipse.lyo.adapter.magicdraw.resources.SysMLPackage;
-import org.eclipse.lyo.adapter.magicdraw.resources.SysMLRequirement;
+import edu.gatech.mbsec.adapter.magicdraw.resources.Constants;
+import edu.gatech.mbsec.adapter.magicdraw.resources.SysMLBlock;
+import edu.gatech.mbsec.adapter.magicdraw.resources.SysMLModel;
+import edu.gatech.mbsec.adapter.magicdraw.resources.SysMLPackage;
+import edu.gatech.mbsec.adapter.magicdraw.resources.SysMLRequirement;
 import org.eclipse.lyo.oslc4j.core.annotation.OslcCreationFactory;
 import org.eclipse.lyo.oslc4j.core.annotation.OslcQueryCapability;
 import org.eclipse.lyo.oslc4j.core.annotation.OslcService;
@@ -94,7 +94,7 @@ public class SysMLBlockService extends HttpServlet {
 	@GET
 	@Produces({ OslcMediaType.APPLICATION_RDF_XML,
 			OslcMediaType.APPLICATION_XML, OslcMediaType.APPLICATION_JSON })
-	public List<org.eclipse.lyo.adapter.magicdraw.resources.SysMLBlock> getBlocks(
+	public List<edu.gatech.mbsec.adapter.magicdraw.resources.SysMLBlock> getBlocks(
 			@PathParam("projectId") final String projectId,
 			@QueryParam("oslc.where") final String where,
 			@QueryParam("oslc.select") final String select,
@@ -113,12 +113,12 @@ public class SysMLBlockService extends HttpServlet {
 	@Path("{blockQualifiedName}")
 	@Produces({ OslcMediaType.APPLICATION_RDF_XML,
 			OslcMediaType.APPLICATION_JSON })
-	public org.eclipse.lyo.adapter.magicdraw.resources.SysMLBlock getBlock(
+	public edu.gatech.mbsec.adapter.magicdraw.resources.SysMLBlock getBlock(
 			@PathParam("projectId") final String projectId,
 			@PathParam("blockQualifiedName") final String blockQualifiedName)
 			throws URISyntaxException {
 		MagicDrawManager.loadSysMLProjects();
-		org.eclipse.lyo.adapter.magicdraw.resources.SysMLBlock sysmlBlock = MagicDrawManager
+		edu.gatech.mbsec.adapter.magicdraw.resources.SysMLBlock sysmlBlock = MagicDrawManager
 				.getBlockByQualifiedName(projectId + "/blocks/" + blockQualifiedName);
 		return sysmlBlock;
 	}
@@ -153,7 +153,7 @@ public class SysMLBlockService extends HttpServlet {
 			@QueryParam("oslc.prefix") final String prefix)
 			throws URISyntaxException, IOException {
 		MagicDrawManager.loadSysMLProjects();
-		org.eclipse.lyo.adapter.magicdraw.resources.SysMLBlock sysmlBlock = MagicDrawManager
+		edu.gatech.mbsec.adapter.magicdraw.resources.SysMLBlock sysmlBlock = MagicDrawManager
 				.getBlockByQualifiedName(projectId + "/blocks/" + blockQualifiedName);
 
 		String requestURL = httpServletRequest.getRequestURL().toString();

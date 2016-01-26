@@ -38,10 +38,10 @@ import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 import javax.ws.rs.core.UriInfo;
 
-import org.eclipse.lyo.adapter.magicdraw.resources.Constants;
-import org.eclipse.lyo.adapter.magicdraw.resources.SysMLModel;
-import org.eclipse.lyo.adapter.magicdraw.resources.SysMLPackage;
-import org.eclipse.lyo.adapter.magicdraw.resources.SysMLValueProperty;
+import edu.gatech.mbsec.adapter.magicdraw.resources.Constants;
+import edu.gatech.mbsec.adapter.magicdraw.resources.SysMLModel;
+import edu.gatech.mbsec.adapter.magicdraw.resources.SysMLPackage;
+import edu.gatech.mbsec.adapter.magicdraw.resources.SysMLValueProperty;
 import org.eclipse.lyo.oslc4j.core.annotation.OslcCreationFactory;
 import org.eclipse.lyo.oslc4j.core.annotation.OslcQueryCapability;
 import org.eclipse.lyo.oslc4j.core.annotation.OslcService;
@@ -86,7 +86,7 @@ public class SysMLPackageService extends HttpServlet{
 	@GET
 	@Produces({ OslcMediaType.APPLICATION_RDF_XML,
 			OslcMediaType.APPLICATION_XML, OslcMediaType.APPLICATION_JSON })
-	public List<org.eclipse.lyo.adapter.magicdraw.resources.SysMLPackage> getPackages(
+	public List<edu.gatech.mbsec.adapter.magicdraw.resources.SysMLPackage> getPackages(
 			@PathParam("projectId") final String projectId,
 			@QueryParam("oslc.where") final String where,
 			@QueryParam("oslc.select") final String select,
@@ -104,7 +104,7 @@ public class SysMLPackageService extends HttpServlet{
 	@GET
 	@Path("{qualifiedName}")
 	@Produces({ OslcMediaType.APPLICATION_RDF_XML, OslcMediaType.APPLICATION_JSON})
-	public org.eclipse.lyo.adapter.magicdraw.resources.SysMLPackage getPackage(@PathParam("projectId") final String projectId, @PathParam("qualifiedName") final String qualifiedName) throws URISyntaxException  {
+	public edu.gatech.mbsec.adapter.magicdraw.resources.SysMLPackage getPackage(@PathParam("projectId") final String projectId, @PathParam("qualifiedName") final String qualifiedName) throws URISyntaxException  {
 		MagicDrawManager.loadSysMLProjects();
 		SysMLPackage sysMLPackage = MagicDrawManager.getPackageByQualifiedName(projectId + "/packages/" +  qualifiedName);
 		return sysMLPackage;
@@ -161,7 +161,7 @@ public class SysMLPackageService extends HttpServlet{
 			@QueryParam("oslc.prefix") final String prefix)
 			throws URISyntaxException, IOException {
 		MagicDrawManager.loadSysMLProjects();
-		org.eclipse.lyo.adapter.magicdraw.resources.SysMLPackage sysmlPackage = MagicDrawManager.getPackageByQualifiedName(projectId + "/packages/" + qualifiedName);
+		edu.gatech.mbsec.adapter.magicdraw.resources.SysMLPackage sysmlPackage = MagicDrawManager.getPackageByQualifiedName(projectId + "/packages/" + qualifiedName);
 	
 		String requestURL = httpServletRequest.getRequestURL().toString();
 		if (sysmlPackage !=null )

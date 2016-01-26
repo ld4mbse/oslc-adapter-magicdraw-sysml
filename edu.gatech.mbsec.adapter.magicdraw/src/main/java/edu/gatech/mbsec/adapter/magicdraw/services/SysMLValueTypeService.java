@@ -33,10 +33,10 @@ import javax.ws.rs.core.Context;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.UriInfo;
 
-import org.eclipse.lyo.adapter.magicdraw.resources.Constants;
-import org.eclipse.lyo.adapter.magicdraw.resources.SysMLAssociationBlock;
-import org.eclipse.lyo.adapter.magicdraw.resources.SysMLRequirement;
-import org.eclipse.lyo.adapter.magicdraw.resources.SysMLValueType;
+import edu.gatech.mbsec.adapter.magicdraw.resources.Constants;
+import edu.gatech.mbsec.adapter.magicdraw.resources.SysMLAssociationBlock;
+import edu.gatech.mbsec.adapter.magicdraw.resources.SysMLRequirement;
+import edu.gatech.mbsec.adapter.magicdraw.resources.SysMLValueType;
 import org.eclipse.lyo.oslc4j.core.annotation.OslcQueryCapability;
 import org.eclipse.lyo.oslc4j.core.annotation.OslcService;
 import org.eclipse.lyo.oslc4j.core.model.OslcConstants;
@@ -72,7 +72,7 @@ public class SysMLValueTypeService {
 	@GET
 	@Produces({ OslcMediaType.APPLICATION_RDF_XML,
 			OslcMediaType.APPLICATION_XML, OslcMediaType.APPLICATION_JSON })
-	public List<org.eclipse.lyo.adapter.magicdraw.resources.SysMLValueType> getValueTypes(
+	public List<edu.gatech.mbsec.adapter.magicdraw.resources.SysMLValueType> getValueTypes(
 			@PathParam("projectId") final String projectId,
 			@QueryParam("oslc.where") final String where,
 			@QueryParam("oslc.select") final String select,
@@ -90,12 +90,12 @@ public class SysMLValueTypeService {
 	@GET
 	@Path("{blockQualifiedName}")
 	@Produces({ OslcMediaType.APPLICATION_RDF_XML, OslcMediaType.APPLICATION_JSON })
-	public org.eclipse.lyo.adapter.magicdraw.resources.SysMLValueType getValueType(
+	public edu.gatech.mbsec.adapter.magicdraw.resources.SysMLValueType getValueType(
 			@PathParam("projectId") final String projectId,
 			@PathParam("blockQualifiedName") final String blockQualifiedName)
 			throws URISyntaxException {
 		MagicDrawManager.loadSysMLProjects();
-		org.eclipse.lyo.adapter.magicdraw.resources.SysMLValueType sysmlValueType = MagicDrawManager
+		edu.gatech.mbsec.adapter.magicdraw.resources.SysMLValueType sysmlValueType = MagicDrawManager
 				.getValueTypeByQualifiedName(projectId + "/valuetypes/" + blockQualifiedName);
 		return sysmlValueType;
 	}
@@ -133,7 +133,7 @@ public class SysMLValueTypeService {
 			@QueryParam("oslc.prefix") final String prefix)
 			throws URISyntaxException, IOException {
 		MagicDrawManager.loadSysMLProjects();
-		org.eclipse.lyo.adapter.magicdraw.resources.SysMLValueType sysmlValueType = 
+		edu.gatech.mbsec.adapter.magicdraw.resources.SysMLValueType sysmlValueType = 
 				MagicDrawManager.getValueTypeByQualifiedName(projectId + "/valuetypes/" + blockQualifiedName);
 	
 		String requestURL = httpServletRequest.getRequestURL().toString();

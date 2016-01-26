@@ -39,9 +39,9 @@
 		<!-- ********************************************************************** --> 
 		
 		<dependency>
-			<groupId>org.eclipse.lyo.adapter.magicdraw</groupId>
+			<groupId>edu.gatech.mbsec.adapter.magicdraw</groupId>
 			<artifactId>oslc4j-magicdraw-resources</artifactId>
-			<version>0.1.0</version>
+			<version>1.1.0</version>
 		</dependency>
 		
 		<!-- ********************************************************************** --> 

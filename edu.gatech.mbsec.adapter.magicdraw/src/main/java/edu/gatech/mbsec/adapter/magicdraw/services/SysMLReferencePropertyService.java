@@ -35,9 +35,9 @@ import javax.ws.rs.core.Context;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.UriInfo;
 
-import org.eclipse.lyo.adapter.magicdraw.resources.Constants;
-import org.eclipse.lyo.adapter.magicdraw.resources.SysMLPartProperty;
-import org.eclipse.lyo.adapter.magicdraw.resources.SysMLReferenceProperty;
+import edu.gatech.mbsec.adapter.magicdraw.resources.Constants;
+import edu.gatech.mbsec.adapter.magicdraw.resources.SysMLPartProperty;
+import edu.gatech.mbsec.adapter.magicdraw.resources.SysMLReferenceProperty;
 import org.eclipse.lyo.oslc4j.core.annotation.OslcCreationFactory;
 import org.eclipse.lyo.oslc4j.core.annotation.OslcName;
 import org.eclipse.lyo.oslc4j.core.annotation.OslcNamespace;
@@ -84,7 +84,7 @@ public class SysMLReferencePropertyService extends HttpServlet{
 	@GET
 	@Produces({ OslcMediaType.APPLICATION_RDF_XML,
 			OslcMediaType.APPLICATION_XML, OslcMediaType.APPLICATION_JSON })
-	public List<org.eclipse.lyo.adapter.magicdraw.resources.SysMLReferenceProperty> getReferenceProperties(
+	public List<edu.gatech.mbsec.adapter.magicdraw.resources.SysMLReferenceProperty> getReferenceProperties(
 			@PathParam("projectId") final String projectId,
 			@QueryParam("oslc.where") final String where,
 			@QueryParam("oslc.select") final String select,
@@ -102,7 +102,7 @@ public class SysMLReferencePropertyService extends HttpServlet{
 	@GET
 	@Path("{propertyQualifiedName}")
 	@Produces({ OslcMediaType.APPLICATION_RDF_XML, OslcMediaType.APPLICATION_JSON})
-	public org.eclipse.lyo.adapter.magicdraw.resources.SysMLReferenceProperty getReferenceProperty(@PathParam("projectId") final String projectId, @PathParam("propertyQualifiedName") final String propertyQualifiedName) throws URISyntaxException  {
+	public edu.gatech.mbsec.adapter.magicdraw.resources.SysMLReferenceProperty getReferenceProperty(@PathParam("projectId") final String projectId, @PathParam("propertyQualifiedName") final String propertyQualifiedName) throws URISyntaxException  {
 		MagicDrawManager.loadSysMLProjects();
 		SysMLReferenceProperty sysMLReferenceProperty = MagicDrawManager.getReferencePropertyByQualifiedName(projectId + "/referenceproperties/" + propertyQualifiedName);
 		return sysMLReferenceProperty;
@@ -140,7 +140,7 @@ public class SysMLReferencePropertyService extends HttpServlet{
 			@QueryParam("oslc.prefix") final String prefix)
 			throws URISyntaxException, IOException {
 		MagicDrawManager.loadSysMLProjects();
-		org.eclipse.lyo.adapter.magicdraw.resources.SysMLReferenceProperty sysmlReferenceProperty = MagicDrawManager.getReferencePropertyByQualifiedName(projectId + "/referenceproperties/" + qualifiedName);
+		edu.gatech.mbsec.adapter.magicdraw.resources.SysMLReferenceProperty sysmlReferenceProperty = MagicDrawManager.getReferencePropertyByQualifiedName(projectId + "/referenceproperties/" + qualifiedName);
 	
 		String requestURL = httpServletRequest.getRequestURL().toString();
 		if (sysmlReferenceProperty !=null )
