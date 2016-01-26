@@ -2,8 +2,8 @@
 Java-based Implementation of OSLC MagicDraw SysML Adapter
 
 
-Instructions to install and run the OSLC MagicDraw SysML Adapter 
-(for v17.0.3, v17.0.4, v17.0.5, v18.0)
+Instructions to install and run the OSLC MagicDraw SysML Adapter: https://github.com/ld4mbse/oslc-adapter-magicdraw-sysml/blob/master/edu.gatech.mbsec.adapter.magicdraw/documentation/Instructions%20to%20install%20and%20execute%20the%20OSLC%20MagicDraw%20SysML%20Adapter%20-%20Deere%20version%20-%20January%2025%202016.docx
+
 
 By Axel Reichwein (axel.reichwein@koneksys.com) 				January 25, 2016
 1.	Installing OSLC4J 
