@@ -99,7 +99,7 @@ String modelName = (String) request.getAttribute("projectId");
 
 
 	<!-- footer -->
-	<p id="footer">OSLC MagicDraw Adapter 1.1</a>
+	<p id="footer">OSLC MagicDraw Adapter 1.1</p>
 	 
 </body>
 </html>

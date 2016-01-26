@@ -58,7 +58,7 @@ import javax.ws.rs.core.Response;
 import javax.ws.rs.core.UriInfo;
 import javax.ws.rs.core.Response.ResponseBuilder;
 
-import org.eclipse.lyo.adapter.subversion.SubversionManager;
+import edu.gatech.mbsec.adapter.subversion.SubversionManager;
 import org.eclipse.lyo.oslc4j.core.annotation.OslcCreationFactory;
 import org.eclipse.lyo.oslc4j.core.annotation.OslcQueryCapability;
 import org.eclipse.lyo.oslc4j.core.annotation.OslcService;

@@ -39,7 +39,7 @@ import javax.ws.rs.core.Context;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response.Status;
 
-import org.eclipse.lyo.adapter.subversion.SubversionManager;
+import edu.gatech.mbsec.adapter.subversion.SubversionManager;
 import org.eclipse.lyo.oslc4j.core.annotation.OslcDialog;
 import org.eclipse.lyo.oslc4j.core.annotation.OslcQueryCapability;
 import org.eclipse.lyo.oslc4j.core.annotation.OslcService;

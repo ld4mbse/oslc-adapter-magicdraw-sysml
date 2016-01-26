@@ -26,7 +26,7 @@
 <%@ page import="org.eclipse.lyo.oslc4j.core.model.Link"%>
 <%@ page import="java.net.URI"%>
 <%@ page import="java.util.Collection" %>
-<%@ page import="org.eclipse.lyo.adapter.subversion.SubversionFile" %>
+<%@ page import="edu.gatech.mbsec.adapter.subversion.SubversionFile" %>
 <%@ page import="org.eclipse.lyo.oslc4j.core.model.AbstractResource"%>
 <%
 Collection<AbstractResource> elements = (Collection<AbstractResource>) request.getAttribute("elements");

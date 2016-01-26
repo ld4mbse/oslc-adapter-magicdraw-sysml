@@ -93,7 +93,7 @@ String requestURL = (String)request.getAttribute("requestURL");
 
 
 	<!-- footer -->
-	<p id="footer">OSLC MagicDraw Adapter 1.1</a>
+	<p id="footer">OSLC MagicDraw Adapter 1.1</p>
 	 
 </body>
 </html>

@@ -43,7 +43,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.ws.rs.WebApplicationException;
 import javax.ws.rs.core.Response.Status;
 
-import org.eclipse.lyo.adapter.subversion.SubversionServiceProviderFactory;
+import edu.gatech.mbsec.adapter.subversion.SubversionServiceProviderFactory;
 import org.eclipse.lyo.oslc4j.client.ServiceProviderRegistryURIs;
 import org.eclipse.lyo.oslc4j.core.exception.OslcCoreApplicationException;
 import org.eclipse.lyo.oslc4j.core.model.Publisher;

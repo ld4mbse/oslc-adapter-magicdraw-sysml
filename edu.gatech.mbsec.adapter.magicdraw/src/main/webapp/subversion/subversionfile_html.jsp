@@ -25,7 +25,7 @@
 <%@ page import="org.eclipse.lyo.oslc4j.core.model.ServiceProvider"%>
 <%@ page import="org.eclipse.lyo.oslc4j.core.model.Link"%>
 <%@ page import="java.net.URI"%>
-<%@ page import="org.eclipse.lyo.adapter.subversion.SubversionFile" %>
+<%@ page import="edu.gatech.mbsec.adapter.subversion.SubversionFile" %>
 	
 <%
 
