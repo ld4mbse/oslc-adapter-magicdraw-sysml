@@ -62,7 +62,7 @@ String requestURL = (String)request.getAttribute("requestURL");
 				</a><br> Adapter Publisher: <a class="notfancy"
 					href="http://www.mbsec.gatech.edu/research/oslc" target="_blank">Georgia
 					Institute of Technology OSLC Tools Project</a><br> Adapter
-				Identity: org.eclipse.lyo.adapter.magicdraw
+				Identity: edu.gatech.mbsec.adapter.magicdraw
 			</p>
 		</div>
 		<br>

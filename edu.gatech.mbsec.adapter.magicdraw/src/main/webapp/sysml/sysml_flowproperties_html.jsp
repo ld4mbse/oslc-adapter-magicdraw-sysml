@@ -62,7 +62,7 @@ String modelName = (String) request.getAttribute("projectId");
 				</a><br> Adapter Publisher: <a class="notfancy"
 					href="http://www.mbsec.gatech.edu/research/oslc" target="_blank">Georgia
 					Institute of Technology OSLC Tools Project</a><br> Adapter
-				Identity: org.eclipse.lyo.adapter.magicDraw
+				Identity: edu.gatech.mbsec.adapter.magicDraw
 			</p>
 		</div>
 		<br>
