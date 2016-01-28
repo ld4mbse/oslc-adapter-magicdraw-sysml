@@ -397,7 +397,7 @@ public class OSLC4JMagicDrawApplication extends OslcWinkApplication {
 		Thread thread = new Thread() {
 			public void start() {
 				ArrayList<FileMetadata> fileMetaDatas = SubversionClient.syncWorkingCopy(svnurl,
-						magicdrawModelsDirectory);
+						magicdrawModelsDirectory, svnUserName, svnPassword);
 				// convert fileMetaDatas into OSLC POJOs
 				subversionManager.convertFileMetaDataIntoRDFSubversionFileResources(fileMetaDatas);
 			}
