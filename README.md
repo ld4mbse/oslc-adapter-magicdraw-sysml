@@ -6,12 +6,26 @@
 
 | SysML Concept  	| GET	| POST	| PUT	| 	DELETE	|
 | ------------- 	| ------|-------|----	|------		|
-| Block  		| X  	| X 	|  	| 		|
-| Model  		| X 	| 	| 	| 		|
-| Line  		| X 	| X	| 	| 		|
-| Input Port  		| X 	| X	| 	| 		|
-| OutputPort  		| X 	| X	| 	| 		|
-| Parameter  		| X 	| X	| X	| 		|
+| Model  		| X  	| X 	|  	| 		|
+| Package  		| X 	| 	| 	| 		|
+| Requirement  		| X 	| X	| 	| 		|
+| Block  		| X 	| X	| 	| 		|
+| InterfaceBlock  	| X 	| X	| 	| 		|
+| AssociationBlock	| X 	| X	| X	| 		|
+| Property	| X 	| X	| X	| 		|
+| PartProperty	| X 	| X	| X	| 		|
+| ReferenceProperty	| X 	| X	| X	| 		|
+| FlowProperty	| X 	| X	| X	| 		|
+| ValueProperty	| X 	| X	| X	| 		|
+| Association	| X 	| X	| X	| 		|
+| Port	| X 	| X	| X	| 		|
+| ProxyPort	| X 	| X	| X	| 		|
+| FullPort	| X 	| X	| X	| 		|
+| Connector	| X 	| X	| X	| 		|
+| ConnectorEnd	| X 	| X	| X	| 		|
+| FlowDirection	| X 	| X	| X	| 		|
+| ItemFlow	| X 	| X	| X	| 		|
+| ValueType	| X 	| X	| X	| 		|
 
 
 
