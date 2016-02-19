@@ -18,7 +18,7 @@
 | FlowProperty	| X 	| X	| 	| 		|
 | ValueProperty	| X 	| X	| X	| 		|
 | Association	| X 	| X	| 	| 		|
-| Port	| X 	| X	| X	| 		|
+| Port	| X 	| X	| 	| 		|
 | ProxyPort	| X 	| X	| 	| 		|
 | FullPort	| X 	| X	| 	| 		|
 | Connector	| X 	| X	| 	| 		|
