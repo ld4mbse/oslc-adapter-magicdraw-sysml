@@ -7,7 +7,7 @@ for v17.0.3, v17.0.4, v17.0.5, v18.0. Updates for v18.2 will come soon.
 | SysML Concept  	| GET	| POST	| PUT	| 	DELETE	|
 | ------------- 	| ------|-------|----	|------		|
 | Model  		| X  	|  	|  	| 		|
-| Package  		| X 	| 	| 	| 		|
+| Package  		| X 	| X	| 	| 		|
 | Requirement  		| X 	| X	| 	| 		|
 | Block  		| X 	| X	| 	| 		|
 | InterfaceBlock  	| X 	| X	| 	| 		|
