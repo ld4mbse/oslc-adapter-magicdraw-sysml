@@ -11,21 +11,21 @@
 | Requirement  		| X 	| X	| 	| 		|
 | Block  		| X 	| X	| 	| 		|
 | InterfaceBlock  	| X 	| X	| 	| 		|
-| AssociationBlock	| X 	| X	| X	| 		|
-| Property	| X 	| X	| X	| 		|
-| PartProperty	| X 	| X	| X	| 		|
-| ReferenceProperty	| X 	| X	| X	| 		|
-| FlowProperty	| X 	| X	| X	| 		|
+| AssociationBlock	| X 	| X	| 	| 		|
+| Property	| X 	| X	| 	| 		|
+| PartProperty	| X 	| X	| 	| 		|
+| ReferenceProperty	| X 	| 	| 	| 		|
+| FlowProperty	| X 	| X	| 	| 		|
 | ValueProperty	| X 	| X	| X	| 		|
-| Association	| X 	| X	| X	| 		|
+| Association	| X 	| X	| 	| 		|
 | Port	| X 	| X	| X	| 		|
-| ProxyPort	| X 	| X	| X	| 		|
-| FullPort	| X 	| X	| X	| 		|
-| Connector	| X 	| X	| X	| 		|
-| ConnectorEnd	| X 	| X	| X	| 		|
-| FlowDirection	| X 	| X	| X	| 		|
-| ItemFlow	| X 	| X	| X	| 		|
-| ValueType	| X 	| X	| X	| 		|
+| ProxyPort	| X 	| X	| 	| 		|
+| FullPort	| X 	| X	| 	| 		|
+| Connector	| X 	| X	| 	| 		|
+| ConnectorEnd	| X 	| X	| 	| 		|
+| FlowDirection	| X 	| X	| 	| 		|
+| ItemFlow	| X 	| X	| 	| 		|
+| ValueType	| X 	| X	| 	| 		|
 
 
 
