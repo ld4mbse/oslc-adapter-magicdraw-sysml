@@ -14,7 +14,7 @@
 | AssociationBlock	| X 	| X	| 	| 		|
 | Property	| X 	| X	| 	| 		|
 | PartProperty	| X 	| X	| 	| 		|
-| ReferenceProperty	| X 	| 	| 	| 		|
+| ReferenceProperty	| X 	| X	| 	| 		|
 | FlowProperty	| X 	| X	| 	| 		|
 | ValueProperty	| X 	| X	| X	| 		|
 | Association	| X 	| X	| 	| 		|
