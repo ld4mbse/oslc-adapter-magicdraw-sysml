@@ -1,6 +1,6 @@
 #OSLC MagicDraw SysML Adapter
 
-
+for v17.0.3, v17.0.4, v17.0.5, v18.0. Updates for v18.2 will come soon.
 
 ## Overview of RESTful web services 
 
@@ -37,7 +37,7 @@
 
 
 
-##Instructions to install and run OSLC MagicDraw SysML Adapter (for v17 up to 18.1)
+##Instructions to install and run OSLC MagicDraw SysML Adapter 
 
 Last updated by Axel Reichwein (axel.reichwein@koneksys.com) 				February 16, 2016
 ### 1.	Installing OSLC4J
@@ -68,7 +68,31 @@ Follow the [Instructions to install edu.gatech.mbsec.adapter.subversion](https:/
 2.	The 3 projects are in the Eclipse workspace
 
 
-### 6. Building the edu.gatech.mbsec.adapter.magicdraw projects
+### 6.	Choosing the MagicDraw-specific pom file
+
+1. By default, the pom.xml file is set up for MagicDraw 18.0.1 sp1. If you are using MagicDraw 18.0, you can skip this installation step. If you are using a different MagicDraw version, such as 17.0.4 or 17.0.5, you will need to go through the next steps.
+2. Each MagicDraw version comes with a different set of jars which need to be loaded on the Java classpath in order to use the MagicDraw API. The Maven pom.xml file refers to the jars which need to be on the Java classpath. In the folder named pom files for specific MagicDraw versions, 
+ 1. select the pom file adequate to your version. For example, for MagicDraw 17.0.4 SP2, select the pom file named “pom for MagicDraw 17.0.4 SP2”. 
+ 2. Copy the file under the project root, so under the project named edu.gatech.mbsec.adapter.magicdraw. 
+ 3. Then delete the pom.xml file which was already under the project root, 
+ 4. and rename the pom file you have just copied into the project root to pom.xml
+
+
+### 7.	Adding Proprietary MagicDraw Jars and documents to the project
+
+1. In Eclipse, open the Project Explorer view. (Window → Show View → Project Explorer)
+2. Expand the edu.gatech.mbsec.adapter.magicdraw project
+3. Select and open the maven pom.xml file through double-click
+4. The pom.xml file contains several tabs. By default, the overview tab will be displayed. The various available tabs are displayed at the bottom of the editor window as shown in the figure below. Click on the pom.xml tab of the pom.xml file as highlighted below.
+5. In the pom.xml tab of the pom.xml file, specify the location of the MagicDraw installation directory in the properties section as highlighted below. 
+```xml
+	<properties>
+		<magicdraw.installdir>C:\Program Files\MagicDraw\</magicdraw.installdir>
+	</properties>
+```
+
+
+### 8. Building the edu.gatech.mbsec.adapter.magicdraw projects
 
 1.	In Eclipse, open the Project Explorer view. (Window → Show View → Project Explorer)
 2.	Expand the edu.gatech.mbsec.adapter.magicdraw.ecore project
@@ -91,7 +115,7 @@ Follow the [Instructions to install edu.gatech.mbsec.adapter.subversion](https:/
 4. Select the project, right-click -> Properties. Select Java Compiler and select 1.8 in the drop down menu next to the JDK compliance setting as highlighted below.
 
 
-### 7.	Manual configuration 
+### 9.	Manual configuration 
 
 Specify the port number of the OSLC SysML adapter service of in the config.properties file under edu.gatech.mbsec.adapter.magicdraw/configuration. By default, port 8080 will be used. As an example displayed below, the port number is set to 8080.
 
@@ -159,23 +183,10 @@ C:/Users/…/git/oslc4jmagicdraw/edu.gatech.mbsec.adapter.magicdraw/localworking
 Note: The contents of this folder will be deleted when the adapter starts in individualSubversionFile mode.  
 Warning: Do not choose as local Subversion file storage the same folder as the one containing all sample SysML models, nor the one containing the local SysML models models without Subversion info.  
  
-
-### 8.	Setting up the Matlab workspace
-1.	Launch Matlab 
-2.	From the File menu, select Set Path…(if your Matlab version has a ribbon-based user interface such as inR2013, choose Set Path in the Home ribbon in the Environment section)
-3.	Use the **Add Folder…** command to add the matlab folder of the oslc4jmagicdraw project to the Matlab search path based on the location of your local git repository
-4. Use the **Add with Subfolders…** command to add the folder in the oslc4jmagicdraw project containing SysML models, or local working copies of Subversion files, to the Matlab search path. For example, based on the settings in Step #5, the concerned folder would have as path in “local mode”  
- ```text
-C:/Users/…/git/oslc4jmagicdraw/edu.gatech.mbsec.adapter.magicdraw/SysML Models/
-```
-  and in “SVN repository mode” and “Individual SVN files mode”:
-  ```text
-  C:/Users/…/git/oslc4jmagicdraw/edu.gatech.mbsec.adapter.magicdraw/localworkingdirs
- ```
-5.	Click Save and then Close
  
 
-### 9. Installing Apache Tomcat
+
+### 10. Installing Apache Tomcat
 
 *Optional: This step is only necessary if you want to use a specific Tomcat instance instead of the Tomcat instance embedded in Eclipse and downloaded by the Maven Tomcat plugin. This step is only necessary if you want:*
 - *to deploy the SysML adapter on a specific Tomcat instance (possibly with specific configurations)*
@@ -255,7 +266,7 @@ In the maven user/.m2/ (Example: C:\Users\Axel\.m2) folder, add in settings.xml 
 Note: you can still use Tomcat 8 with the Tomcat 7 Maven plugin even though it only officially supports Tomcat 7. There is no Tomcat Maven plugin for Tomcat 8 at this point. 
 
 
-### 10.	Installing the Chrome/Firefox Postman plugin (or any REST client)
+### 11.	Installing the Chrome/Firefox Postman plugin (or any REST client)
 
 *Optional - only useful if you want to use this REST client*
 
@@ -263,7 +274,7 @@ Note: you can still use Tomcat 8 with the Tomcat 7 Maven plugin even though it o
 2.	*And the [Postman launcher](https://chrome.google.com/webstore/detail/postman-launcher/igofndmniooofoabmmpfonmdnhgchoka?hl=en)*
 
 
-### 11.	Launching the OSLC SysML Adapter
+### 12.	Launching the OSLC SysML Adapter
 
 There are several options
 
@@ -287,7 +298,7 @@ There are several options
 
 
 #### Option #1: Deploying OSLC SysML adapter on Tomcat server embedded in Eclipse launched through Maven
-Select the oslc4jmagicdraw launch configuration (Run -> Run Configurations… and select in the Maven build category the launch configuration named **oslc adapter for magicdraw** and click Run. In the console window, several logging related exceptions will appear (SLF4J and log4j). This is not critical.
+Select the oslc4jmagicdraw launch configuration (Run -> Run Configurations… and select in the Maven build category the launch configuration named **oslc adapter for magicdraw tomcat run** and click Run. In the console window, several logging related exceptions will appear (SLF4J and log4j). This is not critical.
 
 Warning: If the OSLC SysML adapter service fails to launch due to a java.net.BindException, a different port for the OSLC SysML adapter needs to be used since there is a conflict with another service using the same port. By default, the OSLC SysML adapter uses port 8080. A java.net.BindException means that a different service is already using this port. Go back to Steps #5 and #10 to change the port number.
 
@@ -311,7 +322,7 @@ Note: If you launch the Maven launch configuration (OSLC SysML adapter) in debug
 	4. In the Deploy section, select the WAR file to upload using the dialog shown below.
 
 #### Option #3: Deploying OSLC SysML adapter on standalone Tomcat server automatically from Eclipse
-Run the Maven launch configuration named **oslc adapter for magicdraw tomcat deploy**
+Run the Maven launch configuration named **oslc adapter for magicdraw - tomcat deploy**
 
 #### Option #4: Deploying OSLC SysML adapter on standalone Tomcat server automatically from Eclipse in debug mode
 
@@ -329,12 +340,12 @@ setlocal
 7. And then run the Maven launch configuration named **oslc4jmagicdraw tomcat deploy debug**
 
 
-### 12.	Testing the OSLC SysML Adapter
+### 13.	Testing the OSLC SysML Adapter
 
 #### Testing the retrieval of OSLC resources in HTML
 
 1. Launch your web browser Google Chrome
-2. In the URL field, type for test purposes: [http://localhost:8080/oslc4jmagicdraw/services/catalog/singleton](http://localhost:8080/oslc4jmagicdraw/services/catalog/singleton). This will send a HTTP GET request to retrieve the HTML representation of the SysML Service Provider Catalog. This will launch a Matlab command window which will close automatically. The Matlab command window may display warnings if it is an older version than R2013b.
+2. In the URL field, type for test purposes: [http://localhost:8080/oslc4jmagicdraw/services/catalog/singleton](http://localhost:8080/oslc4jmagicdraw/services/catalog/singleton). This will send a HTTP GET request to retrieve the HTML representation of the SysML Service Provider Catalog. 
 3. You will then see an HTML page showing you the list of Service Providers. You can browse from the Service Providers (e.g. for model11) to the Services and ultimately to the OSLC SysML resources.
 
 
