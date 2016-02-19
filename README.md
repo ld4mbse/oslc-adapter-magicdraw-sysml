@@ -6,7 +6,7 @@
 
 | SysML Concept  	| GET	| POST	| PUT	| 	DELETE	|
 | ------------- 	| ------|-------|----	|------		|
-| Model  		| X  	| X 	|  	| 		|
+| Model  		| X  	|  	|  	| 		|
 | Package  		| X 	| 	| 	| 		|
 | Requirement  		| X 	| X	| 	| 		|
 | Block  		| X 	| X	| 	| 		|
@@ -25,7 +25,13 @@
 | ConnectorEnd	| X 	| X	| 	| 		|
 | FlowDirection	| X 	| X	| 	| 		|
 | ItemFlow	| X 	| X	| 	| 		|
-| ValueType	| X 	| X	| 	| 		|
+| ValueType	| X 	| 	| 	| 		|
+| Unit	| X 	| 	| 	| 		|
+| QuantityKind	| X 	| 	| 	| 		|
+| BlockDiagram	| X 	| 	| 	| 		|
+| InternalBlockDiagram	| X 	| 	| 	| 		|
+| BoundReference	| X 	| 	| 	| 		|
+
 
 
 
