@@ -38,7 +38,7 @@ import javax.xml.datatype.DatatypeConfigurationException;
 
 import edu.gatech.mbsec.adapter.magicdraw.resources.SysMLBlock;
 import edu.gatech.mbsec.adapter.magicdraw.resources.SysMLValueProperty;
-import org.eclipse.lyo.adapter.subversion.SubversionFile;
+import edu.gatech.mbsec.adapter.subversion.SubversionFile;
 import org.eclipse.lyo.oslc4j.core.exception.OslcCoreApplicationException;
 import org.eclipse.lyo.oslc4j.core.model.AbstractResource;
 import org.eclipse.lyo.oslc4j.core.model.QueryCapability;
