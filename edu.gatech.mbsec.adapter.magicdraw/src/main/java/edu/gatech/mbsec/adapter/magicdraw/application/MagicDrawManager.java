@@ -2344,10 +2344,12 @@ public class MagicDrawManager {
 		return sysMLRequirement;
 	}
 
-	public static List<SysMLRequirement> getRequirements() {
+	public static List<SysMLRequirement> getRequirements(String projectName) {
 		List<SysMLRequirement> sysMLRequirements = new ArrayList<SysMLRequirement>();
 		for (String id : idOslcSysmlRequirementMap.keySet()) {
-			sysMLRequirements.add(idOslcSysmlRequirementMap.get(id));
+			if(id.startsWith(projectName + "/requirements/")){
+				sysMLRequirements.add(idOslcSysmlRequirementMap.get(id));
+			}		
 		}
 		return sysMLRequirements;
 	}
@@ -2864,6 +2866,109 @@ public class MagicDrawManager {
 
 	}
 
+	public static void createSysMLRequirement2(SysMLRequirement sysmlRequirement, String projectId2) {
+
+		ProjectsManager projectsManager = magicdrawApplication.getProjectsManager();
+		final File sysmlfile = new File(magicdrawModelsDirectory + projectId2 + ".mdzip");
+		ProjectDescriptor projectDescriptor = ProjectDescriptorsFactory.createProjectDescriptor(sysmlfile.toURI());
+		if (project == null) {
+			projectsManager.loadProject(projectDescriptor, true);
+
+			project = magicdrawApplication.getProject();
+		}
+		if (!SessionManager.getInstance().isSessionCreated()) {
+			SessionManager.getInstance().createSession("MagicDraw OSLC Session for projectId" + projectId + sessionID);
+			sessionID++;
+		}
+
+		// get element name
+		String newElementQualifiedName = getQualifiedNameFromURI(sysmlRequirement.getAbout());
+		String newElementName = getNameFromQualifiedName(newElementQualifiedName);
+
+		// only create element if it doesn't yet exist
+		boolean elementExists = false;
+		if(idOslcSysmlRequirementMap.keySet().contains(projectId2 + "/requirements/" + sysmlRequirement.getIdentifier())){
+			elementExists = true;
+		}
+		
+//		for (String requirementID : idOslcSysmlRequirementMap.keySet()) {
+//			if (mdBlock.getQualifiedName().replaceAll("\\n", "-").replaceAll(" ", "_")
+//					.equals(newElementQualifiedName)) {
+//				elementExists = true;
+//				break;
+//			}
+//		}
+		
+		// if(MagicDrawManager
+		// .getBlockByQualifiedName(projectId2 + "/blocks/" +
+		// newElementQualifiedName) != null){
+		// elementExists = true;
+		// }
+
+		if (!elementExists) {
+			ElementsFactory elementsFactory = project.getElementsFactory();
+			com.nomagic.uml2.ext.magicdraw.classes.mdkernel.Class newMDBlock = elementsFactory.createClassInstance();
+			
+			Stereotype blockStereotype = StereotypesHelper.getStereotype(Application.getInstance().getProject(),
+					SysMLConstants.REQUIREMENT_STEREOTYPE, SysMLConstants.SYSML_PROFILE);
+			StereotypesHelper.addStereotype(newMDBlock, blockStereotype);
+			newMDBlock.setName(newElementName);
+
+			
+			// TODO: currently, requirements can only be owned by the top level project (not by packages)
+			
+//			// set owner
+//			URI ownerURI = sysmlRequirement.getOwner();
+//			String ownerURIString = ownerURI.getRawPath();
+//			ownerURIString = ownerURIString.replace("/oslc4jmagicdraw/services/", "");
+//			String[] ownerElementStrings = ownerURIString.split("/");
+//			String ownerType = ownerElementStrings[1];
+//			String ownerQualifiedName = ownerElementStrings[2];
+
+			
+//			if (ownerType.equals("model")) {
+				Model model = project.getModel();
+				newMDBlock.setOwner(model);
+//			} else if (ownerType.equals("packages")) {
+//				for (com.nomagic.uml2.ext.magicdraw.classes.mdkernel.Package mdPackage : projectIdMDSysmlPackagesMap
+//						.get(projectId2)) {
+//					if (mdPackage.getQualifiedName().replaceAll("\\n", "-").replaceAll(" ", "_")
+//							.equals(ownerQualifiedName)) {
+//						newMDBlock.setOwner(mdPackage);
+//						break;
+//					}
+//				}
+//			} else if (ownerType.equals("blocks")) {
+//				for (com.nomagic.uml2.ext.magicdraw.classes.mdkernel.Class mdBlock : projectIdMDSysmlBlocksMap
+//						.get(projectId2)) {
+//					if (mdBlock.getQualifiedName().replaceAll("\\n", "-").replaceAll(" ", "_")
+//							.equals(ownerQualifiedName)) {
+//						newMDBlock.setOwner(mdBlock);
+//						break;
+//					}
+//				}
+//			}
+
+			
+
+			
+
+			// adding the new requirement to the list of MagicDraw SysML requirements
+			projectIdMDSysmlRequirementsMap.get(projectId2).add(newMDBlock);
+			//qNameOslcSysmlRequirementMap.put(projectId2 + "/requirements/" + getQualifiedNameOrID(newMDBlock), sysmlRequirement);
+			idOslcSysmlRequirementMap.put(projectId2 + "/requirements/" + sysmlRequirement.getIdentifier(), sysmlRequirement);
+			
+			// close session
+			SessionManager.getInstance().closeSession();
+
+			// saves project (need to take new project descriptor)
+			projectDescriptor = ProjectDescriptorsFactory.getDescriptorForProject(project);
+			projectsManager.saveProject(projectDescriptor, true);
+
+		}
+	}
+	
+	
 	public static void createSysMLBlock(SysMLBlock sysmlBlock, String projectId2) {
 
 		ProjectsManager projectsManager = magicdrawApplication.getProjectsManager();
