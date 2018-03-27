@@ -10,7 +10,7 @@
 	<name>oslc4jmagicdraw</name>
 	
 	<properties>
-		<magicdraw.installdir>C:\Program Files\MagicDraw\</magicdraw.installdir>
+		<magicdraw.installdir>C:\Program Files\MagicDraw</magicdraw.installdir>
 	</properties>
 	
 	<dependencies>
@@ -249,14 +249,15 @@
 			<systemPath>${magicdraw.installdir}/lib/EccpressoAll.jar</systemPath>
 		</dependency>
 		
-		 
+		
 		<dependency>
 			<groupId>com.magicdraw.application</groupId>
 			<artifactId>ehcache-core-2.2.0</artifactId>
 			<version>17.0.5</version>
 			<scope>system</scope>
-			<systemPath>${magicdraw.installdir}/lib/ehcache-core-2.2.0.jar</systemPath>
+			<systemPath>${magicdraw.installdir}/lib/ehcache-2.10.1.jar</systemPath>
 		</dependency>
+		
 		
 		<dependency>
 			<groupId>com.magicdraw.application</groupId>
@@ -754,6 +755,7 @@
 			<systemPath>${magicdraw.installdir}/lib/org.eclipse.emf.common_2.7.0.v20110513-1719.jar</systemPath>
 		</dependency>
 
+<!-- 
 		<dependency>
 			<groupId>com.magicdraw.application</groupId>
 			<artifactId>org.eclipse.emf.ecore.change_2.7.0.v20110408-2116</artifactId>
@@ -777,7 +779,7 @@
 			<scope>system</scope>
 			<systemPath>${magicdraw.installdir}/lib/org.eclipse.emf.ecore_2.7.0.v20110513-1719.jar</systemPath>
 		</dependency>
-
+ -->
 		<dependency>
 			<groupId>com.magicdraw.application</groupId>
 			<artifactId>org.eclipse.emf.transaction_1.4.0.v20100331-1738</artifactId>
@@ -817,7 +819,7 @@
 			<scope>system</scope>
 			<systemPath>${magicdraw.installdir}/lib/org.eclipse.ocl.ecore.edit.source_3.0.0.R30x_v201008251030.jar</systemPath>
 		</dependency>
-
+<!--  
 		<dependency>
 			<groupId>com.magicdraw.application</groupId>
 			<artifactId>org.eclipse.ocl.ecore.edit_3.0.0.R30x_v201008251030</artifactId>
@@ -825,7 +827,7 @@
 			<scope>system</scope>
 			<systemPath>${magicdraw.installdir}/lib/org.eclipse.ocl.ecore.edit_3.0.0.R30x_v201008251030.jar</systemPath>
 		</dependency>
-
+-->
 		<dependency>
 			<groupId>com.magicdraw.application</groupId>
 			<artifactId>org.eclipse.ocl.ecore.source_3.0.1.R30x_v201008251030</artifactId>
@@ -833,7 +835,7 @@
 			<scope>system</scope>
 			<systemPath>${magicdraw.installdir}/lib/org.eclipse.ocl.ecore.source_3.0.1.R30x_v201008251030.jar</systemPath>
 		</dependency>
-
+<!--  
 		<dependency>
 			<groupId>com.magicdraw.application</groupId>
 			<artifactId>org.eclipse.ocl.ecore_3.0.1.R30x_v201008251030</artifactId>
@@ -841,7 +843,7 @@
 			<scope>system</scope>
 			<systemPath>${magicdraw.installdir}/lib/org.eclipse.ocl.ecore_3.0.1.R30x_v201008251030.jar</systemPath>
 		</dependency>
-
+-->
 		<dependency>
 			<groupId>com.magicdraw.application</groupId>
 			<artifactId>org.eclipse.ocl.source_3.0.1.R30x_v201008251030</artifactId>
@@ -849,7 +851,7 @@
 			<scope>system</scope>
 			<systemPath>${magicdraw.installdir}/lib/org.eclipse.ocl.source_3.0.1.R30x_v201008251030.jar</systemPath>
 		</dependency>
-
+<!--  
 		<dependency>
 			<groupId>com.magicdraw.application</groupId>
 			<artifactId>org.eclipse.ocl_3.0.1.R30x_v201008251030</artifactId>
@@ -857,7 +859,7 @@
 			<scope>system</scope>
 			<systemPath>${magicdraw.installdir}/lib/org.eclipse.ocl_3.0.1.R30x_v201008251030.jar</systemPath>
 		</dependency>
-
+-->
 		<dependency>
 			<groupId>com.magicdraw.application</groupId>
 			<artifactId>org.eclipse.osgi_3.7.0.v20110513</artifactId>
@@ -1125,7 +1127,7 @@
 			<version>17.0.5</version>
 			<scope>system</scope>
 			<systemPath>${magicdraw.installdir}/plugins/com.nomagic.magicdraw.sysml/sysml.jar</systemPath>
-		</dependency>
+		</dependency> 
 
 		<!-- ********************************************************************** --> 
 		<!-- Subversion client module --> 
