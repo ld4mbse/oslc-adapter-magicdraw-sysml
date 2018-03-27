@@ -27,6 +27,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.swing.JOptionPane;
+import javax.ws.rs.Consumes;
 import javax.ws.rs.GET;
 import javax.ws.rs.POST;
 import javax.ws.rs.Path;
@@ -40,6 +41,7 @@ import javax.ws.rs.core.Response;
 import javax.ws.rs.core.UriInfo;
 
 import edu.gatech.mbsec.adapter.magicdraw.resources.Constants;
+import edu.gatech.mbsec.adapter.magicdraw.resources.SysMLBlock;
 import edu.gatech.mbsec.adapter.magicdraw.resources.SysMLReferenceProperty;
 import edu.gatech.mbsec.adapter.magicdraw.resources.SysMLRequirement;
 import org.eclipse.lyo.oslc4j.core.annotation.OslcCreationFactory;
@@ -97,7 +99,7 @@ public class SysMLRequirementService extends HttpServlet {
 			@QueryParam("oslc.pageSize") final String pageSize)
 			throws IOException, ServletException {
 		MagicDrawManager.loadSysMLProjects();
-		return MagicDrawManager.getRequirements();
+		return MagicDrawManager.getRequirements(projectId);
 	}
 	
 	@GET
@@ -116,7 +118,7 @@ public class SysMLRequirementService extends HttpServlet {
     public void getHtmlRequirements(@PathParam("projectId") final String projectId)
     {				
 		MagicDrawManager.loadSysMLProjects();
-		List<SysMLRequirement> sysmlRequirements = MagicDrawManager.getRequirements();		
+		List<SysMLRequirement> sysmlRequirements = MagicDrawManager.getRequirements(projectId);		
 		String requestURL = httpServletRequest.getRequestURL().toString();
     	if (sysmlRequirements !=null )
     	{        
@@ -161,31 +163,53 @@ public class SysMLRequirementService extends HttpServlet {
     	}	
 	}
 	
+	
+//	@POST
+//	@Produces({ OslcMediaType.APPLICATION_RDF_XML,
+//			OslcMediaType.APPLICATION_XML, OslcMediaType.APPLICATION_JSON })
+//	public SysMLRequirement addRequirement(@PathParam("projectId") final String projectId)
+//			throws IOException, ServletException {		
+////		MagicDrawManager.loadSysMLProjects();
+//		MagicDrawManager.makeSysMLProjectActive(projectId);
+//		// get element name from HTTP header, header = "NewElementName", Value =
+//		// "MyNewPackage"
+//		String newElementName = httpServletRequest.getHeader("NewElementName");
+//		if (newElementName == null) {
+//			newElementName = "NewElement";
+//		}
+//
+//		// get owner name from HTTP header, header = "OwnerName", Value =
+//		// "MyNewPackage"
+//		String ownerName = httpServletRequest.getHeader("OwnerName");
+//		if (ownerName == null) {
+//			return null;
+//		}
+//
+//		final SysMLRequirement newSysMLRequirement = MagicDrawManager
+//				.createSysMLRequirement(newElementName, ownerName, projectId);
+//		return newSysMLRequirement;
+//	}
+	
 	@OslcCreationFactory(title = "SysML Requirement Creation Factory", label = "SysML Requirement Creation", resourceShapes = { OslcConstants.PATH_RESOURCE_SHAPES
 			+ "/" + Constants.PATH_SYSML_REQUIREMENT }, resourceTypes = { Constants.TYPE_SYSML_REQUIREMENT }, usages = { OslcConstants.OSLC_USAGE_DEFAULT })
 	@POST
+	@Consumes({ OslcMediaType.APPLICATION_RDF_XML,
+			OslcMediaType.APPLICATION_XML, OslcMediaType.APPLICATION_JSON })
 	@Produces({ OslcMediaType.APPLICATION_RDF_XML,
 			OslcMediaType.APPLICATION_XML, OslcMediaType.APPLICATION_JSON })
-	public SysMLRequirement addRequirement(@PathParam("projectId") final String projectId)
-			throws IOException, ServletException {		
+	public Response addRequirement(@PathParam("projectId") final String projectId,
+			final SysMLRequirement sysmlRequirement) throws IOException, ServletException {
+		System.out.println(sysmlRequirement.getName());
 //		MagicDrawManager.loadSysMLProjects();
+//		MagicDrawManager.loadSysMLProject(projectId);
 		MagicDrawManager.makeSysMLProjectActive(projectId);
-		// get element name from HTTP header, header = "NewElementName", Value =
-		// "MyNewPackage"
-		String newElementName = httpServletRequest.getHeader("NewElementName");
-		if (newElementName == null) {
-			newElementName = "NewElement";
-		}
-
-		// get owner name from HTTP header, header = "OwnerName", Value =
-		// "MyNewPackage"
-		String ownerName = httpServletRequest.getHeader("OwnerName");
-		if (ownerName == null) {
-			return null;
-		}
-
-		final SysMLRequirement newSysMLRequirement = MagicDrawManager
-				.createSysMLRequirement(newElementName, ownerName, projectId);
-		return newSysMLRequirement;
+		
+		// make sure that the correct MagicDraw project is set as active and is loaded
+		// global project variable of MagicDrawManager points to the last loaded project
+		
+		
+		MagicDrawManager.createSysMLRequirement2(sysmlRequirement, projectId);
+		URI about = sysmlRequirement.getAbout();
+		return Response.created(about).entity(sysmlRequirement).build();
 	}
 }
