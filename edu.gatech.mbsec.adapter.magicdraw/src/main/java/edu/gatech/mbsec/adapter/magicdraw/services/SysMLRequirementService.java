@@ -199,13 +199,11 @@ public class SysMLRequirementService extends HttpServlet {
 			OslcMediaType.APPLICATION_XML, OslcMediaType.APPLICATION_JSON })
 	public Response addRequirement(@PathParam("projectId") final String projectId,
 			final SysMLRequirement sysmlRequirement) throws IOException, ServletException {
-		System.out.println(sysmlRequirement.getName());
-//		MagicDrawManager.loadSysMLProjects();
-//		MagicDrawManager.loadSysMLProject(projectId);
-		MagicDrawManager.makeSysMLProjectActive(projectId);
+		System.out.println(sysmlRequirement.getName());	
 		
 		// make sure that the correct MagicDraw project is set as active and is loaded
 		// global project variable of MagicDrawManager points to the last loaded project
+		MagicDrawManager.makeSysMLProjectActive(projectId);
 		
 		
 		MagicDrawManager.createSysMLRequirement2(sysmlRequirement, projectId);
