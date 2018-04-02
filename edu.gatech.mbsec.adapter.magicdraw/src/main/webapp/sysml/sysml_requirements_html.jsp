@@ -109,7 +109,9 @@ String modelName = (String) request.getAttribute("projectId");
 <%!
 	public String getElementQualifiedName(URI uri){
 		String[] names = uri.getPath().split("/");
-	    String last_name = names[names.length - 1]; 	    	
-	    return last_name; 
+	    String last_name = names[names.length - 1]; 
+	    String[] last_names = last_name.split("::");
+	    String simple_last_name = last_names[last_names.length - 1];
+	    return simple_last_name; 
 	}
 %>
