@@ -78,6 +78,7 @@ import com.nomagic.uml2.ext.jmi.helpers.StereotypesHelper;
 import com.nomagic.uml2.ext.magicdraw.auxiliaryconstructs.mdinformationflows.InformationFlow;
 import com.nomagic.uml2.ext.magicdraw.auxiliaryconstructs.mdmodels.Model;
 import com.nomagic.uml2.ext.magicdraw.classes.mdassociationclasses.AssociationClass;
+import com.nomagic.uml2.ext.magicdraw.classes.mddependencies.Abstraction;
 import com.nomagic.uml2.ext.magicdraw.classes.mddependencies.Dependency;
 import com.nomagic.uml2.ext.magicdraw.classes.mdkernel.AggregationKindEnum;
 import com.nomagic.uml2.ext.magicdraw.classes.mdkernel.Association;
@@ -2910,6 +2911,39 @@ public class MagicDrawManager {
 			// TODO: currently, requirements can only be owned by the top level project (not by packages)
 			Model model = project.getModel();
 			newMDBlock.setOwner(model);
+			
+			// adding derivedFrom relationship if existing
+			if(sysmlRequirement.getDerivedFromElements().length > 0 ){
+				Stereotype deriveReqtStereotype = StereotypesHelper.getStereotype(Application.getInstance().getProject(),
+						SysMLConstants.DERIVE_REQT_STEREOTYPE, SysMLConstants.SYSML_PROFILE);
+//				Stereotype deriveReqtStereotype = StereotypesHelper.getStereotype(project, "DeriveReqt");
+				Link[] derivedFromElements = sysmlRequirement.getDerivedFromElements();
+				for (Link link : derivedFromElements) {
+					// get md requirement corresponding to link
+					// get target requirement
+					URI targetRequirementURI = link.getValue(); 
+					String targetRequirementQualifiedName = getQualifiedNameFromURI(targetRequirementURI);
+					
+					for (com.nomagic.uml2.ext.magicdraw.classes.mdkernel.Class mdRequirement : projectIdMDSysmlRequirementsMap
+							.get(projectId2)) {
+						if (mdRequirement.getQualifiedName().replaceAll("\\n", "-").replaceAll(" ", "_")
+								.equals(targetRequirementQualifiedName)) {
+							
+							// create abstraction element with stereotype
+							// for now only for DeriveReqt relationship
+							// TODO: add support for more relationship types							
+							Abstraction abstraction = elementsFactory.createAbstractionInstance();
+							abstraction.getClient().add(newMDBlock);
+							abstraction.getSupplier().add(mdRequirement);
+							StereotypesHelper.addStereotype(abstraction, deriveReqtStereotype);
+							abstraction.setOwner(model);							
+							break;
+						}
+					}					
+				}
+
+			}
+			
 	
 			// adding the new requirement to the list of MagicDraw SysML requirements
 			projectIdMDSysmlRequirementsMap.get(projectId2).add(newMDBlock);
