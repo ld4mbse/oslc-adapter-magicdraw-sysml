@@ -94,6 +94,14 @@ String requestURL = (String)request.getAttribute("requestURL");
 			<% } %>
 		<% } %>
 		
+		<% if( element.getDerivedFromElements().length > 0) {  %>
+		<p><span id="metainfo">Derived From</span></p>
+		<!-- list representation of resource relationships -->				
+			<% for (Link link : element.getDerivedFromElements()) {  %>				
+				<p><a href="<%= link.getValue() %>"> <%=getElementQualifiedName(link.getValue())%></a></p>				
+			<% } %>
+		<% } %>
+		
 		<% if( element.getSatisfiedBy().length > 0) {  %>
 		<p><span id="metainfo">Satisfied By</span></p>
 		<!-- list representation of resource relationships -->				
