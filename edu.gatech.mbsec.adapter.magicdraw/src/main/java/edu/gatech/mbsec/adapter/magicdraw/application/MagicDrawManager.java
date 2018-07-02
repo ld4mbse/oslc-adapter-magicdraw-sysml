@@ -2160,12 +2160,18 @@ public class MagicDrawManager {
 						linkedElementBaseURI = baseHTTPURI + "/services/" + projectId + "/usecases/";
 					}
 					String linkedElementQName = null;
-					if (!isLinkedElementRequirement) {
+//					if (!isLinkedElementRequirement) {
+//						linkedElementQName = linkedNamedElement.getQualifiedName().replaceAll("\\n", "-")
+//								.replaceAll(" ", "_");
+//					} else {
+//						linkedElementQName = linkedElementID;
+//					}
+					
+					
 						linkedElementQName = linkedNamedElement.getQualifiedName().replaceAll("\\n", "-")
 								.replaceAll(" ", "_");
-					} else {
-						linkedElementQName = linkedElementID;
-					}
+					
+					
 					URI linkedElementURI = null;
 					try {
 						linkedElementURI = new URI(linkedElementBaseURI + linkedElementQName);
@@ -3875,7 +3881,12 @@ public class MagicDrawManager {
 
 		// get element that already exists
 		Property mdValuePropertyToUpdate = null;
-		for (Property mdValueProperty : mdSysmlValueProperties) {
+		
+		
+		Collection<Property> projectSpecificMdValueProperties = projectIdMDSysmlValuePropertiesMap.get(projectId2);
+		
+		//for (Property mdValueProperty : mdSysmlValueProperties) {
+		for (Property mdValueProperty : projectSpecificMdValueProperties) {
 			if (mdValueProperty.getQualifiedName().equals(newElementQualifiedName)) {
 				mdValuePropertyToUpdate = mdValueProperty;
 				break;
