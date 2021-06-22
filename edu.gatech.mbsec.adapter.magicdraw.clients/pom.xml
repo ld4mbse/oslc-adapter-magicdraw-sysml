@@ -66,17 +66,17 @@
 		<dependency>
 			<groupId>org.eclipse.lyo.oslc4j.core</groupId>
 			<artifactId>oslc4j-core</artifactId>
-			<version>2.0.0</version>
+			<version>4.0.0</version>
 		</dependency>
 		<dependency>
 			<groupId>org.eclipse.lyo.oslc4j.core</groupId>
 			<artifactId>oslc4j-jena-provider</artifactId>
-			<version>3.0.0-SNAPSHOT</version>
+			<version>4.0.0</version>
 		</dependency>
 		<dependency>
 			<groupId>org.eclipse.lyo.oslc4j.core</groupId>
 			<artifactId>oslc4j-registry</artifactId>
-			<version>3.0.0-SNAPSHOT</version>
+			<version>4.0.0</version>
 			<type>war</type>
 		</dependency>
 
@@ -85,20 +85,20 @@
 		<dependency>
 			<groupId>org.apache.jena</groupId>
 			<artifactId>jena-tdb</artifactId>
-			<version>1.1.2</version>	<!-- depend on jena-tdb, which will pull in the other artifacts, version 
+			<version>3.1.0</version> <!-- depend on jena-tdb, which will pull in the other artifacts, version 
 				number of TDB needs to be checked - it is not the same as apache-jena, https://jena.apache.org/download/maven.html -->
 		</dependency>
 
 		<dependency>
 			<groupId>org.apache.jena</groupId>
 			<artifactId>jena-core</artifactId>
-			<version>2.13.0</version>
+			<version>4.1.0</version>
 		</dependency>
 
 		<dependency>
 			<groupId>org.eclipse.lyo.oslc4j.core</groupId>
 			<artifactId>oslc4j-core</artifactId>
-			<version>3.0.0-SNAPSHOT</version>
+			<version>4.0.0</version>
 		</dependency>
 
 		<dependency>
@@ -123,8 +123,8 @@
 				<artifactId>maven-compiler-plugin</artifactId>
 				<version>3.1</version>
 				<configuration>
-					<source>1.7</source>
-					<target>1.7</target>
+					<source>1.8</source>
+					<target>1.8</target>
 				</configuration>
 			</plugin>
 

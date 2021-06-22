@@ -1,6 +1,6 @@
 #OSLC MagicDraw SysML Adapter
 
-for v17.0.3, v17.0.4, v17.0.5, v18.0. Updates for v18.2 will come soon.
+for v17.0.3, v17.0.4, v17.0.5, v18.0. Updates for v18.2 will come soon. It's required to download and install the [MagicDraw SysMl plugin](https://www.magicdraw.com/main.php?ts=download&cmd_show_download=1&NMSESSID=f866f565d52790bab55816843ff873c1&group=6&menu=download_sysml&c=7b7fb23082223578e12b031bd0f87bdd) in your MagicDraw installation before installing and running the OSLC MagicDraw Adapter. 
 
 ## Overview of RESTful web services 
 
@@ -39,20 +39,17 @@ for v17.0.3, v17.0.4, v17.0.5, v18.0. Updates for v18.2 will come soon.
 
 ##Instructions to install and run OSLC MagicDraw SysML Adapter 
 
-Last updated by Axel Reichwein (axel.reichwein@koneksys.com) 				February 16, 2016
-### 1.	Installing OSLC4J
-Follow the [Instructions to install Eclipse Lyo](https://github.com/ld4mbse/oslc4j/edit/master/README.md). The document also contains instructions on how to use a proxy server with Maven and Eclipse. 
+Last updated by Axel Reichwein (axel.reichwein@koneksys.com) 				June 22, 2021
 
-
-### 2.	Installing edu.gatech.mbsec.subversion.client 
+### 1.	Installing edu.gatech.mbsec.subversion.client 
 Follow the [Instructions to install edu.gatech.mbsec.subversion.client](https://github.com/ld4mbse/subversion-client/blob/master/README.md). 
 
 
-### 3.	Installing edu.gatech.mbsec.adapter.subversion 
+### 2.	Installing edu.gatech.mbsec.adapter.subversion 
 Follow the [Instructions to install edu.gatech.mbsec.adapter.subversion](https://github.com/ld4mbse/oslc-adapter-subversion/blob/master/README.md). 
 
 
-### 4.	Downloading edu.gatech.mbsec.adapter.magicdraw repository 
+### 3.	Downloading edu.gatech.mbsec.adapter.magicdraw repository 
 
 1.	Open the Git Repositories View (Window -> Show View -> type “Git Repositories” in the search field)
 2.	Click on the Clone Repository icon  
@@ -62,13 +59,13 @@ Follow the [Instructions to install edu.gatech.mbsec.adapter.subversion](https:/
 6.	Click Next until Finish.
 
 
-### 5.	Importing projects into the Eclipse workspace
+### 4.	Importing projects into the Eclipse workspace
 
 1.	In the Git repositories view, right-click edu.gatech.mbsec.adapter.magicdraw and select “Import Projects”. Click Next until Finish
 2.	The 3 projects are in the Eclipse workspace
 
 
-### 6.	Choosing the MagicDraw-specific pom file
+### 5.	Choosing the MagicDraw-specific pom file
 
 1. By default, the pom.xml file is set up for MagicDraw 18.0.1 sp1. If you are using MagicDraw 18.0, you can skip this installation step. If you are using a different MagicDraw version, such as 17.0.4 or 17.0.5, you will need to go through the next steps.
 2. Each MagicDraw version comes with a different set of jars which need to be loaded on the Java classpath in order to use the MagicDraw API. The Maven pom.xml file refers to the jars which need to be on the Java classpath. In the folder named pom files for specific MagicDraw versions, 
@@ -78,7 +75,7 @@ Follow the [Instructions to install edu.gatech.mbsec.adapter.subversion](https:/
  4. and rename the pom file you have just copied into the project root to pom.xml
 
 
-### 7.	Adding Proprietary MagicDraw Jars and documents to the project
+### 6.	Adding Proprietary MagicDraw Jars and documents to the project
 
 1. In Eclipse, open the Project Explorer view. (Window → Show View → Project Explorer)
 2. Expand the edu.gatech.mbsec.adapter.magicdraw project
@@ -92,7 +89,7 @@ Follow the [Instructions to install edu.gatech.mbsec.adapter.subversion](https:/
 ```
 
 
-### 8. Building the edu.gatech.mbsec.adapter.magicdraw projects
+### 7. Building the edu.gatech.mbsec.adapter.magicdraw projects
 
 1.	In Eclipse, open the Project Explorer view. (Window → Show View → Project Explorer)
 2.	Expand the edu.gatech.mbsec.adapter.magicdraw.ecore project
@@ -115,7 +112,7 @@ Follow the [Instructions to install edu.gatech.mbsec.adapter.subversion](https:/
 4. Select the project, right-click -> Properties. Select Java Compiler and select 1.8 in the drop down menu next to the JDK compliance setting as highlighted below.
 
 
-### 9.	Manual configuration 
+### 8.	Manual configuration 
 
 Specify the port number of the OSLC SysML adapter service of in the config.properties file under edu.gatech.mbsec.adapter.magicdraw/configuration. By default, port 8080 will be used. As an example displayed below, the port number is set to 8080.
 
@@ -186,7 +183,7 @@ Warning: Do not choose as local Subversion file storage the same folder as the o
  
 
 
-### 10. Installing Apache Tomcat
+### 9. Installing Apache Tomcat
 
 *Optional: This step is only necessary if you want to use a specific Tomcat instance instead of the Tomcat instance embedded in Eclipse and downloaded by the Maven Tomcat plugin. This step is only necessary if you want:*
 - *to deploy the SysML adapter on a specific Tomcat instance (possibly with specific configurations)*
@@ -266,7 +263,7 @@ In the maven user/.m2/ (Example: C:\Users\Axel\.m2) folder, add in settings.xml 
 Note: you can still use Tomcat 8 with the Tomcat 7 Maven plugin even though it only officially supports Tomcat 7. There is no Tomcat Maven plugin for Tomcat 8 at this point. 
 
 
-### 11.	Installing the Chrome/Firefox Postman plugin (or any REST client)
+### 10.	Installing the Chrome/Firefox Postman plugin (or any REST client)
 
 *Optional - only useful if you want to use this REST client*
 
@@ -274,7 +271,7 @@ Note: you can still use Tomcat 8 with the Tomcat 7 Maven plugin even though it o
 2.	*And the [Postman launcher](https://chrome.google.com/webstore/detail/postman-launcher/igofndmniooofoabmmpfonmdnhgchoka?hl=en)*
 
 
-### 12.	Launching the OSLC SysML Adapter
+### 11.	Launching the OSLC SysML Adapter
 
 There are several options
 
@@ -340,7 +337,7 @@ setlocal
 7. And then run the Maven launch configuration named **oslc4jmagicdraw tomcat deploy debug**
 
 
-### 13.	Testing the OSLC SysML Adapter
+### 12.	Testing the OSLC SysML Adapter
 
 #### Testing the retrieval of OSLC resources in HTML
 

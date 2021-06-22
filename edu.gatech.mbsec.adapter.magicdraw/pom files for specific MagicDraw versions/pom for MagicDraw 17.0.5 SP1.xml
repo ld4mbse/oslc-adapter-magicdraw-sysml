@@ -34,9 +34,9 @@
 		<!-- ********************************************************************** --> 
 		
 		<dependency>
-			<groupId>org.eclipse.lyo.adapter.magicdraw</groupId>
+			<groupId>edu.gatech.mbsec.adapter.magicdraw</groupId>
 			<artifactId>oslc4j-magicdraw-resources</artifactId>
-			<version>0.1.0</version>
+			<version>1.1.0</version>
 		</dependency>
 		
 		<!-- ********************************************************************** --> 
@@ -46,7 +46,7 @@
 		<dependency>
 			<groupId>org.eclipse.lyo.oslc4j.core</groupId>
 			<artifactId>oslc4j-wink</artifactId>
-			<version>2.0.0</version>
+			<version>4.0.0</version>
 			<exclusions>
         		<exclusion>
       				<groupId>javax.xml.bind</groupId>
@@ -61,17 +61,17 @@
 		<dependency>
 			<groupId>org.eclipse.lyo.oslc4j.core</groupId>
 			<artifactId>oslc4j-jena-provider</artifactId>
-			<version>2.0.0</version>
+			<version>4.0.0</version>
 		</dependency>
 		<dependency>
 			<groupId>org.eclipse.lyo.oslc4j.core</groupId>
 			<artifactId>oslc4j-core</artifactId>
-			<version>2.0.0</version>
+			<version>4.0.0</version>
 		</dependency>
 		<dependency>
 			<groupId>org.eclipse.lyo.oslc4j.core</groupId>
 			<artifactId>oslc4j-json4j-provider</artifactId>
-			<version>2.0.0</version>
+			<version>4.0.0</version>
 		</dependency>
 		
 		
