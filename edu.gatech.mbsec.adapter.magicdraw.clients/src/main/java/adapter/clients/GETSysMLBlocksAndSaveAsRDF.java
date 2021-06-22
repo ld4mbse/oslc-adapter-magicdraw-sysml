@@ -43,8 +43,8 @@ import org.eclipse.lyo.oslc4j.provider.jena.OslcRdfXmlCollectionProvider;
 import org.eclipse.lyo.oslc4j.provider.jena.OslcRdfXmlProvider;
 import org.glassfish.jersey.client.ClientConfig;
 
-import com.hp.hpl.jena.rdf.model.Model;
-import com.hp.hpl.jena.rdf.model.RDFWriter;
+import org.apache.jena.rdf.model.Model;
+import org.apache.jena.rdf.model.RDFWriterI;
 
 
 
@@ -76,7 +76,7 @@ public class GETSysMLBlocksAndSaveAsRDF {
 				// print requirements in RDF file
 				try {
 					Model model = JenaModelHelper.createJenaModel(objects);
-					RDFWriter writer = writer = model.getWriter("RDF/XML");
+					RDFWriterI writer = writer = model.getWriter("RDF/XML");
 			        writer.setProperty("showXmlDeclaration",
 			                           "false");
 			        writer.setErrorHandler(new ErrorHandler());    

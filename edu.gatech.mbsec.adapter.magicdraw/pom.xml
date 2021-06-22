@@ -10,7 +10,7 @@
 	<name>oslc4jmagicdraw</name>
 	
 	<properties>
-		<magicdraw.installdir>C:\Program Files\MagicDraw</magicdraw.installdir>
+		<magicdraw.installdir>D:\Fabio\Downloads\MagicDraw_180_sp7_no_install</magicdraw.installdir>
 	</properties>
 	
 	<dependencies>
@@ -51,7 +51,7 @@
 		<dependency>
 			<groupId>org.eclipse.lyo.oslc4j.core</groupId>
 			<artifactId>oslc4j-wink</artifactId>
-			<version>3.0.0-SNAPSHOT</version>
+			<version>4.0.0</version>
 			<exclusions>
         		<exclusion>
       				<groupId>javax.xml.bind</groupId>
@@ -66,17 +66,17 @@
 		<dependency>
 			<groupId>org.eclipse.lyo.oslc4j.core</groupId>
 			<artifactId>oslc4j-jena-provider</artifactId>
-			<version>3.0.0-SNAPSHOT</version>
+			<version>4.0.0</version>
 		</dependency>
 		<dependency>
 			<groupId>org.eclipse.lyo.oslc4j.core</groupId>
 			<artifactId>oslc4j-core</artifactId>
-			<version>3.0.0-SNAPSHOT</version>
+			<version>4.0.0</version>
 		</dependency>
 		<dependency>
 			<groupId>org.eclipse.lyo.oslc4j.core</groupId>
 			<artifactId>oslc4j-json4j-provider</artifactId>
-			<version>3.0.0-SNAPSHOT</version>
+			<version>4.0.0</version>
 		</dependency>
 		
 		

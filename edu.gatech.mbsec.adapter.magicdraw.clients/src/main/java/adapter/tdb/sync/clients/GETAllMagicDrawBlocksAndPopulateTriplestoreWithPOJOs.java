@@ -53,11 +53,10 @@ import org.glassfish.jersey.client.ClientConfig;
 
 import util.TriplestoreUtil;
 
-import com.hp.hpl.jena.query.Dataset;
-import com.hp.hpl.jena.rdf.model.Model;
-import com.hp.hpl.jena.rdf.model.RDFWriter;
-import com.hp.hpl.jena.tdb.TDBFactory;
-import com.hp.hpl.jena.util.FileManager;
+import org.apache.jena.query.Dataset;
+import org.apache.jena.rdf.model.Model;
+import org.apache.jena.tdb.TDBFactory;
+import org.apache.jena.util.FileManager;
 
 import edu.gatech.mbsec.adapter.magicdraw.resources.SysMLBlock;
 
