@@ -10,7 +10,7 @@
 	<name>oslc4jmagicdraw</name>
 	
 	<properties>
-		<magicdraw.installdir>D:\Fabio\Downloads\MagicDraw_180_sp7_no_install</magicdraw.installdir>
+		<magicdraw.installdir>C:\Program Files\MagicDraw</magicdraw.installdir>
 	</properties>
 	
 	<dependencies>

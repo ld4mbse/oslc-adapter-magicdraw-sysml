@@ -1,6 +1,6 @@
 #OSLC MagicDraw SysML Adapter
 
-for v17.0.3, v17.0.4, v17.0.5, v18.0. Updates for v18.2 will come soon.
+for v17.0.3, v17.0.4, v17.0.5, v18.0. Updates for v18.2 will come soon. It's required to download and install the [MagicDraw SysMl plugin](https://www.magicdraw.com/main.php?ts=download&cmd_show_download=1&NMSESSID=f866f565d52790bab55816843ff873c1&group=6&menu=download_sysml&c=7b7fb23082223578e12b031bd0f87bdd) in your MagicDraw installation before installing and running the OSLC MagicDraw Adapter. 
 
 ## Overview of RESTful web services 
 
